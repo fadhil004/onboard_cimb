@@ -1,6 +1,7 @@
 package helper
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/google/uuid"
@@ -23,4 +24,8 @@ func GetIDFromTransactionPath(path string) string {
 		return parts[2]
 	}
 	return ""
+}
+
+func NewAPIPath(method string, path string) string {
+	return fmt.Sprintf("%s %s", method, path)
 }

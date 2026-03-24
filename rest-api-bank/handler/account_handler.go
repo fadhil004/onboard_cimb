@@ -13,8 +13,21 @@ import (
 )
 
 type AccountHandler struct {
+	mux *http.ServeMux
 	Service *service.AccountService
 	TransferService *service.TransferService
+}
+
+func NewAccountHandler(mux *http.ServeMux, service *service.AccountService, transferService *service.TransferService) *AccountHandler {
+	return &AccountHandler{mux: mux, Service: service, TransferService: transferService}
+}
+
+func (h *AccountHandler) MapRoutes() {
+	h.mux.HandleFunc(helper.NewAPIPath("POST", "/accounts"), h.Create())
+	h.mux.HandleFunc(helper.NewAPIPath("GET", "/accounts"), h.GetAll())
+	h.mux.HandleFunc(helper.NewAPIPath("GET", "/accounts/"), h.GetByID())
+	h.mux.HandleFunc(helper.NewAPIPath("PUT", "/accounts/"), h.Update())
+	h.mux.HandleFunc(helper.NewAPIPath("DELETE", "/accounts/"), h.Delete())
 }
 
 func (h *AccountHandler) Create() http.HandlerFunc {

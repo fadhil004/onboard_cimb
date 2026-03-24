@@ -5,13 +5,23 @@ import (
 	"net/http"
 
 	"rest-api-bank/dto"
+	"rest-api-bank/helper"
 	"rest-api-bank/service"
 
 	"github.com/google/uuid"
 )
 
 type TransferHandler struct {
+	mux *http.ServeMux
 	Service *service.TransferService
+}
+
+func NewTransferHandler(mux *http.ServeMux, service *service.TransferService) *TransferHandler {
+	return &TransferHandler{mux: mux, Service: service}
+}
+
+func (h *TransferHandler) MapRoutes() {
+	h.mux.HandleFunc(helper.NewAPIPath("POST", "/transfers"), h.Transfer())
 }
 
 func (h *TransferHandler) Transfer() http.HandlerFunc {
