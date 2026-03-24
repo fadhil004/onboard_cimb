@@ -2,10 +2,9 @@ package service
 
 import (
 	"errors"
+	"rest-api-bank/helper"
 	"rest-api-bank/models"
 	"rest-api-bank/repository"
-
-	"github.com/google/uuid"
 )
 
 type AccountService struct {
@@ -26,10 +25,13 @@ func (s *AccountService) GetAll() ([]models.Account, error) {
 }
 
 func (s *AccountService) GetByID(id string) (models.Account, error) {
-	return s.Repo.GetByID(uuidMustParse(id))
+	return s.Repo.GetByID(helper.UuidMustParse(id))
 }
 
-func uuidMustParse(id string) uuid.UUID {
-	u, _ := uuid.Parse(id)
-	return u
+func (s *AccountService) Update(acc models.Account) error {
+	return s.Repo.Update(acc)
+}
+
+func (s *AccountService) Delete(id string) error {
+	return s.Repo.Delete(helper.UuidMustParse(id))
 }

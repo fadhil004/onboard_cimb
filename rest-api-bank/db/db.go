@@ -8,7 +8,7 @@ import (
 )
 
 func InitDB() *sqlx.DB { 
-	dsn := "host=localhost user=postgres password=postgres dbname=bank port=5432 sslmode=disable"
+	dsn := "host=localhost user=postgres password=postgres dbname=rest-api-bank port=5432 sslmode=disable"
 
 	db, err := sqlx.Connect("postgres", dsn)
 	if err != nil {

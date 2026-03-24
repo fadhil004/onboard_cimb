@@ -2,6 +2,7 @@ package service
 
 import (
 	"errors"
+	"rest-api-bank/helper"
 	"rest-api-bank/models"
 	"rest-api-bank/repository"
 
@@ -50,4 +51,8 @@ func (s *TransferService) Transfer(fromID, toID uuid.UUID, amount int64) error {
 	}
 
 	return s.TransactionRepo.Create(tx)
+}
+
+func (s *TransferService) GetTransaction(id string) ([]models.Transaction, error) {
+	return s.TransactionRepo.GetByAccountID(helper.UuidMustParse(id))
 }
