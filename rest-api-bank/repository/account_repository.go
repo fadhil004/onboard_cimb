@@ -60,6 +60,19 @@ func (r *AccountRepository) Update(acc models.Account) error {
 }
 
 func (r *AccountRepository) Delete(id uuid.UUID) error {
-	_, err := r.DB.Exec("DELETE FROM accounts WHERE id=$1", id)
+	result, err := r.DB.Exec("DELETE FROM accounts WHERE id=$1", id)
+
+	if err != nil {
+		return err
+	}
+
+	rows, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	if rows == 0 {
+		return errors.New("Account not found")
+	}
 	return err
 }
