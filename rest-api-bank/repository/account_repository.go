@@ -39,9 +39,22 @@ func (r *AccountRepository) GetByID(id uuid.UUID) (models.Account, error) {
 }
 
 func (r *AccountRepository) Update(acc models.Account) error {
-	_, err := r.DB.Exec(`
+	result, err := r.DB.Exec(`
 	UPDATE accounts SET account_holder=$1, balance=$2 WHERE id=$3
 	`, acc.AccountHolder, acc.Balance, acc.ID)
+
+	if err != nil {
+		return err
+	}
+
+	rows, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	if rows == 0 {
+		return errors.New("Account not found")
+	}
 
 	return err
 }

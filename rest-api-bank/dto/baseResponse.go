@@ -1,6 +1,7 @@
 package dto
 
 type BaseResponse struct {
-	Message string      `json:"message"`
-	Data    interface{} `json:"data,omitempty"`
+	ResponseCode string      `json:"responseCode"`
+	ResponseDesc string      `json:"responseDesc"`
+	Data         interface{} `json:"data"`
 }

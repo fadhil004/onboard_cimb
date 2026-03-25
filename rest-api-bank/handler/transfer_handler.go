@@ -21,7 +21,7 @@ func NewTransferHandler(mux *http.ServeMux, service *service.TransferService) *T
 }
 
 func (h *TransferHandler) MapRoutes() {
-	h.mux.HandleFunc(helper.NewAPIPath("POST", "/transfers"), h.Transfer())
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodPost, "/transfers"), h.Transfer())
 }
 
 func (h *TransferHandler) Transfer() http.HandlerFunc {
@@ -29,30 +29,71 @@ func (h *TransferHandler) Transfer() http.HandlerFunc {
 
 		var req dto.TransferRequest
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-			http.Error(w, "invalid body", 400)
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(dto.BaseResponse{
+				ResponseCode: "400",
+				ResponseDesc: "Invalid Body",
+			})
 			return
 		}
 
 		fromID, err := uuid.Parse(req.FromAccountID)
 		if err != nil {
-			http.Error(w, "invalid from_account_id", 400)
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(dto.BaseResponse{
+				ResponseCode: "400",
+				ResponseDesc: "Invalid from_account_id",
+			})
 			return
 		}
 
 		toID, err := uuid.Parse(req.ToAccountID)
 		if err != nil {
-			http.Error(w, "invalid to_account_id", 400)
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(dto.BaseResponse{
+				ResponseCode: "400",
+				ResponseDesc: "Invalid to_account_id",
+			})
 			return
 		}
 
 		err = h.Service.Transfer(fromID, toID, req.Amount)
 		if err != nil {
-			http.Error(w, err.Error(), 400)
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(dto.BaseResponse{
+				ResponseCode: "400",
+				ResponseDesc: err.Error(),
+			})
 			return
 		}
 
+		w.WriteHeader(http.StatusOK)
 		json.NewEncoder(w).Encode(dto.BaseResponse{
-			Message: "Transfer success",
+			ResponseCode: "200",
+			ResponseDesc: "Transfer success",
 		})
 	}
 }
+
+// func (h *TransferHandler) GetTransaction() http.HandlerFunc {
+// 	return func(w http.ResponseWriter, r *http.Request) {
+
+// 		id := helper.GetIDFromTransactionPath(r.URL.Path)
+// 		data, err := h.Service.GetTransaction(id)
+// 		if err != nil {
+// 			w.WriteHeader(http.StatusNotFound)
+// 			json.NewEncoder(w).Encode(dto.BaseResponse{
+// 				ResponseCode: "404",
+// 				ResponseDesc: "Account not found",
+// 			})
+// 			return
+// 		}
+
+// 		w.WriteHeader(http.StatusOK)
+// 		json.NewEncoder(w).Encode(dto.BaseResponse{
+// 			ResponseCode: "200",
+// 			ResponseDesc: "Success",
+// 			Data:         data,
+// 		})
+// 	}
+// }
