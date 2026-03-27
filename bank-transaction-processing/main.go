@@ -23,7 +23,7 @@ type Transaction struct {
 }
 
 var (
-	accounts = map[string]*Account{		
+	accounts = map[string]*Account{
 		"C001": {"CIMB", "C001", 300000},
 		"M002": {"MANDIRI", "M002", 500000},
 		"B003": {"BNI", "B003", 400000},
@@ -32,27 +32,36 @@ var (
 	mu sync.Mutex
 )
 
-// Worker
 func processTransaction(trx Transaction, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	done := make(chan bool)
+	flag := false
 
-	go func() {
-		delay := time.Duration(rand.Intn(5)+1) * time.Second
+	delay := time.Duration(rand.Intn(5)+1) * time.Second
+	from := accounts[trx.From]
+	to := accounts[trx.To]
+	
+	log.Printf("| Processing TX-%d (%ds) | %s -> %s | Rp%d", trx.ID, int(delay.Seconds()), from.No, to.No, trx.Amount)
+	select {
+	case <-time.After(delay):
 
-		time.Sleep(delay)
+		if ctx.Err() != nil {
+			log.Printf("CEK SEBELUM COMMIT")
+			flag = true
+			return
+		}
 
 		mu.Lock()
 		defer mu.Unlock()
 
-		from := accounts[trx.From]
-		to := accounts[trx.To]
-
-		log.Printf("| Processing TX-%d | %s -> %s | Rp%d", trx.ID, from.No, to.No, trx.Amount)
+		if ctx.Err() != nil {
+			log.Printf("CEK SETELAH COMMIT")
+			flag = true
+			return
+		}
 
 		if from.Saldo < trx.Amount {
 			log.Printf("| TX-%d FAILED | %s -> %s | Transfer Rp%d | Saldo %s hanya Rp%d",
@@ -60,25 +69,18 @@ func processTransaction(trx Transaction, wg *sync.WaitGroup) {
 		} else {
 			from.Saldo -= trx.Amount
 			to.Saldo += trx.Amount
-
-			log.Printf("| TX-%d SUCCESS \n Saldo %s sekarang Rp%d \n Saldo %s sekarang Rp%d",
+			log.Printf("| TX-%d SUCCESS\n  Saldo %s sekarang Rp%d\n  Saldo %s sekarang Rp%d",
 				trx.ID, from.No, from.Saldo, to.No, to.Saldo)
 		}
-
-		done <- true
-	}()
-
-	select {
 	case <-ctx.Done():
-		log.Printf("TX-%d TIMEOUT", trx.ID)
-	case <-done:
-		// selesai normal
+		flag = true
+	}
+	if flag {
+		log.Printf("| TX-%d TIMEOUT", trx.ID)
 	}
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
-
 	transactions := []Transaction{
 		{1, "C001", "M002", 300000},
 		{2, "C001", "B003", 600000},
@@ -100,6 +102,6 @@ func main() {
 
 	fmt.Println("\n=== SALDO AKHIR ===")
 	for _, acc := range accounts {
-		fmt.Printf("%s (%s): Rp%d \n", acc.Bank, acc.No, acc.Saldo)
+		fmt.Printf("%s (%s): Rp%d\n", acc.Bank, acc.No, acc.Saldo)
 	}
 }
