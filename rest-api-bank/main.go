@@ -12,8 +12,9 @@ import (
 
 func main() {
 	database := db.InitDB()
+	db.RunMigrations(database)
 
-	// ✅ pakai constructor, bukan struct literal
+	//  pakai constructor, bukan struct literal
 	accountRepo := repository.NewAccountRepository(database)
 	transactionRepo := repository.NewTransactionRepository(database)
 

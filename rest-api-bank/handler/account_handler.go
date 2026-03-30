@@ -63,7 +63,7 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 
 		err := h.Service.Create(acc)
 		if err != nil {
-			if strings.Contains(err.Error(), "accounts_account_number_key") {
+			if strings.Contains(err.Error(), "duplicate key") {
 				w.WriteHeader(http.StatusBadRequest)
 				json.NewEncoder(w).Encode(dto.BaseResponse{
 					ResponseCode: "400",
