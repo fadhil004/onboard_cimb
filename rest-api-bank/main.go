@@ -13,10 +13,14 @@ import (
 func main() {
 	database := db.InitDB()
 
-	accountRepo := &repository.AccountRepository{DB: database}
-	transactionRepo := &repository.TransactionRepository{DB: database}
+	// ✅ pakai constructor, bukan struct literal
+	accountRepo := repository.NewAccountRepository(database)
+	transactionRepo := repository.NewTransactionRepository(database)
 
-	accountService := &service.AccountService{Repo: accountRepo}
+	accountService := &service.AccountService{
+		Repo: accountRepo,
+	}
+
 	transferService := &service.TransferService{
 		AccountRepo:     accountRepo,
 		TransactionRepo: transactionRepo,
@@ -30,7 +34,7 @@ func main() {
 	transferRoutes := handler.NewTransferHandler(mux, transferService)
 	transferRoutes.MapRoutes()
 
-	http.ListenAndServe(":8080", 
+	http.ListenAndServe(":8080",
 		server.ApplicationMiddlewareResponse(
 			server.HandleRouteNotFound(mux),
 		),
