@@ -7,6 +7,7 @@ import (
 
 	"rest-api-bank/dto"
 	"rest-api-bank/helper"
+	"rest-api-bank/middleware"
 	"rest-api-bank/models"
 	"rest-api-bank/service"
 
@@ -24,17 +25,18 @@ func NewAccountHandler(mux *http.ServeMux, service *service.AccountService, tran
 }
 
 func (h *AccountHandler) MapRoutes() {
-	h.mux.HandleFunc(helper.NewAPIPath(http.MethodPost, "/accounts"), h.Create())
-	h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts"), h.GetAll())
-	// h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts/"), h.GetByID())
-	h.mux.HandleFunc(helper.NewAPIPath(http.MethodPut, "/accounts/"), h.Update())
-	h.mux.HandleFunc(helper.NewAPIPath(http.MethodDelete, "/accounts/"), h.Delete())
-	h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts/"), h.HandleAccountsAdvanced())
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodPost, "/accounts"), middleware.RateLimit(h.Create(),"auth", "create"))
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts"), middleware.RateLimit(h.GetAll(),"auth", "get_all"))
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts/{id}"), middleware.RateLimit(h.GetByID(), "account", "get_by_id"))
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodPut, "/accounts/{id}"), h.Update())
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodDelete, "/accounts/{id}"), h.Delete())
+	h.mux.HandleFunc(helper.NewAPIPath(http.MethodGet, "/accounts/{id}/transactions"), middleware.RateLimit(h.GetTransaction(), "account", "get_transaction"))
 }
 
 func (h *AccountHandler) Create() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
+		ctx := r.Context()
+		
 		var req dto.CreateAccountRequest
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -61,7 +63,7 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 			Balance:       req.Balance,
 		}
 
-		err := h.Service.Create(acc)
+		err := h.Service.Create(ctx,acc)
 		if err != nil {
 			if strings.Contains(err.Error(), "duplicate key") {
 				w.WriteHeader(http.StatusBadRequest)
@@ -91,8 +93,9 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 
 func (h *AccountHandler) GetAll() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
 
-		data, err := h.Service.GetAll()
+		data, err := h.Service.GetAll(ctx)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -113,9 +116,10 @@ func (h *AccountHandler) GetAll() http.HandlerFunc {
 
 func (h *AccountHandler) GetByID() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
 
 		id := helper.GetIDFromPath(r.URL.Path)
-		data, err := h.Service.GetByID(id)
+		data, err := h.Service.GetByID(ctx, id)
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -136,6 +140,7 @@ func (h *AccountHandler) GetByID() http.HandlerFunc {
 
 func (h *AccountHandler) Update() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
 
 		id := helper.UuidMustParse(helper.GetIDFromPath(r.URL.Path))
 
@@ -155,7 +160,7 @@ func (h *AccountHandler) Update() http.HandlerFunc {
 			Balance:       req.Balance,
 		}
 
-		err := h.Service.Update(acc)
+		err := h.Service.Update(ctx, acc)
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -165,7 +170,7 @@ func (h *AccountHandler) Update() http.HandlerFunc {
 			return
 		}
 
-		updatedData, _ := h.Service.GetByID(id.String())
+		updatedData, _ := h.Service.GetByID(ctx, id.String())
 		w.WriteHeader(http.StatusOK)
 		json.NewEncoder(w).Encode(dto.BaseResponse{
 			ResponseCode: "200",
@@ -177,9 +182,10 @@ func (h *AccountHandler) Update() http.HandlerFunc {
 
 func (h *AccountHandler) GetTransaction() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
 
 		id := helper.GetIDFromTransactionPath(r.URL.Path)
-		data, err := h.TransferService.GetTransaction(id)
+		data, err := h.TransferService.GetTransaction(ctx, id)
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -200,10 +206,11 @@ func (h *AccountHandler) GetTransaction() http.HandlerFunc {
 
 func (h *AccountHandler) Delete() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
 
 		id := helper.GetIDFromPath(r.URL.Path)
 
-		err := h.Service.Delete(id)
+		err := h.Service.Delete(ctx, id)
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -218,21 +225,5 @@ func (h *AccountHandler) Delete() http.HandlerFunc {
 			ResponseCode: "200",
 			ResponseDesc: "Account deleted successfully",
 		})
-	}
-}
-
-func (h *AccountHandler) HandleAccountsAdvanced() http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-
-		path := r.URL.Path
-
-		//accounts/{id}/transactions
-		if strings.Contains(path, "/transactions") {
-			h.GetTransaction()(w, r)
-			return
-		}
-
-		//default /accounts/{id}
-		h.GetByID()(w, r)
 	}
 }

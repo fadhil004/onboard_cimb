@@ -1,18 +1,22 @@
 package main
 
 import (
+	"log"
 	"net/http"
+	"time"
 
-	"rest-api-bank/db"
+	"rest-api-bank/config"
 	"rest-api-bank/handler"
+	"rest-api-bank/middleware"
 	"rest-api-bank/repository"
 	"rest-api-bank/server"
 	"rest-api-bank/service"
 )
 
 func main() {
-	database := db.InitDB()
-	db.RunMigrations(database)
+	config.InitRedis()
+	database := config.InitDB()
+	config.RunMigrations(database)
 
 	//  pakai constructor, bukan struct literal
 	accountRepo := repository.NewAccountRepository(database)
@@ -35,9 +39,16 @@ func main() {
 	transferRoutes := handler.NewTransferHandler(mux, transferService)
 	transferRoutes.MapRoutes()
 
-	http.ListenAndServe(":8080",
-		server.ApplicationMiddlewareResponse(
-			server.HandleRouteNotFound(mux),
-		),
-	)
+	timeoutMiddleware := middleware.Timeout(20 * time.Second) 
+
+	handlerChain := server.ApplicationMiddlewareResponse(
+						timeoutMiddleware(
+								server.HandleRouteNotFound(mux),
+					
+							),
+						)
+
+	http.ListenAndServe(":8080", handlerChain)
+
+	log.Println("Server running on port 8080")
 }

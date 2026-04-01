@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"context"
 	"errors"
 	"rest-api-bank/models"
 
@@ -16,24 +17,24 @@ func NewAccountRepository(db *sqlx.DB) AccountRepository {
     return &accountRepository{db}
 }
 
-func (r *accountRepository) Create(acc models.Account) error {
+func (r *accountRepository) Create(ctx context.Context, acc models.Account) error {
 	query := `
 	INSERT INTO accounts (id, account_number, account_holder, balance)
 	VALUES ($1,$2,$3,$4)
 	`
-	_, err := r.db.Exec(query, acc.ID, acc.AccountNumber, acc.AccountHolder, acc.Balance)
+	_, err := r.db.ExecContext(ctx, query, acc.ID, acc.AccountNumber, acc.AccountHolder, acc.Balance)
 	return err
 }
 
-func (r *accountRepository) GetAll() ([]models.Account, error) {
+func (r *accountRepository) GetAll(ctx context.Context) ([]models.Account, error) {
 	var accounts []models.Account
-	err := r.db.Select(&accounts, "SELECT * FROM accounts")
+	err := r.db.SelectContext(ctx, &accounts, "SELECT * FROM accounts")
 	return accounts, err
 }
 
-func (r *accountRepository) GetByID(id uuid.UUID) (models.Account, error) {
+func (r *accountRepository) GetByID(ctx context.Context, id uuid.UUID) (models.Account, error) {
 	var acc models.Account
-	err := r.db.Get(&acc, "SELECT * FROM accounts WHERE id=$1", id)
+	err := r.db.GetContext(ctx, &acc, "SELECT * FROM accounts WHERE id=$1", id)
 
 	if err != nil {
 		return acc, errors.New("account not found")
@@ -42,8 +43,8 @@ func (r *accountRepository) GetByID(id uuid.UUID) (models.Account, error) {
 	return acc, nil
 }
 
-func (r *accountRepository) Update(acc models.Account) error {
-	result, err := r.db.Exec(`
+func (r *accountRepository) Update(ctx context.Context, acc models.Account) error {
+	result, err := r.db.ExecContext(ctx, `
 	UPDATE accounts SET account_holder=$1, balance=$2 WHERE id=$3
 	`, acc.AccountHolder, acc.Balance, acc.ID)
 
@@ -63,8 +64,8 @@ func (r *accountRepository) Update(acc models.Account) error {
 	return err
 }
 
-func (r *accountRepository) Delete(id uuid.UUID) error {
-	result, err := r.db.Exec("DELETE FROM accounts WHERE id=$1", id)
+func (r *accountRepository) Delete(ctx context.Context, id uuid.UUID) error {
+	result, err := r.db.ExecContext(ctx, "DELETE FROM accounts WHERE id=$1", id)
 
 	if err != nil {
 		return err
