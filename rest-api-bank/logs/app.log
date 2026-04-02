@@ -1,0 +1,16 @@
+{"level":"info","ts":1775032443.7376628,"msg":"handling get account by id request","trace_id":"5ad30732bdc23d6878c7eaf99f6aadc7","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775032443.7420628,"msg":"getting account by id","trace_id":"5ad30732bdc23d6878c7eaf99f6aadc7","account_id":"4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"warn","ts":1775032443.7433915,"msg":"cache miss","key":"bank:account:4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775032443.7440662,"msg":"getting account by id","id":"4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775032443.8202848,"msg":"http request","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874","duration":0.102479714,"trace_id":"5ad30732bdc23d6878c7eaf99f6aadc7"}
+{"level":"info","ts":1775032495.2289672,"msg":"handling get account by id request","trace_id":"1c37f2222720275b14d6a8fc9f63e3b2","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874a"}
+{"level":"info","ts":1775032495.2294147,"msg":"getting account by id","trace_id":"1c37f2222720275b14d6a8fc9f63e3b2","account_id":"4a48d946-76c7-4821-a074-eb63e4a25874a"}
+{"level":"warn","ts":1775032495.2301087,"msg":"cache miss","key":"bank:account:4a48d946-76c7-4821-a074-eb63e4a25874a"}
+{"level":"error","ts":1775032495.2303953,"msg":"invalid id format","id":"4a48d946-76c7-4821-a074-eb63e4a25874a"}
+{"level":"error","ts":1775032495.230709,"msg":"failed to get account by id","error":"invalid id format"}
+{"level":"info","ts":1775032495.2311256,"msg":"http request","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874a","duration":0.003131084,"trace_id":"1c37f2222720275b14d6a8fc9f63e3b2"}
+{"level":"info","ts":1775035498.6582098,"msg":"handling get account by id request","trace_id":"605ddd670ffb8770caca16188a3d3019","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775035498.6588578,"msg":"getting account by id","trace_id":"605ddd670ffb8770caca16188a3d3019","account_id":"4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"warn","ts":1775035498.6595335,"msg":"cache miss","key":"bank:account:4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775035498.6602345,"msg":"getting account by id","id":"4a48d946-76c7-4821-a074-eb63e4a25874"}
+{"level":"info","ts":1775035498.6633267,"msg":"http request","method":"GET","path":"/accounts/4a48d946-76c7-4821-a074-eb63e4a25874","duration":0.009979609,"trace_id":"605ddd670ffb8770caca16188a3d3019"}

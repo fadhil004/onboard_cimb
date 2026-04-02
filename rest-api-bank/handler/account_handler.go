@@ -9,10 +9,13 @@ import (
 	"rest-api-bank/helper"
 	"rest-api-bank/middleware"
 	"rest-api-bank/models"
+	"rest-api-bank/pkg/logger"
 	"rest-api-bank/service"
 
 	"github.com/google/uuid"
+	"go.uber.org/zap"
 )
+
 
 type AccountHandler struct {
 	mux *http.ServeMux
@@ -35,10 +38,17 @@ func (h *AccountHandler) MapRoutes() {
 
 func (h *AccountHandler) Create() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx, span := middleware.Tracer.Start(r.Context(), "AccountHandler.Create")
+		defer span.End()
+
+		logger.Logger.Info("handling create account request",
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
 		
 		var req dto.CreateAccountRequest
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			logger.Logger.Error("failed to decode create account request", zap.Error(err))
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "400",
@@ -48,6 +58,7 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 		}
 
 		if req.AccountNumber == "" {
+			logger.Logger.Error("account number is required")
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "400",
@@ -65,6 +76,7 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 
 		err := h.Service.Create(ctx,acc)
 		if err != nil {
+			logger.Logger.Error("failed to create account", zap.Error(err))
 			if strings.Contains(err.Error(), "duplicate key") {
 				w.WriteHeader(http.StatusBadRequest)
 				json.NewEncoder(w).Encode(dto.BaseResponse{
@@ -93,10 +105,17 @@ func (h *AccountHandler) Create() http.HandlerFunc {
 
 func (h *AccountHandler) GetAll() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx, span := middleware.Tracer.Start(r.Context(), "AccountHandler.GetAll")
+		defer span.End()
+
+		logger.Logger.Info("handling get all account request",
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
 
 		data, err := h.Service.GetAll(ctx)
 		if err != nil {
+			logger.Logger.Error("failed to get all accounts", zap.Error(err))
 			w.WriteHeader(http.StatusInternalServerError)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "500",
@@ -116,11 +135,19 @@ func (h *AccountHandler) GetAll() http.HandlerFunc {
 
 func (h *AccountHandler) GetByID() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx,span := middleware.Tracer.Start(r.Context(), "AccountHandler.GetByID")
+		defer span.End()
+
+		logger.Logger.Info("handling get account by id request",
+			zap.String("trace_id", helper.GetTraceID(ctx)),
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
 
 		id := helper.GetIDFromPath(r.URL.Path)
 		data, err := h.Service.GetByID(ctx, id)
 		if err != nil {
+			logger.Logger.Error("failed to get account by id", zap.Error(err))
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "404",
@@ -140,12 +167,29 @@ func (h *AccountHandler) GetByID() http.HandlerFunc {
 
 func (h *AccountHandler) Update() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx, span := middleware.Tracer.Start(r.Context(), "AccountHandler.Update")
+		defer span.End()
 
-		id := helper.UuidMustParse(helper.GetIDFromPath(r.URL.Path))
+		logger.Logger.Info("handling update account request",
+			zap.String("trace_id", helper.GetTraceID(ctx)),
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
+
+		id, err := uuid.Parse(helper.GetIDFromPath(r.URL.Path))
+		if err != nil {
+			logger.Logger.Error("invalid id format", zap.String("id", id.String()))
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(dto.BaseResponse{
+				ResponseCode: "400",
+				ResponseDesc: "Invalid ID format",
+			})
+			return
+		}
 
 		var req dto.UpdateAccountRequest
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			logger.Logger.Error("failed to decode update account request", zap.Error(err))
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "400",
@@ -160,8 +204,9 @@ func (h *AccountHandler) Update() http.HandlerFunc {
 			Balance:       req.Balance,
 		}
 
-		err := h.Service.Update(ctx, acc)
+		err = h.Service.Update(ctx, acc)
 		if err != nil {
+			logger.Logger.Error("failed to update account", zap.Error(err))
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "404",
@@ -182,11 +227,19 @@ func (h *AccountHandler) Update() http.HandlerFunc {
 
 func (h *AccountHandler) GetTransaction() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx, span := middleware.Tracer.Start(r.Context(), "AccountHandler.GetTransaction")
+		defer span.End()
+
+		logger.Logger.Info("handling get transaction request",
+			zap.String("trace_id", helper.GetTraceID(ctx)),
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
 
 		id := helper.GetIDFromTransactionPath(r.URL.Path)
 		data, err := h.TransferService.GetTransaction(ctx, id)
 		if err != nil {
+			logger.Logger.Error("failed to get transaction", zap.Error(err))
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "404",
@@ -206,12 +259,20 @@ func (h *AccountHandler) GetTransaction() http.HandlerFunc {
 
 func (h *AccountHandler) Delete() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
+		ctx,span := middleware.Tracer.Start(r.Context(), "AccountHandler.Delete")
+		defer span.End()
+
+		logger.Logger.Info("handling delete account request",
+			zap.String("trace_id", helper.GetTraceID(ctx)),
+			zap.String("method", r.Method),
+			zap.String("path", r.URL.Path),
+		)
 
 		id := helper.GetIDFromPath(r.URL.Path)
 
 		err := h.Service.Delete(ctx, id)
 		if err != nil {
+			logger.Logger.Error("failed to delete account", zap.Error(err))
 			w.WriteHeader(http.StatusNotFound)
 			json.NewEncoder(w).Encode(dto.BaseResponse{
 				ResponseCode: "404",

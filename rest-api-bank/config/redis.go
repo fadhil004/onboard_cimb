@@ -15,9 +15,12 @@ var (
 )
 
 func InitRedis() {
+
 	RDB = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%s", os.Getenv("REDIS_HOST"), os.Getenv("REDIS_PORT")),
 	})
+
+	log.Println("Connecting to Redis at", fmt.Sprintf("%s:%s", os.Getenv("REDIS_HOST"), os.Getenv("REDIS_PORT")))
 
 	_, err := RDB.Ping(Ctx).Result()
 	if err != nil {

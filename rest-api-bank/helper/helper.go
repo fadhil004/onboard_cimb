@@ -1,10 +1,11 @@
 package helper
 
 import (
+	"context"
 	"fmt"
 	"strings"
 
-	"github.com/google/uuid"
+	"go.opentelemetry.io/otel/trace"
 )
 
 func GetIDFromPath(path string) string {
@@ -12,9 +13,12 @@ func GetIDFromPath(path string) string {
 	return parts[len(parts)-1]
 }
 
-func UuidMustParse(id string) uuid.UUID {
-	u, _ := uuid.Parse(id)
-	return u
+func GetTraceID(ctx context.Context) string {
+	span := trace.SpanFromContext(ctx)
+	if span == nil {
+		return ""
+	}
+	return span.SpanContext().TraceID().String()
 }
 
 func GetIDFromTransactionPath(path string) string {
