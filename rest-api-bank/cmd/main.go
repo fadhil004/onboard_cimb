@@ -10,12 +10,14 @@ import (
 	"rest-api-bank/handler"
 	"rest-api-bank/middleware"
 	"rest-api-bank/pkg/logger"
+	"rest-api-bank/pkg/metrics"
 	"rest-api-bank/pkg/otel"
 	"rest-api-bank/repository"
 	"rest-api-bank/server"
 	"rest-api-bank/service"
 
 	"github.com/joho/godotenv"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func main() {
@@ -26,6 +28,8 @@ func main() {
 
 	shutdown := otel.InitTracer(context.Background())
 	defer shutdown(context.Background())
+
+	metrics.Init()
 
 	config.InitRedis()
 	database := config.InitDB()
@@ -46,6 +50,8 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	mux.Handle("/metrics", promhttp.Handler())
+
 	accountHandler := handler.NewAccountHandler(mux, accountService, transferService)
 	accountHandler.MapRoutes()
 
@@ -54,10 +60,12 @@ func main() {
 
 	timeoutMiddleware := middleware.Timeout(20 * time.Second) 
 
-	handlerChain := middleware.Observability(
-		server.ApplicationMiddlewareResponse(
-			timeoutMiddleware(
-				server.HandleRouteNotFound(mux),
+	handlerChain := middleware.Metrics(
+		middleware.Observability(
+			server.ApplicationMiddlewareResponse(
+				timeoutMiddleware(
+					server.HandleRouteNotFound(mux),
+				),
 			),
 		),
 	)
