@@ -16,7 +16,7 @@ func Observability(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
 
-		ctx, span := Tracer.Start(r.Context(), r.Method+" "+r.URL.Path)
+		ctx, span := Tracer.Start(r.Context(), r.Method+" "+NormalizePath(r.URL.Path))
 		defer span.End()
 
 		next.ServeHTTP(w, r.WithContext(ctx))
@@ -25,7 +25,7 @@ func Observability(next http.Handler) http.Handler {
 
 		logger.Logger.Info("http request",
 			zap.String("method", r.Method),
-			zap.String("path", r.URL.Path),
+			zap.String("path", NormalizePath(r.URL.Path)),
 			zap.Duration("duration", time.Since(start)),
 			zap.String("trace_id", helper.GetTraceID(ctx)),
 		)

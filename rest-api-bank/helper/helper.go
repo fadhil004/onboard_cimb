@@ -33,3 +33,13 @@ func GetIDFromTransactionPath(path string) string {
 func NewAPIPath(method string, path string) string {
 	return fmt.Sprintf("%s %s", method, path)
 }
+
+func NormalizePath(path string) string {
+	if strings.Contains(path, "/transactions") {
+		return "/accounts/{id}/transactions"
+	}
+	if strings.Contains(path, "/accounts/") {
+		return "/accounts/{id}"
+	}
+	return path
+}

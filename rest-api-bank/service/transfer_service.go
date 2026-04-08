@@ -10,6 +10,7 @@ import (
 	"rest-api-bank/middleware"
 	"rest-api-bank/models"
 	"rest-api-bank/pkg/logger"
+	"rest-api-bank/pkg/metrics"
 	"rest-api-bank/repository"
 	"time"
 
@@ -131,9 +132,13 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.TransferR
 
 	err = s.TransactionRepo.Create(ctx, tx)
 	if err != nil {
+		metrics.TransferFailed.Inc()
 		logger.Logger.Error("failed to create transaction", zap.Error(err))
 		return err
 	}
+
+	metrics.TransferTotal.Inc()
+	metrics.TransferAmount.Observe(float64(req.Amount))
 
 	return nil
 }

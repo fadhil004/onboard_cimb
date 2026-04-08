@@ -41,10 +41,13 @@ func (r *accountRepository) Create(ctx context.Context, acc models.Account) erro
 	_, err := r.db.ExecContext(ctx, query, acc.ID, acc.AccountNumber, acc.AccountHolder, acc.Balance)
 
 	metrics.DBQueryDuration.
-			WithLabelValues("AccountRepository.Create").
+			WithLabelValues("insert_account").
 			Observe(time.Since(start).Seconds())
 
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("insert_account").
+			Inc()
 		logger.Logger.Error("failed to insert account", zap.Error(err))
 	}
 
@@ -63,11 +66,14 @@ func (r *accountRepository) GetAll(ctx context.Context) ([]models.Account, error
 	err := r.db.SelectContext(ctx, &accounts, "SELECT * FROM accounts")
 
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("get_all_accounts").
+			Inc()
 		logger.Logger.Error("failed to get accounts", zap.Error(err))
 	}
 
 	metrics.DBQueryDuration.
-		WithLabelValues("AccountRepository.GetAll").
+		WithLabelValues("get_all_accounts").
 		Observe(time.Since(start).Seconds())
 
 	return accounts, err
@@ -85,10 +91,13 @@ func (r *accountRepository) GetByID(ctx context.Context, id uuid.UUID) (models.A
 	err := r.db.GetContext(ctx, &acc, "SELECT * FROM accounts WHERE id=$1", id)
 
 	metrics.DBQueryDuration.
-		WithLabelValues("AccountRepository.GetByID").
+		WithLabelValues("get_account_by_id").
 		Observe(time.Since(start).Seconds())
 
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("get_account_by_id").
+			Inc()
 		logger.Logger.Error("failed to get account by id", zap.Error(err))
 
 		return acc, errors.New("account not found")
@@ -114,21 +123,30 @@ func (r *accountRepository) Update(ctx context.Context, acc models.Account) erro
 	`, acc.AccountHolder, acc.Balance, acc.ID)
 
 	metrics.DBQueryDuration.
-		WithLabelValues("AccountRepository.Update").
+		WithLabelValues("update_account").
 		Observe(time.Since(start).Seconds())
 
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("update_account").
+			Inc()
 		logger.Logger.Error("failed to update account", zap.Error(err))
 		return err
 	}
 
 	rows, err := result.RowsAffected()
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("update_account_rows_affected").
+			Inc()
 		logger.Logger.Error("failed to get rows affected", zap.Error(err))
 		return err
 	}
 
 	if rows == 0 {
+		metrics.DBQueryErrors.
+			WithLabelValues("update_account_rows_affected").
+			Inc()
 		logger.Logger.Error("account not found", zap.String("id", acc.ID.String()))
 		return errors.New("Account not found")
 	}
@@ -146,21 +164,30 @@ func (r *accountRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	result, err := r.db.ExecContext(ctx, "DELETE FROM accounts WHERE id=$1", id)
 
 	metrics.DBQueryDuration.
-		WithLabelValues("AccountRepository.Delete").
+		WithLabelValues("delete_account").
 		Observe(time.Since(start).Seconds())
 
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("delete_account").
+			Inc()
 		logger.Logger.Error("failed to delete account", zap.Error(err))
 		return err
 	}
 
 	rows, err := result.RowsAffected()
 	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("delete_account_rows_affected").
+			Inc()
 		logger.Logger.Error("failed to get rows affected", zap.Error(err))
 		return err
 	}
 
 	if rows == 0 {
+		metrics.DBQueryErrors.
+			WithLabelValues("delete_account_rows_affected").
+			Inc()
 		logger.Logger.Error("account not found", zap.String("id", id.String()))
 		return errors.New("Account not found")
 	}

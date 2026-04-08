@@ -16,6 +16,9 @@ import (
 	"go.uber.org/zap"
 )
 
+var(
+	NormalizePath = helper.NormalizePath
+)
 
 type AccountHandler struct {
 	mux *http.ServeMux
@@ -233,7 +236,7 @@ func (h *AccountHandler) GetTransaction() http.HandlerFunc {
 		logger.Logger.Info("handling get transaction request",
 			zap.String("trace_id", helper.GetTraceID(ctx)),
 			zap.String("method", r.Method),
-			zap.String("path", r.URL.Path),
+			zap.String("path", NormalizePath(r.URL.Path)),
 		)
 
 		id := helper.GetIDFromTransactionPath(r.URL.Path)

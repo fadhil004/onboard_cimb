@@ -35,7 +35,7 @@ func (h *TransferHandler) Transfer() http.HandlerFunc {
 		logger.Logger.Info("handling transfer request",
 			zap.String("trace_id", helper.GetTraceID(ctx)),
 			zap.String("method", r.Method),
-			zap.String("path", r.URL.Path),
+			zap.String("path", NormalizePath(r.URL.Path)),
 		)
 
 		var req dto.TransferRequest

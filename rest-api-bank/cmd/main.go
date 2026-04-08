@@ -22,6 +22,7 @@ import (
 
 func main() {
 	godotenv.Load()
+	// if err := godotenv.Load(); err != nil { log.Fatal("Error loading .env file") }	
 
 	logger.InitLogger()
 	defer logger.Logger.Sync()
@@ -70,7 +71,7 @@ func main() {
 		),
 	)
 
+	log.Println("Server running on port 8080")
 	http.ListenAndServe(":8080", handlerChain)
 
-	log.Println("Server running on port 8080")
 }
