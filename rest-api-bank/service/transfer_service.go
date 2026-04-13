@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"rest-api-bank/config"
 	"rest-api-bank/dto"
 	"rest-api-bank/helper"
@@ -12,9 +13,11 @@ import (
 	"rest-api-bank/pkg/logger"
 	"rest-api-bank/pkg/metrics"
 	"rest-api-bank/repository"
+	"strconv"
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 )
 
@@ -23,15 +26,17 @@ type TransferService struct {
 	TransactionRepo repository.TransactionRepository
 }
 
-func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.TransferRequest) (dto.TransferRequest, error) {
+func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.SnapTransferRequest) (dto.SnapTransferResponse, error) {
 	ctx, span := middleware.Tracer.Start(ctx, "TransferService.Transfer")
 	defer span.End()
 
+	snap := middleware.GetSnap(ctx)
+
 	logger.Logger.Info("processing transfer",
 		zap.String("trace_id", helper.GetTraceID(ctx)),
-		zap.String("from_account_id", req.FromAccountID),
-		zap.String("to_account_id", req.ToAccountID),
-		zap.Int64("amount", req.Amount),
+		zap.String("from_account_id", req.SourceAccountNo),
+		zap.String("to_account_id", req.BeneficiaryAccountNo),
+		zap.String("amount", req.Amount.Value),
 		zap.String("idempotency_key", idemKey),
 	)
 
@@ -39,87 +44,108 @@ func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.
 
 	val, err := config.RDB.Get(ctx, key).Result()
 	if err == nil {
-		var cached dto.TransferRequest
-		err := json.Unmarshal([]byte(val), &cached)
-		if err == nil {
-			logger.Logger.Info("cache hit", zap.String("key", key))
-			cached.Message = "Duplicate request - returning cached result"
+		// Cache hit — return idempotent response
+		var cached dto.SnapTransferResponse
+		if jsonErr := json.Unmarshal([]byte(val), &cached); jsonErr == nil {
+			logger.Logger.Info("idempotency cache hit", zap.String("key", key))
+			// FIX: per SNAP BI, duplicate request still returns the original response unchanged
 			return cached, nil
 		}
+	} else if !errors.Is(err, redis.Nil) {
+		// Real Redis error — log and fallthrough to process normally
+		logger.Logger.Error("redis get error (fallback to db)", zap.String("key", key), zap.Error(err))
 	}
 
-	if err.Error() != "redis: nil" {
-		logger.Logger.Error("redis error", zap.String("key", key), zap.Error(err))
-		// log.Println("error getting from redis (fallback db):", err)
+	if err := s.processTransfer(ctx, req); err != nil {
+		logger.Logger.Error("failed to process transfer", zap.Error(err), zap.String("trace_id", helper.GetTraceID(ctx)))
+		return dto.SnapTransferResponse{}, err
 	}
 
-	err = s.processTransfer(ctx, req)
-	if err != nil {
-		logger.Logger.Error("failed to process transfer", zap.Error(err))
-		return dto.TransferRequest{}, err
-	}
+	result := dto.SnapTransferResponse{
+		ResponseCode:    helper.SnapResponseCode(200, snap.ServiceCode, "00"),
+		ResponseMessage: "Request has been processed successfully",
+		ReferenceNo:     uuid.New().String(),
 
-	result := dto.TransferRequest{
-		Status:        "success",
-		Message:       "Transfer successful",
+		PartnerReferenceNo:   req.PartnerReferenceNo,
+		Amount:               req.Amount,
+		BeneficiaryAccountNo: req.BeneficiaryAccountNo,
+		Currency:             req.Currency,
+		CustomerReference:    req.CustomerReference,
+		SourceAccount:        req.SourceAccountNo,
+		TransactionDate:      req.TransactionDate,
+		OriginatorInfos:      req.OriginatorInfos,
+		AdditionalInfo:       req.AdditionalInfo,
 	}
 	
 	data, err := json.Marshal(result)
 	if err != nil {
 		logger.Logger.Error("failed to marshal result", zap.Error(err))
 		// log.Println("failed to marshal result:", err)
-		return dto.TransferRequest{}, err
+		return dto.SnapTransferResponse{}, err
 	}
 
-	err = config.RDB.Set(ctx, key, data, 5*time.Minute).Err() // simpan hasil ke redis, set expired 5 menit
-	if err != nil {
-		logger.Logger.Error("failed to set result to redis", zap.Error(err))
-		// log.Println("error setting to redis:", err)
+	if err := config.RDB.Set(ctx, key, data, 5*time.Minute).Err(); err != nil {
+		// Non-fatal: log but don't fail the request
+		logger.Logger.Warn("failed to cache transfer result in redis", zap.String("key", key), zap.Error(err))
 	}
 
 	return result, nil
 }
 
-func (s *TransferService) processTransfer(ctx context.Context, req dto.TransferRequest) error {
+func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTransferRequest) error {
 	ctx, span := middleware.Tracer.Start(ctx, "TransferService.processTransfer")
 	defer span.End()
 
-	logger.Logger.Info("processing transfer",
+	logger.Logger.Info("processing transfer internal",
 		zap.String("trace_id", helper.GetTraceID(ctx)),
-		zap.String("from_account_id", req.FromAccountID),
-		zap.String("to_account_id", req.ToAccountID),
-		zap.Int64("amount", req.Amount),
+		zap.String("from_account_id", req.SourceAccountNo),
+		zap.String("to_account_id", req.BeneficiaryAccountNo),
+		zap.String("amount", req.Amount.Value),
 	)
 
-	from, err := s.AccountRepo.GetByID(ctx, uuid.MustParse(req.FromAccountID))
+	from, err := s.AccountRepo.GetByAccountNumber(ctx, req.SourceAccountNo)
 	if err != nil {
-		logger.Logger.Error("failed to get from account", zap.Error(err))
-		return err
+		logger.Logger.Error("source account not found", zap.String("source_account_no", req.SourceAccountNo))
+		return helper.ErrAccountNotFound
 	}
 
-	to, err := s.AccountRepo.GetByID(ctx, uuid.MustParse(req.ToAccountID))
+	to, err := s.AccountRepo.GetByAccountNumber(ctx, req.BeneficiaryAccountNo)
 	if err != nil {
-		logger.Logger.Error("failed to get to account", zap.Error(err))
-		return err
+		logger.Logger.Error("beneficiary account not found", zap.String("beneficiary_account_no", req.BeneficiaryAccountNo))
+		return helper.ErrAccountNotFound
 	}
 
-	if from.Balance < req.Amount {
-		logger.Logger.Error("insufficient balance", zap.Int64("balance", from.Balance))
-		return errors.New("insufficient balance")
+	amountFloat, err := strconv.ParseFloat(req.Amount.Value, 64)
+	if err != nil {
+		logger.Logger.Error("invalid amount value", zap.String("amount", req.Amount.Value))
+		return helper.ErrInvalidField
+	}
+	amountInt := int64(amountFloat)
+	if amountInt <= 0 {
+		logger.Logger.Error("amount must be positive", zap.String("amount", req.Amount.Value))
+		return fmt.Errorf("%w: amount must be greater than 0", helper.ErrInvalidField)
 	}
 
-	from.Balance -= req.Amount
-	to.Balance += req.Amount
+	if from.Balance < amountInt {
+		logger.Logger.Error("insufficient balance", 
+			zap.Int64("balance", from.Balance),
+			zap.Int64("required", amountInt),
+		)
+		return helper.ErrInsufficientFunds
+	}
+
+	from.Balance -= amountInt
+	to.Balance += amountInt
 
 	err = s.AccountRepo.Update(ctx, from)
 	if err != nil {	
-		logger.Logger.Error("failed to update from account", zap.Error(err))
+		logger.Logger.Error("failed to update source account balance", zap.Error(err))
 		return err
 	}
 
 	err = s.AccountRepo.Update(ctx, to)
 	if err != nil {
-		logger.Logger.Error("failed to update to account", zap.Error(err))
+		logger.Logger.Error("failed to update beneficiary account balance", zap.Error(err))
 		return err
 	}
 
@@ -127,7 +153,7 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.TransferR
 		ID:            uuid.New(),
 		FromAccountID: from.ID,
 		ToAccountID:   to.ID,
-		Amount:        req.Amount,
+		Amount:        amountInt,
 	}
 
 	err = s.TransactionRepo.Create(ctx, tx)
@@ -138,7 +164,7 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.TransferR
 	}
 
 	metrics.TransferTotal.Inc()
-	metrics.TransferAmount.Observe(float64(req.Amount))
+	metrics.TransferAmount.Observe(float64(amountInt))
 
 	return nil
 }

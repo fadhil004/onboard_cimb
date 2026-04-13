@@ -8398,3 +8398,396 @@
 {"level":"info","ts":1775634007.2681584,"msg":"http request","method":"GET","path":"/metrics","duration":0.000979057,"trace_id":"ae236dab99bfcf7b7455a1735f5e660a"}
 {"level":"info","ts":1775634022.2687862,"msg":"http request","method":"GET","path":"/metrics","duration":0.002224027,"trace_id":"b4f00b6deae33ea43687da77d9d2c4d3"}
 {"level":"info","ts":1775634037.2664034,"msg":"http request","method":"GET","path":"/metrics","duration":0.001088065,"trace_id":"022bfa1e66af07b248f50158d7d8e4eb"}
+{"level":"info","ts":1775634052.2662795,"msg":"http request","method":"GET","path":"/metrics","duration":0.001165565,"trace_id":"c9317a3b3185ffd96aec258d38fe3974"}
+{"level":"info","ts":1775634067.263968,"msg":"http request","method":"GET","path":"/metrics","duration":0.000978155,"trace_id":"aed05aa4245e207750f1808dc2e7b738"}
+{"level":"info","ts":1775634082.2651494,"msg":"http request","method":"GET","path":"/metrics","duration":0.001428281,"trace_id":"d0e16097efe6b23f2d9ab9834f5b7836"}
+{"level":"info","ts":1775634097.2633288,"msg":"http request","method":"GET","path":"/metrics","duration":0.001356776,"trace_id":"255448407549e033a3e238d97402e192"}
+{"level":"info","ts":1775634112.2638066,"msg":"http request","method":"GET","path":"/metrics","duration":0.002030115,"trace_id":"5ddaac17ac82535372dbd171c8022f76"}
+{"level":"info","ts":1775634127.264116,"msg":"http request","method":"GET","path":"/metrics","duration":0.001019157,"trace_id":"955a88dc355243d56dab0f76bace6d59"}
+{"level":"info","ts":1775634142.2611446,"msg":"http request","method":"GET","path":"/metrics","duration":0.000968155,"trace_id":"3ee3036647db7c5bdf5f4333ce150cd5"}
+{"level":"info","ts":1775634157.2597222,"msg":"http request","method":"GET","path":"/metrics","duration":0.001146465,"trace_id":"b11e9db9e2ad1dad516c2736b6842931"}
+{"level":"info","ts":1775634172.2603586,"msg":"http request","method":"GET","path":"/metrics","duration":0.001455675,"trace_id":"ecb4e0cb50d45fe11be40931d532553f"}
+{"level":"info","ts":1775634187.2584996,"msg":"http request","method":"GET","path":"/metrics","duration":0.001402479,"trace_id":"b8605daf5954883e757a6d699a993f60"}
+{"level":"info","ts":1775634202.2580593,"msg":"http request","method":"GET","path":"/metrics","duration":0.001156967,"trace_id":"54ad3b4adc2ad3c15f7f87224a6f9119"}
+{"level":"info","ts":1775634217.2571747,"msg":"http request","method":"GET","path":"/metrics","duration":0.001366276,"trace_id":"5d06c490700aec6f82efb26748e3409f"}
+{"level":"info","ts":1775704045.7544909,"msg":"http request","method":"GET","path":"/metrics","duration":0.007016339,"trace_id":"ee6129391614cfc61678139276542aca"}
+{"level":"info","ts":1775704060.7401657,"msg":"http request","method":"GET","path":"/metrics","duration":0.001908073,"trace_id":"bd2502de876e791dcf3896c4ab6d7a02"}
+{"level":"info","ts":1775704075.74068,"msg":"http request","method":"GET","path":"/metrics","duration":0.001064999,"trace_id":"d13a974974f7bdd723b1c96a7bbaa54c"}
+{"level":"info","ts":1775704090.7376847,"msg":"http request","method":"GET","path":"/metrics","duration":0.001040194,"trace_id":"6e51730c95e394027efb0c24f4afbc7a"}
+{"level":"info","ts":1775704105.739255,"msg":"http request","method":"GET","path":"/metrics","duration":0.002185401,"trace_id":"e13fa0063dd00d98be65dfe811174464"}
+{"level":"info","ts":1775704120.7366045,"msg":"http request","method":"GET","path":"/metrics","duration":0.003368868,"trace_id":"babbcf49d4781d2e69b4eaa376f898f7"}
+{"level":"info","ts":1775704135.7487357,"msg":"http request","method":"GET","path":"/metrics","duration":0.015547534,"trace_id":"86043bd65a143b476fb2a58d6f051eed"}
+{"level":"info","ts":1775704150.7325888,"msg":"http request","method":"GET","path":"/metrics","duration":0.002394912,"trace_id":"e0def7cd56ce97a1d7ceee8d6dc9f18b"}
+{"level":"info","ts":1775704162.6332312,"msg":"handling transfer request","trace_id":"b77ee2b92f7c751f046a5dc8a16b83ae","method":"POST","path":"/transfers"}
+{"level":"error","ts":1775704162.6339915,"msg":"idempotency key is required"}
+{"level":"info","ts":1775704162.6346767,"msg":"http request","method":"POST","path":"/transfers","duration":0.004931352,"trace_id":"b77ee2b92f7c751f046a5dc8a16b83ae"}
+{"level":"info","ts":1775704165.7331967,"msg":"http request","method":"GET","path":"/metrics","duration":0.002487129,"trace_id":"41ae8d2fe9ef872d0b0f6bfc1d69105b"}
+{"level":"info","ts":1775704180.734685,"msg":"http request","method":"GET","path":"/metrics","duration":0.003777445,"trace_id":"011c2ef690865de4bd93a77e34355584"}
+{"level":"info","ts":1775704195.7335465,"msg":"http request","method":"GET","path":"/metrics","duration":0.00455201,"trace_id":"7b04f40fd07a8431f0f0623d82cdae9b"}
+{"level":"info","ts":1775704210.7278996,"msg":"http request","method":"GET","path":"/metrics","duration":0.001431015,"trace_id":"8828468c282292060dc000b47e45d58d"}
+{"level":"info","ts":1775704317.0214453,"msg":"http request","method":"GET","path":"/metrics","duration":0.002897759,"trace_id":"b289a39b116c278ac30ea9cf6fbf5cd7"}
+{"level":"info","ts":1775704319.8729844,"msg":"http request","method":"POST","path":"/transfers","duration":0.000209818,"trace_id":"b82df81b2db36c22339217e3a4475b46"}
+{"level":"info","ts":1775704332.0019686,"msg":"http request","method":"GET","path":"/metrics","duration":0.002257403,"trace_id":"4548a7ac5f88f6db94e4a858d1aa6f61"}
+{"level":"info","ts":1775704347.0042927,"msg":"http request","method":"GET","path":"/metrics","duration":0.004432598,"trace_id":"baa7cc5de07501425b824f2fa3f29a51"}
+{"level":"info","ts":1775704361.9985323,"msg":"http request","method":"GET","path":"/metrics","duration":0.002698331,"trace_id":"79ceaf56a2de07065415449f2fe15536"}
+{"level":"info","ts":1775704376.9993129,"msg":"http request","method":"GET","path":"/metrics","duration":0.002025076,"trace_id":"9d5e97e9182c86f28780ae47c222059a"}
+{"level":"info","ts":1775704391.9950016,"msg":"http request","method":"GET","path":"/metrics","duration":0.001083796,"trace_id":"7b3ca3f4eb44a2634243c409a44265a5"}
+{"level":"info","ts":1775704406.9969401,"msg":"http request","method":"GET","path":"/metrics","duration":0.003057168,"trace_id":"8489cf1a788cf8f7e6248de7b361c118"}
+{"level":"info","ts":1775704421.9933288,"msg":"http request","method":"GET","path":"/metrics","duration":0.00162454,"trace_id":"3699d1e794c4e9354436bdcc68c2aadc"}
+{"level":"info","ts":1775704436.9936643,"msg":"http request","method":"GET","path":"/metrics","duration":0.002447205,"trace_id":"ad66106bac1adfc04fcd8a747ea426f1"}
+{"level":"info","ts":1775704451.991276,"msg":"http request","method":"GET","path":"/metrics","duration":0.001587333,"trace_id":"07cf1bc13345cbe428447be41e6fdc80"}
+{"level":"info","ts":1775704466.994517,"msg":"http request","method":"GET","path":"/metrics","duration":0.004265655,"trace_id":"f26ce93874a39f81f2c35aa5972ba962"}
+{"level":"info","ts":1775704481.9882395,"msg":"http request","method":"GET","path":"/metrics","duration":0.001580068,"trace_id":"8dd66f6d3d2f1294282cefd9e3f2870e"}
+{"level":"info","ts":1775704496.9888115,"msg":"http request","method":"GET","path":"/metrics","duration":0.001995871,"trace_id":"3d8cf8b54d538d0c3191312f22aae45f"}
+{"level":"info","ts":1775704511.9881124,"msg":"http request","method":"GET","path":"/metrics","duration":0.003245264,"trace_id":"00ea2aa92468f3b2ad6f7902d53f5507"}
+{"level":"info","ts":1775704526.986091,"msg":"http request","method":"GET","path":"/metrics","duration":0.001471614,"trace_id":"f26e65433ce7b036df1093c5d16ac289"}
+{"level":"info","ts":1775704541.9847975,"msg":"http request","method":"GET","path":"/metrics","duration":0.002603113,"trace_id":"2cc8ea425a2f89939a98363a1d3647d4"}
+{"level":"info","ts":1775704556.9833443,"msg":"http request","method":"GET","path":"/metrics","duration":0.001377013,"trace_id":"1c287f7bb149a9469fd201d227b53826"}
+{"level":"info","ts":1775704571.9797678,"msg":"http request","method":"GET","path":"/metrics","duration":0.00108889,"trace_id":"79e00c2b3a25515376054cbbeec3642e"}
+{"level":"info","ts":1775704586.9795709,"msg":"http request","method":"GET","path":"/metrics","duration":0.000895374,"trace_id":"330829bdc089fd7061783ae20afe99f6"}
+{"level":"info","ts":1775704601.9787474,"msg":"http request","method":"GET","path":"/metrics","duration":0.001372713,"trace_id":"81b2238d3dea9dd53790fb9e21576978"}
+{"level":"info","ts":1775704616.9808462,"msg":"http request","method":"GET","path":"/metrics","duration":0.002061967,"trace_id":"96ed795c9e70e79bed1ec1242658e38f"}
+{"level":"info","ts":1775704631.9775603,"msg":"http request","method":"GET","path":"/metrics","duration":0.002202275,"trace_id":"d2ead397139b2d183b126a4c72cb2d21"}
+{"level":"info","ts":1775704646.9761236,"msg":"http request","method":"GET","path":"/metrics","duration":0.002029286,"trace_id":"584877fa00af039118e01d9c1ae749e1"}
+{"level":"info","ts":1775704661.97364,"msg":"http request","method":"GET","path":"/metrics","duration":0.001244392,"trace_id":"6a436988d883ef0de3d0e382190d8cb2"}
+{"level":"info","ts":1775704676.9727466,"msg":"http request","method":"GET","path":"/metrics","duration":0.000849165,"trace_id":"6b837ec91796dfdb20796f480344cdd1"}
+{"level":"info","ts":1775704691.9631398,"msg":"http request","method":"GET","path":"/metrics","duration":0.00124909,"trace_id":"fa585dec6213fa90a6741f109163c61e"}
+{"level":"info","ts":1775704706.9626064,"msg":"http request","method":"GET","path":"/metrics","duration":0.000926272,"trace_id":"b0dd3cba22d0b4545387d03aa4a4aaed"}
+{"level":"info","ts":1775704721.9603374,"msg":"http request","method":"GET","path":"/metrics","duration":0.0021157,"trace_id":"1599e01e524586aa43e5820452d1b015"}
+{"level":"info","ts":1775704736.9585433,"msg":"http request","method":"GET","path":"/metrics","duration":0.001346905,"trace_id":"0959af0ca9d9ccec396e717226523ccc"}
+{"level":"info","ts":1775704751.9581056,"msg":"http request","method":"GET","path":"/metrics","duration":0.001015911,"trace_id":"3d7cff85d368733dfdfb3b2da36183a4"}
+{"level":"info","ts":1775704766.9635437,"msg":"http request","method":"GET","path":"/metrics","duration":0.004009478,"trace_id":"3a582b0aee33fd46f952a1b1cc8f3a77"}
+{"level":"info","ts":1775704781.9563456,"msg":"http request","method":"GET","path":"/metrics","duration":0.001403786,"trace_id":"20b331bcccfce70d1448293250c6c414"}
+{"level":"info","ts":1775704796.957885,"msg":"http request","method":"GET","path":"/metrics","duration":0.001815188,"trace_id":"f36ddce27470718eb8bb0d3f00d88606"}
+{"level":"info","ts":1775704811.955032,"msg":"http request","method":"GET","path":"/metrics","duration":0.003449765,"trace_id":"bea0bcb9bcd215337fb3717a5f09a3d3"}
+{"level":"info","ts":1775704826.9554837,"msg":"http request","method":"GET","path":"/metrics","duration":0.002965134,"trace_id":"daeb0f2e86e2d1a6b8d8857ccfa2c20e"}
+{"level":"info","ts":1775704841.95179,"msg":"http request","method":"GET","path":"/metrics","duration":0.001479921,"trace_id":"db5444dfb5a6c8ee6f4eb8055d678361"}
+{"level":"info","ts":1775704856.9506683,"msg":"http request","method":"GET","path":"/metrics","duration":0.001244504,"trace_id":"12d563cb7581bb7a67816d381fc4152c"}
+{"level":"info","ts":1775704871.9504077,"msg":"http request","method":"GET","path":"/metrics","duration":0.002076653,"trace_id":"de1e35871d2a17a747e954c38110b0f4"}
+{"level":"info","ts":1775704886.947946,"msg":"http request","method":"GET","path":"/metrics","duration":0.000938466,"trace_id":"9ff3d193b545ea48359f17ac3e02dcc1"}
+{"level":"info","ts":1775704901.9456317,"msg":"http request","method":"GET","path":"/metrics","duration":0.001087681,"trace_id":"9b4b5d5210106d7a96dd37c23af4a938"}
+{"level":"info","ts":1775704916.9495275,"msg":"http request","method":"GET","path":"/metrics","duration":0.003634471,"trace_id":"2e9d2c804af316e4246da4c64e6db15c"}
+{"level":"info","ts":1775704931.9448829,"msg":"http request","method":"GET","path":"/metrics","duration":0.000970957,"trace_id":"aca96360ddb1c03f5079173823a8d268"}
+{"level":"info","ts":1775704946.9457326,"msg":"http request","method":"GET","path":"/metrics","duration":0.001859036,"trace_id":"15f50e2167f0909a99744162df54f7f8"}
+{"level":"info","ts":1775704961.9425774,"msg":"http request","method":"GET","path":"/metrics","duration":0.002527378,"trace_id":"be7ba39fc290681fa6d8f4e5a02efb42"}
+{"level":"info","ts":1775704976.941458,"msg":"http request","method":"GET","path":"/metrics","duration":0.001417304,"trace_id":"0b5db41a52e142b028c76db97268d21f"}
+{"level":"info","ts":1775704991.940708,"msg":"http request","method":"GET","path":"/metrics","duration":0.001043375,"trace_id":"88f295702ae7afc692464a3864fc1513"}
+{"level":"info","ts":1775705006.9400628,"msg":"http request","method":"GET","path":"/metrics","duration":0.001293688,"trace_id":"88d88f2fd68a82d1e5b0b4a6608bba8c"}
+{"level":"info","ts":1775705021.940389,"msg":"http request","method":"GET","path":"/metrics","duration":0.002680644,"trace_id":"ee4431cd43c4df9c15d30b6f96e355e1"}
+{"level":"info","ts":1775705036.9373899,"msg":"http request","method":"GET","path":"/metrics","duration":0.001025772,"trace_id":"96dfbad223cfc0cc65282267bcd8f317"}
+{"level":"info","ts":1775705051.935206,"msg":"http request","method":"GET","path":"/metrics","duration":0.000939366,"trace_id":"d1be3291fe7bfd612b861a8a736ee629"}
+{"level":"info","ts":1775705066.9367368,"msg":"http request","method":"GET","path":"/metrics","duration":0.001620433,"trace_id":"5b2bba95ad005e8bba1bfaef1a6c1a21"}
+{"level":"info","ts":1775706959.3153026,"msg":"http request","method":"GET","path":"/metrics","duration":0.00354203,"trace_id":"f353bcb05aead6059f2dbe9810670842"}
+{"level":"info","ts":1775706974.309224,"msg":"http request","method":"GET","path":"/metrics","duration":0.001394288,"trace_id":"94786fccefb8af7e2d9ba6061a6e94d5"}
+{"level":"info","ts":1775706989.3106015,"msg":"http request","method":"GET","path":"/metrics","duration":0.001588199,"trace_id":"ad86c1096cc65e596e2dd1cec2489d95"}
+{"level":"info","ts":1775707004.3103147,"msg":"http request","method":"GET","path":"/metrics","duration":0.003993942,"trace_id":"06f0ec317e15f1adfb515613f587e398"}
+{"level":"info","ts":1775707019.3116353,"msg":"http request","method":"GET","path":"/metrics","duration":0.004777395,"trace_id":"3b593429bc2017900ceea0bc2acb7c3c"}
+{"level":"info","ts":1775707034.3064246,"msg":"http request","method":"GET","path":"/metrics","duration":0.0015979,"trace_id":"de7e145dc75041c9b7b13e10b53c4401"}
+{"level":"info","ts":1775707049.3071473,"msg":"http request","method":"GET","path":"/metrics","duration":0.002175638,"trace_id":"82715cfe3e30b74a4c4acaa27a214a78"}
+{"level":"info","ts":1775707064.3051171,"msg":"http request","method":"GET","path":"/metrics","duration":0.001492793,"trace_id":"c8f37879270c24e3cc660c70b58291ec"}
+{"level":"info","ts":1775707079.3052475,"msg":"http request","method":"GET","path":"/metrics","duration":0.002025526,"trace_id":"ee799d33d240b0937a15882a303218e8"}
+{"level":"info","ts":1775707094.3031294,"msg":"http request","method":"GET","path":"/metrics","duration":0.002769325,"trace_id":"c291f0c2e8c1503a545313474b40e1bb"}
+{"level":"info","ts":1775707109.303123,"msg":"http request","method":"GET","path":"/metrics","duration":0.001846918,"trace_id":"a7150b709284beda4ea98f3e6662af12"}
+{"level":"info","ts":1775707119.2518222,"msg":"handling create account request","method":"POST","path":"/accounts"}
+{"level":"info","ts":1775707119.252538,"msg":"creating account","trace_id":"72f7672fa8731e0e517d4eccec0a137a","account_number":"888801000157508","account_holder":"Budi Santoso","balance":5000000}
+{"level":"info","ts":1775707119.2528281,"msg":"inserting account into database","account_number":"888801000157508","account_holder":"Budi Santoso","balance":5000000}
+{"level":"info","ts":1775707119.265858,"msg":"http request","method":"POST","path":"/accounts","duration":0.015368046,"trace_id":"72f7672fa8731e0e517d4eccec0a137a"}
+{"level":"info","ts":1775707119.3476398,"msg":"handling create account request","method":"POST","path":"/accounts"}
+{"level":"info","ts":1775707119.348278,"msg":"creating account","trace_id":"747e411c90aab594fd93f799bc08264c","account_number":"888801000003301","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"info","ts":1775707119.3486671,"msg":"inserting account into database","account_number":"888801000003301","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"info","ts":1775707119.3509219,"msg":"http request","method":"POST","path":"/accounts","duration":0.003675403,"trace_id":"747e411c90aab594fd93f799bc08264c"}
+{"level":"info","ts":1775707119.4074805,"msg":"http request","method":"POST","path":"/transfer-intrabank","duration":0.000035202,"trace_id":"37418dbe4a53ac49240ef563514f7431"}
+{"level":"info","ts":1775707124.3052046,"msg":"http request","method":"GET","path":"/metrics","duration":0.002057923,"trace_id":"1189d270d20ac8fee730067c2035a896"}
+{"level":"info","ts":1775707139.2996778,"msg":"http request","method":"GET","path":"/metrics","duration":0.001146166,"trace_id":"59b0bbaa23202af60b3777b2106727a9"}
+{"level":"info","ts":1775707140.8792596,"msg":"http request","method":"POST","path":"/transfers","duration":0.000096406,"trace_id":"d71b815a4aba0193ee9a576ed613aaca"}
+{"level":"info","ts":1775707152.7295659,"msg":"handling get all account request","method":"GET","path":"/accounts"}
+{"level":"info","ts":1775707152.7299645,"msg":"getting all accounts","trace_id":"fb11e9295b431f2808cc78a18a9c6d25"}
+{"level":"info","ts":1775707152.7303245,"msg":"getting all accounts"}
+{"level":"info","ts":1775707152.734566,"msg":"http request","method":"GET","path":"/accounts","duration":0.005643474,"trace_id":"fb11e9295b431f2808cc78a18a9c6d25"}
+{"level":"info","ts":1775707154.299576,"msg":"http request","method":"GET","path":"/metrics","duration":0.003034301,"trace_id":"4f536400f373559c4dc66aa34a6acbdb"}
+{"level":"info","ts":1775707169.2980528,"msg":"http request","method":"GET","path":"/metrics","duration":0.00131388,"trace_id":"eec807321b4625d3abb25d8ec1a37d3c"}
+{"level":"info","ts":1775707184.2965224,"msg":"http request","method":"GET","path":"/metrics","duration":0.001055865,"trace_id":"3ba77b1745921a3782c3ae8e56d4486b"}
+{"level":"info","ts":1775707199.2968361,"msg":"http request","method":"GET","path":"/metrics","duration":0.001453789,"trace_id":"579b81b2e9a9a153e137dc5b9b543c35"}
+{"level":"info","ts":1775707214.2940326,"msg":"http request","method":"GET","path":"/metrics","duration":0.001032962,"trace_id":"732e73ff8f4586ab7e5ad2f8151a5f49"}
+{"level":"info","ts":1775707229.293852,"msg":"http request","method":"GET","path":"/metrics","duration":0.001148571,"trace_id":"e02abc71753bbb135e7c02b903f16577"}
+{"level":"info","ts":1775707244.29461,"msg":"http request","method":"GET","path":"/metrics","duration":0.003230198,"trace_id":"db39614aeb483d781d46c297405e1c48"}
+{"level":"info","ts":1775707259.2930348,"msg":"http request","method":"GET","path":"/metrics","duration":0.001259277,"trace_id":"a1c0094f9a6cf1049dc04f1e7734bcfe"}
+{"level":"info","ts":1775707274.2919734,"msg":"http request","method":"GET","path":"/metrics","duration":0.001799112,"trace_id":"45a540230a7551a670793ec299255891"}
+{"level":"info","ts":1775707289.291055,"msg":"http request","method":"GET","path":"/metrics","duration":0.0016423,"trace_id":"786d5092f77ea7f10b0d68d75f1cf44f"}
+{"level":"info","ts":1775707304.289229,"msg":"http request","method":"GET","path":"/metrics","duration":0.000821051,"trace_id":"7c944a873f532b8f47d9dbe8872ab405"}
+{"level":"info","ts":1775707319.2885957,"msg":"http request","method":"GET","path":"/metrics","duration":0.001018263,"trace_id":"3b38c4d60b3eff695771939a0875a487"}
+{"level":"info","ts":1775707334.2878084,"msg":"http request","method":"GET","path":"/metrics","duration":0.002187732,"trace_id":"9a57c0f16735d6e06ac6474b46be8cbe"}
+{"level":"info","ts":1775707349.290327,"msg":"http request","method":"GET","path":"/metrics","duration":0.003503815,"trace_id":"bc44a48eb593284fa537a29d3c1f82ba"}
+{"level":"info","ts":1775707364.2852924,"msg":"http request","method":"GET","path":"/metrics","duration":0.001896721,"trace_id":"310ec9571e49d1f1134c4fe8aab3bba6"}
+{"level":"info","ts":1775707379.285013,"msg":"http request","method":"GET","path":"/metrics","duration":0.001353984,"trace_id":"841b5850f082c6db68d1e1dd6042fd48"}
+{"level":"info","ts":1775707394.284569,"msg":"http request","method":"GET","path":"/metrics","duration":0.001758314,"trace_id":"bbd28913efc558b4086abf84006dc168"}
+{"level":"info","ts":1775707409.2848423,"msg":"http request","method":"GET","path":"/metrics","duration":0.00185529,"trace_id":"03407b558d6148793cefae4f37de96f2"}
+{"level":"info","ts":1775707424.2842276,"msg":"http request","method":"GET","path":"/metrics","duration":0.001946318,"trace_id":"bdd37818b5978c67d98a787b70f67afd"}
+{"level":"info","ts":1775707439.2820346,"msg":"http request","method":"GET","path":"/metrics","duration":0.001056664,"trace_id":"b2103413feb2bf68c7463de8273386c2"}
+{"level":"info","ts":1775707454.2789423,"msg":"http request","method":"GET","path":"/metrics","duration":0.00098406,"trace_id":"2599206c26cbe3c5b67e517d113a6a5a"}
+{"level":"info","ts":1775707469.2808225,"msg":"http request","method":"GET","path":"/metrics","duration":0.002473351,"trace_id":"08573c2ce62b397d3141f55e42adf453"}
+{"level":"info","ts":1775707484.276425,"msg":"http request","method":"GET","path":"/metrics","duration":0.001357093,"trace_id":"65c331888bbe95ae19c9514cb724f216"}
+{"level":"info","ts":1775707499.2761502,"msg":"http request","method":"GET","path":"/metrics","duration":0.001084174,"trace_id":"607ee4652d47bdd08070414d6380cc60"}
+{"level":"info","ts":1775707514.27429,"msg":"http request","method":"GET","path":"/metrics","duration":0.001366811,"trace_id":"cbebc3420646c43defce47a092dc72d4"}
+{"level":"info","ts":1775707529.275324,"msg":"http request","method":"GET","path":"/metrics","duration":0.001546779,"trace_id":"e8119d52d9ede5170674c5a1e50a7362"}
+{"level":"info","ts":1775707544.2747755,"msg":"http request","method":"GET","path":"/metrics","duration":0.003344109,"trace_id":"1a4ffc555f19c71b9a1ffa73d055835e"}
+{"level":"info","ts":1775707559.271464,"msg":"http request","method":"GET","path":"/metrics","duration":0.001050485,"trace_id":"0d2b088d12e1720ee9ee08ad41f8bd04"}
+{"level":"info","ts":1775707574.270011,"msg":"http request","method":"GET","path":"/metrics","duration":0.001591026,"trace_id":"a29ccd5cc9e6dace442e18d2b9f636da"}
+{"level":"info","ts":1775707589.2729046,"msg":"http request","method":"GET","path":"/metrics","duration":0.005058505,"trace_id":"f08f2713ad59146a61bcea30d1be083b"}
+{"level":"info","ts":1775707604.2690094,"msg":"http request","method":"GET","path":"/metrics","duration":0.003230412,"trace_id":"6e371009233c7414126895fea0a2cf3d"}
+{"level":"info","ts":1775707619.266423,"msg":"http request","method":"GET","path":"/metrics","duration":0.000925976,"trace_id":"e8e63537cb931c92ac1905ffe43595dd"}
+{"level":"info","ts":1775707634.2652287,"msg":"http request","method":"GET","path":"/metrics","duration":0.001457519,"trace_id":"7e9ddac28c5c23b12c3b749143142150"}
+{"level":"info","ts":1775707649.26407,"msg":"http request","method":"GET","path":"/metrics","duration":0.000804264,"trace_id":"6a203f1a3393a7c85b6211252e2eff3f"}
+{"level":"info","ts":1775707664.2620838,"msg":"http request","method":"GET","path":"/metrics","duration":0.001014478,"trace_id":"c84aed7c51f2bcc1c917a03ea6e8b285"}
+{"level":"info","ts":1775707679.263175,"msg":"http request","method":"GET","path":"/metrics","duration":0.001351305,"trace_id":"8828e633e7d40275dd50494907e0afdd"}
+{"level":"info","ts":1775707694.2619517,"msg":"http request","method":"GET","path":"/metrics","duration":0.002290675,"trace_id":"75d3dcab1f4a59c18ea4530cb5ed8e67"}
+{"level":"info","ts":1775707709.2612567,"msg":"http request","method":"GET","path":"/metrics","duration":0.001986754,"trace_id":"e062b5230d890d1bb0f48b04b3e9fb9f"}
+{"level":"info","ts":1775707724.254455,"msg":"http request","method":"GET","path":"/metrics","duration":0.001234919,"trace_id":"cf09a210faa8d12b8efe4fea80e8dcff"}
+{"level":"info","ts":1775707739.2546182,"msg":"http request","method":"GET","path":"/metrics","duration":0.000971608,"trace_id":"a7b0e5a6c2a3641b4604311b40069cdd"}
+{"level":"info","ts":1775707754.24954,"msg":"http request","method":"GET","path":"/metrics","duration":0.000934061,"trace_id":"d214e172e2a16eadde3f1f53b1a31b84"}
+{"level":"info","ts":1775707769.2506564,"msg":"http request","method":"GET","path":"/metrics","duration":0.001224643,"trace_id":"3fedc180b22e62f1decd90651b829480"}
+{"level":"info","ts":1775707784.2491202,"msg":"http request","method":"GET","path":"/metrics","duration":0.003167395,"trace_id":"e80561984811f298060cec28314a7383"}
+{"level":"info","ts":1775707799.2459211,"msg":"http request","method":"GET","path":"/metrics","duration":0.001300527,"trace_id":"6290a50d40ebdc375616bcbeab91891f"}
+{"level":"info","ts":1775707814.2427127,"msg":"http request","method":"GET","path":"/metrics","duration":0.0013045,"trace_id":"1c34a865b80984963fadbe2fb4f2e232"}
+{"level":"info","ts":1775707829.2436945,"msg":"http request","method":"GET","path":"/metrics","duration":0.001399594,"trace_id":"61a746484e981c09665bc183d179d7c8"}
+{"level":"info","ts":1775707844.2378647,"msg":"http request","method":"GET","path":"/metrics","duration":0.001035747,"trace_id":"1ad5b5bc920145a9773b87f3b95a2bba"}
+{"level":"info","ts":1775707859.240403,"msg":"http request","method":"GET","path":"/metrics","duration":0.002635899,"trace_id":"b7c204f2b933924292f7cfebf9b97952"}
+{"level":"info","ts":1775707874.2351635,"msg":"http request","method":"GET","path":"/metrics","duration":0.001530718,"trace_id":"afd62a71c12dcb11eadc02ba56d87110"}
+{"level":"info","ts":1775707889.2362373,"msg":"http request","method":"GET","path":"/metrics","duration":0.001924057,"trace_id":"876cec8e61f85576318d7e16c28ffbef"}
+{"level":"info","ts":1775707904.233323,"msg":"http request","method":"GET","path":"/metrics","duration":0.001844635,"trace_id":"615e51cb541be321ae29579cd0408d7e"}
+{"level":"info","ts":1775707919.2320993,"msg":"http request","method":"GET","path":"/metrics","duration":0.001325351,"trace_id":"6eabc1f47a127915c6f7cfd99bf32635"}
+{"level":"info","ts":1775707934.2241082,"msg":"http request","method":"GET","path":"/metrics","duration":0.001176743,"trace_id":"c75a87da856d8c1cb6bf383909531ba7"}
+{"level":"info","ts":1775707949.2243166,"msg":"http request","method":"GET","path":"/metrics","duration":0.001883637,"trace_id":"7447c08745a5c3a7f617259d398398fb"}
+{"level":"info","ts":1775707954.041449,"msg":"http request","method":"POST","path":"/transfer-intrabank","duration":0.000255032,"trace_id":"e26b2d8fab63ccb1ba02e9cff1f1a15a"}
+{"level":"info","ts":1775707964.2258043,"msg":"http request","method":"GET","path":"/metrics","duration":0.001174349,"trace_id":"21b62108d7b1b45f6d7881c281f6ed30"}
+{"level":"info","ts":1775707979.2276487,"msg":"http request","method":"GET","path":"/metrics","duration":0.00289256,"trace_id":"cfa2df2299e4c945f0c24227769d9adb"}
+{"level":"info","ts":1775707994.2213044,"msg":"http request","method":"GET","path":"/metrics","duration":0.001117536,"trace_id":"906242fdf660431a2158d302a0eba028"}
+{"level":"info","ts":1775708008.4749887,"msg":"http request","method":"POST","path":"/transfer-intrabank","duration":0.000217227,"trace_id":"a0957c982f5290329f5aa2f8642ca95d"}
+{"level":"info","ts":1775708009.2208443,"msg":"http request","method":"GET","path":"/metrics","duration":0.001184944,"trace_id":"f5ec1d90d030cbe8c1cfb7ea141b2916"}
+{"level":"info","ts":1775708018.4593282,"msg":"handling create account request","method":"POST","path":"/accounts"}
+{"level":"info","ts":1775708018.45983,"msg":"creating account","trace_id":"d5e7b88e8de3d6f56c992070c78f0d5a","account_number":"888801000157508","account_holder":"Budi Santoso","balance":5000000}
+{"level":"info","ts":1775708018.4600704,"msg":"inserting account into database","account_number":"888801000157508","account_holder":"Budi Santoso","balance":5000000}
+{"level":"error","ts":1775708018.4646893,"msg":"failed to insert account","error":"pq: duplicate key value violates unique constraint \"accounts_account_number_key\" (23505)"}
+{"level":"error","ts":1775708018.4651763,"msg":"failed to create account","error":"pq: duplicate key value violates unique constraint \"accounts_account_number_key\" (23505)"}
+{"level":"info","ts":1775708018.4655173,"msg":"http request","method":"POST","path":"/accounts","duration":0.007272567,"trace_id":"d5e7b88e8de3d6f56c992070c78f0d5a"}
+{"level":"info","ts":1775708024.218147,"msg":"http request","method":"GET","path":"/metrics","duration":0.001298854,"trace_id":"a3b203fc2ca48754d7ee2d31894f2be1"}
+{"level":"info","ts":1775708024.705503,"msg":"handling create account request","method":"POST","path":"/accounts"}
+{"level":"info","ts":1775708024.705928,"msg":"creating account","trace_id":"8ecc2b043e744c9e2c2b75bb683a1641","account_number":"888801000003301","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"info","ts":1775708024.7062602,"msg":"inserting account into database","account_number":"888801000003301","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"error","ts":1775708024.7072062,"msg":"failed to insert account","error":"pq: duplicate key value violates unique constraint \"accounts_account_number_key\" (23505)"}
+{"level":"error","ts":1775708024.7074938,"msg":"failed to create account","error":"pq: duplicate key value violates unique constraint \"accounts_account_number_key\" (23505)"}
+{"level":"info","ts":1775708024.7078564,"msg":"http request","method":"POST","path":"/accounts","duration":0.002927049,"trace_id":"8ecc2b043e744c9e2c2b75bb683a1641"}
+{"level":"info","ts":1775708039.218845,"msg":"http request","method":"GET","path":"/metrics","duration":0.002229063,"trace_id":"792cd1b0ad001b52656ca77f64ffb8b8"}
+{"level":"info","ts":1775708054.2150877,"msg":"http request","method":"GET","path":"/metrics","duration":0.0017045,"trace_id":"6f8b6efaaa37c2754f8bd507963b2a5a"}
+{"level":"info","ts":1775708069.2154222,"msg":"http request","method":"GET","path":"/metrics","duration":0.001857615,"trace_id":"6d5ced7c2b3695c077de3e339c1430e1"}
+{"level":"info","ts":1775708084.219585,"msg":"http request","method":"GET","path":"/metrics","duration":0.010541769,"trace_id":"2453379aafe46af7095592b0f28ab6ff"}
+{"level":"info","ts":1775708099.213103,"msg":"http request","method":"GET","path":"/metrics","duration":0.002313047,"trace_id":"02afbe4e8a3ecd0c49cf38663851739d"}
+{"level":"info","ts":1775708114.2089498,"msg":"http request","method":"GET","path":"/metrics","duration":0.001847213,"trace_id":"bae177de2f6329965ef3261c49c5a25e"}
+{"level":"info","ts":1775708129.206833,"msg":"http request","method":"GET","path":"/metrics","duration":0.000909906,"trace_id":"8b1be4b40abca418d6453af4be867e44"}
+{"level":"info","ts":1775708144.2036598,"msg":"http request","method":"GET","path":"/metrics","duration":0.001461669,"trace_id":"64773476b20ad02ae532d70257c7ad1a"}
+{"level":"info","ts":1775708159.2044888,"msg":"http request","method":"GET","path":"/metrics","duration":0.001758903,"trace_id":"19209fd975ec6d250f6a11686b2cdf58"}
+{"level":"info","ts":1775708174.2039688,"msg":"http request","method":"GET","path":"/metrics","duration":0.003839143,"trace_id":"21da1ef3456b4e18b55456d8c8966ed0"}
+{"level":"info","ts":1775708189.2012672,"msg":"http request","method":"GET","path":"/metrics","duration":0.001868217,"trace_id":"c12ad9bff61eb6315cdad71f20eb8c80"}
+{"level":"info","ts":1775708204.197847,"msg":"http request","method":"GET","path":"/metrics","duration":0.001490075,"trace_id":"d4d6ca86cb01878866507fd62f0f0d7b"}
+{"level":"info","ts":1775708219.1979778,"msg":"http request","method":"GET","path":"/metrics","duration":0.001300731,"trace_id":"7e2167d14238ef17b42bc55bb98982f9"}
+{"level":"info","ts":1775708234.1935136,"msg":"http request","method":"GET","path":"/metrics","duration":0.000854098,"trace_id":"54bb0ecc2ae3b7ef7b43260d17ddf342"}
+{"level":"info","ts":1775708249.1930897,"msg":"http request","method":"GET","path":"/metrics","duration":0.00119974,"trace_id":"c98b549d585030b39311202c903fe440"}
+{"level":"info","ts":1775708261.2748249,"msg":"http request","method":"POST","path":"/transfer-intrabank","duration":0.000294022,"trace_id":"163a77ac0f95bd4d62e1c02efcfc51c8"}
+{"level":"info","ts":1775708264.1895187,"msg":"http request","method":"GET","path":"/metrics","duration":0.001083284,"trace_id":"4f8a1cdb56d5979076fa36f5076154ba"}
+{"level":"info","ts":1775708279.191175,"msg":"http request","method":"GET","path":"/metrics","duration":0.002718222,"trace_id":"9afcaf861b57be004cf46369c2c6f0ac"}
+{"level":"info","ts":1775708294.1863406,"msg":"http request","method":"GET","path":"/metrics","duration":0.001410264,"trace_id":"7fa22e9558a2c58167246f41d6f00923"}
+{"level":"info","ts":1775708309.1869779,"msg":"http request","method":"GET","path":"/metrics","duration":0.001389364,"trace_id":"5f1a4554d0baaa26ce0102d6e7ac2dec"}
+{"level":"info","ts":1775708324.183744,"msg":"http request","method":"GET","path":"/metrics","duration":0.001179238,"trace_id":"bcb35edd0c5e92b4ee8f798e32dd9888"}
+{"level":"info","ts":1775708339.1855474,"msg":"http request","method":"GET","path":"/metrics","duration":0.002640582,"trace_id":"ebe074e6444979e1892fcd70c069b590"}
+{"level":"info","ts":1775708354.1795056,"msg":"http request","method":"GET","path":"/metrics","duration":0.001171227,"trace_id":"c38684727779c6e424962af7160574aa"}
+{"level":"info","ts":1775708369.1816578,"msg":"http request","method":"GET","path":"/metrics","duration":0.001800008,"trace_id":"bf702b3a3bc7da56b271ed5ad0f006a7"}
+{"level":"info","ts":1775708384.1763082,"msg":"http request","method":"GET","path":"/metrics","duration":0.000896696,"trace_id":"7a492b337cfb82bea1446ca288e6d13d"}
+{"level":"info","ts":1775708399.176422,"msg":"http request","method":"GET","path":"/metrics","duration":0.000917808,"trace_id":"be5660146e7aefc2a854a0dc44ee6849"}
+{"level":"info","ts":1775708402.378276,"msg":"http request","method":"POST","path":"/transfer-iantrabanka","duration":0.00016582,"trace_id":"84e36938ea04d92d7e8873f90648398f"}
+{"level":"info","ts":1775708414.1737618,"msg":"http request","method":"GET","path":"/metrics","duration":0.000994319,"trace_id":"7beba2636aa266873eadca29781669ae"}
+{"level":"info","ts":1775708429.1754715,"msg":"http request","method":"GET","path":"/metrics","duration":0.002119268,"trace_id":"255e2e018d82e6b4dc0a81a1064c5ad8"}
+{"level":"info","ts":1775708436.2482944,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.003186114,"trace_id":"a461037e6644ede0cd9bfc265f57b547"}
+{"level":"info","ts":1775708444.1711838,"msg":"http request","method":"GET","path":"/metrics","duration":0.001134103,"trace_id":"5f02e95b937b60d5404d11cd1715e7d0"}
+{"level":"info","ts":1775708455.5808606,"msg":"handling transfer request","trace_id":"fc332c5eda638b68e02fef73a83bcf7c","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775708455.5851889,"msg":"processing transfer","trace_id":"fc332c5eda638b68e02fef73a83bcf7c","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00","idempotency_key":"gsx4pkhipp1775708455522"}
+{"level":"info","ts":1775708455.5886672,"msg":"processing transfer internal","trace_id":"fc332c5eda638b68e02fef73a83bcf7c","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00"}
+{"level":"info","ts":1775708455.5893853,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775708455.595955,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775708455.5970523,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":4900000}
+{"level":"info","ts":1775708455.6108022,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1100000}
+{"level":"info","ts":1775708455.6130128,"msg":"inserting transaction into database","trace_id":"fc332c5eda638b68e02fef73a83bcf7c","from_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","to_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","amount":100000}
+{"level":"error","ts":1775708455.6172879,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775708455.6176445,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775708455.6179287,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.038381536,"trace_id":"fc332c5eda638b68e02fef73a83bcf7c"}
+{"level":"info","ts":1775708459.1721654,"msg":"http request","method":"GET","path":"/metrics","duration":0.001884819,"trace_id":"b8972598025f035ac13fc68d1b2eccf6"}
+{"level":"info","ts":1775708474.168722,"msg":"http request","method":"GET","path":"/metrics","duration":0.001295336,"trace_id":"80f86355f0c42a55c968406185204adc"}
+{"level":"info","ts":1775708489.1690834,"msg":"http request","method":"GET","path":"/metrics","duration":0.001454952,"trace_id":"04ff3ad41f038cca790eb24e35d615a3"}
+{"level":"info","ts":1775708504.1658077,"msg":"http request","method":"GET","path":"/metrics","duration":0.002712077,"trace_id":"55b9c78b24f8123142d9f222323e6776"}
+{"level":"info","ts":1775708519.1646209,"msg":"http request","method":"GET","path":"/metrics","duration":0.001081312,"trace_id":"d8c81f37de61b7579bb7f751bddf3d76"}
+{"level":"info","ts":1775708534.1638818,"msg":"http request","method":"GET","path":"/metrics","duration":0.002250032,"trace_id":"57ce8e76f480cf9df3847463d19704fb"}
+{"level":"info","ts":1775708549.162109,"msg":"http request","method":"GET","path":"/metrics","duration":0.001116995,"trace_id":"13e74f2e967580062ce493832bf07815"}
+{"level":"info","ts":1775708564.1598668,"msg":"http request","method":"GET","path":"/metrics","duration":0.0014845,"trace_id":"4a1dd61dbf8e0f1a8da4a1a439af96eb"}
+{"level":"info","ts":1775708579.1608999,"msg":"http request","method":"GET","path":"/metrics","duration":0.002133947,"trace_id":"3d3c8a3518c2fac953e863751d19b163"}
+{"level":"info","ts":1775708594.1580603,"msg":"http request","method":"GET","path":"/metrics","duration":0.001090199,"trace_id":"2aaaacf97737d69edb8a34a0c4c09710"}
+{"level":"info","ts":1775708609.1578734,"msg":"http request","method":"GET","path":"/metrics","duration":0.001654849,"trace_id":"fc9d1d130954544e865e254020c98499"}
+{"level":"info","ts":1775708624.1550303,"msg":"http request","method":"GET","path":"/metrics","duration":0.001258712,"trace_id":"f589efcab03ddacb946b4fedfde66bc8"}
+{"level":"info","ts":1775708639.1555092,"msg":"http request","method":"GET","path":"/metrics","duration":0.001786163,"trace_id":"7096b20b32e50593a83a88afa1cb9592"}
+{"level":"info","ts":1775708654.1115358,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000237121,"trace_id":"2078028ddf82fc7f6cd0ed8baec98fb3"}
+{"level":"info","ts":1775708654.1521165,"msg":"http request","method":"GET","path":"/metrics","duration":0.00121781,"trace_id":"54df5827b0e7b23f4128943c41298ca3"}
+{"level":"info","ts":1775708669.1529398,"msg":"http request","method":"GET","path":"/metrics","duration":0.001350478,"trace_id":"e2160278ad3c2fca2f28663e583ec221"}
+{"level":"info","ts":1775708684.1507132,"msg":"http request","method":"GET","path":"/metrics","duration":0.002119026,"trace_id":"8c78210638de86deb84db0cf19552716"}
+{"level":"info","ts":1775708699.149868,"msg":"http request","method":"GET","path":"/metrics","duration":0.001185304,"trace_id":"ec202840b088ea6eea0b07e039c0cd83"}
+{"level":"info","ts":1775708714.1474125,"msg":"http request","method":"GET","path":"/metrics","duration":0.001392013,"trace_id":"d9fde7dbff28e8675ef6b409a11177d7"}
+{"level":"info","ts":1775708729.1494555,"msg":"http request","method":"GET","path":"/metrics","duration":0.002838436,"trace_id":"af42bffc91ebca6bf5e78a53968a53ff"}
+{"level":"info","ts":1775708744.1455727,"msg":"http request","method":"GET","path":"/metrics","duration":0.001318607,"trace_id":"d62fb7dee12c0c4b0d0db52579b1a5b1"}
+{"level":"info","ts":1775708759.1486351,"msg":"http request","method":"GET","path":"/metrics","duration":0.004287649,"trace_id":"3c0c87fe27ab90d6cdef812e8b0a8392"}
+{"level":"info","ts":1775708774.1460288,"msg":"http request","method":"GET","path":"/metrics","duration":0.002998955,"trace_id":"67bf3cc93a5f6e89a00d766bed544ed6"}
+{"level":"info","ts":1775708789.1420639,"msg":"http request","method":"GET","path":"/metrics","duration":0.001043488,"trace_id":"8bb569e77109bbd3dd1fe7fd46223060"}
+{"level":"info","ts":1775708804.1417685,"msg":"http request","method":"GET","path":"/metrics","duration":0.001998862,"trace_id":"eda20792b212ed5ba6a5003486f6a27d"}
+{"level":"info","ts":1775708819.1408968,"msg":"http request","method":"GET","path":"/metrics","duration":0.001433884,"trace_id":"b9d35b9d2e1c39bcedd4d7f75e55e019"}
+{"level":"info","ts":1775708834.1391091,"msg":"http request","method":"GET","path":"/metrics","duration":0.001431715,"trace_id":"8005f924e2c21a6d0de33c9e7627e05f"}
+{"level":"info","ts":1775708849.1406486,"msg":"http request","method":"GET","path":"/metrics","duration":0.00338337,"trace_id":"48e00dd332e9f3b3f60df49e66e1353b"}
+{"level":"info","ts":1775708864.1381874,"msg":"http request","method":"GET","path":"/metrics","duration":0.002586102,"trace_id":"155df0f79ed0572c748456f98a781acc"}
+{"level":"info","ts":1775708879.1361759,"msg":"http request","method":"GET","path":"/metrics","duration":0.001214795,"trace_id":"bf2e88d2545b8fe7e456c343233af6f0"}
+{"level":"info","ts":1775708894.1345992,"msg":"http request","method":"GET","path":"/metrics","duration":0.002158471,"trace_id":"56cdf35411230d2bf4afee11d028e432"}
+{"level":"info","ts":1775708958.188953,"msg":"http request","method":"GET","path":"/metrics","duration":0.00488248,"trace_id":"03100686cdfbee41ade0d406ac7b56d2"}
+{"level":"info","ts":1775708959.6172612,"msg":"handling transfer request","trace_id":"dd93487c05d583f19e3a18db5ee1ace9","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775708959.6184888,"msg":"processing transfer","trace_id":"dd93487c05d583f19e3a18db5ee1ace9","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"789"}
+{"level":"info","ts":1775708959.619227,"msg":"processing transfer internal","trace_id":"dd93487c05d583f19e3a18db5ee1ace9","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775708959.6196198,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775708959.6682208,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775708959.6694465,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"info","ts":1775708959.673864,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5000000}
+{"level":"info","ts":1775708959.675767,"msg":"inserting transaction into database","trace_id":"dd93487c05d583f19e3a18db5ee1ace9","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"error","ts":1775708959.6788907,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775708959.6792843,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775708959.6796505,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.063238125,"trace_id":"dd93487c05d583f19e3a18db5ee1ace9"}
+{"level":"info","ts":1775708968.915516,"msg":"handling transfer request","trace_id":"42890e88f187c6ac1155ed50d73df9cb","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775708968.915977,"msg":"processing transfer","trace_id":"42890e88f187c6ac1155ed50d73df9cb","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00","idempotency_key":"k0bgj4fxq71775708968857"}
+{"level":"info","ts":1775708968.916534,"msg":"processing transfer internal","trace_id":"42890e88f187c6ac1155ed50d73df9cb","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00"}
+{"level":"info","ts":1775708968.9169214,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775708968.918449,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775708968.9195783,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":4900000}
+{"level":"info","ts":1775708968.9335582,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1100000}
+{"level":"info","ts":1775708968.9355783,"msg":"inserting transaction into database","trace_id":"42890e88f187c6ac1155ed50d73df9cb","from_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","to_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","amount":100000}
+{"level":"error","ts":1775708968.9373384,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775708968.937614,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775708968.937927,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.023130772,"trace_id":"42890e88f187c6ac1155ed50d73df9cb"}
+{"level":"info","ts":1775708975.7116394,"msg":"handling transfer request","trace_id":"bc615c64cbb863e174ad1aa1d85ace88","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775708975.7123342,"msg":"processing transfer","trace_id":"bc615c64cbb863e174ad1aa1d85ace88","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00","idempotency_key":"udo2rxad4u1775708975660"}
+{"level":"info","ts":1775708975.7131233,"msg":"processing transfer internal","trace_id":"bc615c64cbb863e174ad1aa1d85ace88","from_account_id":"888801000157508","to_account_id":"888801000003301","amount":"100000.00"}
+{"level":"info","ts":1775708975.713388,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775708975.7150784,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775708975.7158484,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":4800000}
+{"level":"info","ts":1775708975.7289777,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1200000}
+{"level":"info","ts":1775708975.7308347,"msg":"inserting transaction into database","trace_id":"bc615c64cbb863e174ad1aa1d85ace88","from_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","to_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","amount":100000}
+{"level":"error","ts":1775708975.7329602,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775708975.7332468,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775708975.7336915,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.02262278,"trace_id":"bc615c64cbb863e174ad1aa1d85ace88"}
+{"level":"info","ts":1775708982.1981473,"msg":"handling transfer request","trace_id":"bffbf67c536ad2a2b66b440694766535","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775708982.1991003,"msg":"processing transfer","trace_id":"bffbf67c536ad2a2b66b440694766535","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"789"}
+{"level":"info","ts":1775708982.1996958,"msg":"processing transfer internal","trace_id":"bffbf67c536ad2a2b66b440694766535","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775708982.20001,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775708982.2013626,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775708982.2023807,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1100000}
+{"level":"info","ts":1775708982.213009,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":4900000}
+{"level":"info","ts":1775708982.2148597,"msg":"inserting transaction into database","trace_id":"bffbf67c536ad2a2b66b440694766535","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"error","ts":1775708982.2165105,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775708982.2167428,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775708982.2171187,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.019829317,"trace_id":"bffbf67c536ad2a2b66b440694766535"}
+{"level":"info","ts":1775709018.174872,"msg":"http request","method":"GET","path":"/metrics","duration":0.001190792,"trace_id":"4ab4dbf9a1d3cb4c443376dce5221136"}
+{"level":"info","ts":1775709078.1724503,"msg":"http request","method":"GET","path":"/metrics","duration":0.003373259,"trace_id":"490d0a7158e3d5aec82919c060b5130d"}
+{"level":"info","ts":1775709138.168256,"msg":"http request","method":"GET","path":"/metrics","duration":0.003448762,"trace_id":"d5ce5c710582d60bbe995725c971213a"}
+{"level":"info","ts":1775709198.16075,"msg":"http request","method":"GET","path":"/metrics","duration":0.00144891,"trace_id":"68140549d19d39a04ecdc38415d4b2c0"}
+{"level":"info","ts":1775709258.1562464,"msg":"http request","method":"GET","path":"/metrics","duration":0.001784246,"trace_id":"ee470ed2783e7603d1065cf324412071"}
+{"level":"info","ts":1775709318.152821,"msg":"http request","method":"GET","path":"/metrics","duration":0.001604121,"trace_id":"931ecb655884fb99b26023028dc538b1"}
+{"level":"info","ts":1775709378.1494882,"msg":"http request","method":"GET","path":"/metrics","duration":0.003078931,"trace_id":"7979273a8e2378213b48dc8b496d9e67"}
+{"level":"info","ts":1775709383.2263927,"msg":"handling transfer request","trace_id":"d9f575aec4ebedb16e88509a6c4c710d","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775709383.2269046,"msg":"processing transfer","trace_id":"d9f575aec4ebedb16e88509a6c4c710d","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775709383.2275,"msg":"processing transfer internal","trace_id":"d9f575aec4ebedb16e88509a6c4c710d","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775709383.2279005,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775709383.2296343,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775709383.230937,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":1000000}
+{"level":"info","ts":1775709383.233297,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5000000}
+{"level":"info","ts":1775709383.2356553,"msg":"inserting transaction into database","trace_id":"d9f575aec4ebedb16e88509a6c4c710d","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"error","ts":1775709383.2378905,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775709383.2381537,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775709383.238531,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.012876471,"trace_id":"d9f575aec4ebedb16e88509a6c4c710d"}
+{"level":"info","ts":1775716422.9616134,"msg":"http request","method":"GET","path":"/metrics","duration":0.00212716,"trace_id":"a70d7c9824724c7e58c10a12fa201a2d"}
+{"level":"info","ts":1775716481.8147855,"msg":"http request","method":"GET","path":"/metrics","duration":0.008033573,"trace_id":"709d4913a3fed58cf08993047757b3bf"}
+{"level":"info","ts":1775722875.2275116,"msg":"handling transfer request","trace_id":"f3909d16a99b1797866c8679a5c7c8d3","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775722875.2316532,"msg":"processing transfer","trace_id":"f3909d16a99b1797866c8679a5c7c8d3","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775722875.2324204,"msg":"processing transfer internal","trace_id":"f3909d16a99b1797866c8679a5c7c8d3","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775722875.2327285,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775722875.2546837,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775722875.2560847,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":900000}
+{"level":"info","ts":1775722875.261461,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5100000}
+{"level":"info","ts":1775722875.263378,"msg":"inserting transaction into database","trace_id":"f3909d16a99b1797866c8679a5c7c8d3","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"error","ts":1775722875.2666187,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775722875.2670164,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775722875.2676506,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.041085805,"trace_id":"f3909d16a99b1797866c8679a5c7c8d3"}
+{"level":"info","ts":1775722893.9264643,"msg":"http request","method":"GET","path":"/metrics","duration":0.004716392,"trace_id":"2d57db5094a47ed441b40cd3a3afddc0"}
+{"level":"info","ts":1775722953.918539,"msg":"http request","method":"GET","path":"/metrics","duration":0.003110782,"trace_id":"370367d87a691161f91f69f5f9fc0f14"}
+{"level":"info","ts":1775723013.9134274,"msg":"http request","method":"GET","path":"/metrics","duration":0.002121426,"trace_id":"1f1aa4fa4e3f6a9cef1efefca3b1bdbe"}
+{"level":"info","ts":1775723073.910249,"msg":"http request","method":"GET","path":"/metrics","duration":0.001756308,"trace_id":"a51c658847ae2e6772fac0a8480a1986"}
+{"level":"info","ts":1775723133.9093819,"msg":"http request","method":"GET","path":"/metrics","duration":0.004127841,"trace_id":"c5ef4b2fbe973677981bb01f1f80506d"}
+{"level":"info","ts":1775723193.902583,"msg":"http request","method":"GET","path":"/metrics","duration":0.002197823,"trace_id":"4874167364d5bbd9b5e92bee7b7d5b59"}
+{"level":"info","ts":1775723342.8801103,"msg":"handling transfer request","trace_id":"279052a29f4eed5c19ab379ba283144b","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775723342.8820379,"msg":"processing transfer","trace_id":"279052a29f4eed5c19ab379ba283144b","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775723342.882879,"msg":"processing transfer internal","trace_id":"279052a29f4eed5c19ab379ba283144b","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775723342.8830388,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775723342.8888202,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775723342.8896801,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":800000}
+{"level":"info","ts":1775723342.8925133,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5200000}
+{"level":"info","ts":1775723342.89473,"msg":"inserting transaction into database","trace_id":"279052a29f4eed5c19ab379ba283144b","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"error","ts":1775723342.8968003,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"error","ts":1775723342.897044,"msg":"failed to process transfer","error":"redis: nil"}
+{"level":"info","ts":1775723342.8974705,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.019411312,"trace_id":"279052a29f4eed5c19ab379ba283144b"}
+{"level":"info","ts":1775723910.3163877,"msg":"handling transfer request","trace_id":"e14edff7330f8c1eb0065cc80414dc72","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775723910.3171892,"msg":"processing transfer","trace_id":"e14edff7330f8c1eb0065cc80414dc72","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775723910.31795,"msg":"processing transfer internal","trace_id":"e14edff7330f8c1eb0065cc80414dc72","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775723910.3184404,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775723910.3218648,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775723910.3232267,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":700000}
+{"level":"info","ts":1775723910.3262537,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5300000}
+{"level":"info","ts":1775723910.328863,"msg":"inserting transaction into database","trace_id":"e14edff7330f8c1eb0065cc80414dc72","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"info","ts":1775723910.332303,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.016747826,"trace_id":"e14edff7330f8c1eb0065cc80414dc72"}
+{"level":"info","ts":1775727901.6695058,"msg":"http request","method":"POST","path":"/transfer-intrabank","duration":0.044085257,"trace_id":"d6467f5c4ffac65f81e885d62e5f220f"}
+{"level":"info","ts":1775728180.3328226,"msg":"handling transfer request","trace_id":"3e4cc3393091a4f55bdad0a56b56dcdd","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728180.345863,"msg":"processing transfer","trace_id":"3e4cc3393091a4f55bdad0a56b56dcdd","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775728180.350379,"msg":"processing transfer internal","trace_id":"3e4cc3393091a4f55bdad0a56b56dcdd","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775728180.3512456,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775728180.4198112,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775728180.4227545,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":600000}
+{"level":"info","ts":1775728180.440836,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5400000}
+{"level":"info","ts":1775728180.4435775,"msg":"inserting transaction into database","trace_id":"3e4cc3393091a4f55bdad0a56b56dcdd","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"info","ts":1775728180.4529388,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.173990514,"trace_id":"3e4cc3393091a4f55bdad0a56b56dcdd"}
+{"level":"info","ts":1775728186.1329296,"msg":"handling transfer request","trace_id":"25377b5e9c96f197ab7f8db6d696d732","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728186.1341877,"msg":"processing transfer","trace_id":"25377b5e9c96f197ab7f8db6d696d732","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775728186.134868,"msg":"idempotency cache hit","key":"bank:transfer:78911"}
+{"level":"info","ts":1775728186.1355715,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.003702071,"trace_id":"25377b5e9c96f197ab7f8db6d696d732"}
+{"level":"info","ts":1775728187.950451,"msg":"handling transfer request","trace_id":"58be4f8d7ee97d9a30915ae0abd639de","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728187.9514003,"msg":"processing transfer","trace_id":"58be4f8d7ee97d9a30915ae0abd639de","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775728187.9519162,"msg":"idempotency cache hit","key":"bank:transfer:78911"}
+{"level":"info","ts":1775728187.953693,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.003714272,"trace_id":"58be4f8d7ee97d9a30915ae0abd639de"}
+{"level":"info","ts":1775728208.3451273,"msg":"handling transfer request","trace_id":"a3fb90f9e723aead674587862c5e01fd","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728208.350109,"msg":"processing transfer","trace_id":"a3fb90f9e723aead674587862c5e01fd","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"78911"}
+{"level":"info","ts":1775728208.3512225,"msg":"idempotency cache hit","key":"bank:transfer:78911"}
+{"level":"info","ts":1775728208.352588,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.009817596,"trace_id":"a3fb90f9e723aead674587862c5e01fd"}
+{"level":"info","ts":1775728252.83433,"msg":"handling transfer request","trace_id":"881b5bfdba475cd3848c071561245497","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728252.8350277,"msg":"processing transfer","trace_id":"881b5bfdba475cd3848c071561245497","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"789112"}
+{"level":"info","ts":1775728252.835876,"msg":"processing transfer internal","trace_id":"881b5bfdba475cd3848c071561245497","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00"}
+{"level":"info","ts":1775728252.8363585,"msg":"getting account by account number","account_number":"888801000003301"}
+{"level":"info","ts":1775728252.838956,"msg":"getting account by account number","account_number":"888801000157508"}
+{"level":"info","ts":1775728252.8396308,"msg":"updating account","id":"9a97efea-26f7-45bd-9175-91c46633a6b3","account_holder":"Siti Rahayu","balance":500000}
+{"level":"info","ts":1775728252.8443468,"msg":"updating account","id":"66526cf5-b981-471e-958e-c692ebb7ff06","account_holder":"Budi Santoso","balance":5500000}
+{"level":"info","ts":1775728252.846965,"msg":"inserting transaction into database","trace_id":"881b5bfdba475cd3848c071561245497","from_account_id":"9a97efea-26f7-45bd-9175-91c46633a6b3","to_account_id":"66526cf5-b981-471e-958e-c692ebb7ff06","amount":100000}
+{"level":"info","ts":1775728252.8496268,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.016716395,"trace_id":"881b5bfdba475cd3848c071561245497"}
+{"level":"info","ts":1775728266.0566933,"msg":"handling transfer request","trace_id":"1a464cc82647c795f1cc39eb3b4c4eee","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728266.0579176,"msg":"processing transfer","trace_id":"1a464cc82647c795f1cc39eb3b4c4eee","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"789112"}
+{"level":"info","ts":1775728266.0587487,"msg":"idempotency cache hit","key":"bank:transfer:789112"}
+{"level":"info","ts":1775728266.059778,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.005326478,"trace_id":"1a464cc82647c795f1cc39eb3b4c4eee"}
+{"level":"info","ts":1775728372.0413911,"msg":"handling transfer request","trace_id":"e46d9b5c441a90b5336a94174a861fca","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1775728372.0424042,"msg":"processing transfer","trace_id":"e46d9b5c441a90b5336a94174a861fca","from_account_id":"888801000003301","to_account_id":"888801000157508","amount":"100000.00","idempotency_key":"789112"}
+{"level":"info","ts":1775728372.0433981,"msg":"idempotency cache hit","key":"bank:transfer:789112"}
+{"level":"info","ts":1775728372.0439377,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.004835916,"trace_id":"e46d9b5c441a90b5336a94174a861fca"}

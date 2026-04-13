@@ -193,3 +193,29 @@ func (r *accountRepository) Delete(ctx context.Context, id uuid.UUID) error {
 	}
 	return err
 }
+
+func (r *accountRepository) GetByAccountNumber(ctx context.Context, accountNumber string) (models.Account, error) {
+	start := time.Now()
+
+	ctx, span := middleware.Tracer.Start(ctx, "AccountRepository.GetByAccountNumber")
+	defer span.End()
+
+	logger.Logger.Info("getting account by account number", zap.String("account_number", accountNumber))
+
+	var acc models.Account
+	err := r.db.GetContext(ctx, &acc, "SELECT * FROM accounts WHERE account_number=$1", accountNumber)
+
+	metrics.DBQueryDuration.
+		WithLabelValues("get_account_by_number").
+		Observe(time.Since(start).Seconds())
+
+	if err != nil {
+		metrics.DBQueryErrors.
+			WithLabelValues("get_account_by_number").
+			Inc()
+		logger.Logger.Error("failed to get account by number", zap.Error(err))
+		return acc, errors.New("account not found")
+	}
+
+	return acc, nil
+}
