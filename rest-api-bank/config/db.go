@@ -50,18 +50,48 @@ func InitDB() *sqlx.DB {
 func RunMigrations(db *sqlx.DB) {
 	queries := []string{
 		`CREATE TABLE IF NOT EXISTS accounts (
-			id UUID PRIMARY KEY,
-			account_number TEXT UNIQUE,
-			account_holder TEXT,
-			balance BIGINT
+			id             UUID        PRIMARY KEY,
+			account_number VARCHAR(20) NOT NULL UNIQUE,
+			account_holder VARCHAR(255) NOT NULL,
+			balance        BIGINT      NOT NULL DEFAULT 0 CHECK (balance >= 0),
+			created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+			updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
 		);`,
 
 		`CREATE TABLE IF NOT EXISTS transactions (
-			id UUID PRIMARY KEY,
-			from_account_id UUID,
-			to_account_id UUID,
-			amount BIGINT
+			id              UUID        PRIMARY KEY,
+			from_account_id UUID        NOT NULL REFERENCES accounts(id),
+			to_account_id   UUID        NOT NULL REFERENCES accounts(id),
+			amount          BIGINT      NOT NULL CHECK (amount > 0),
+			remark          TEXT        NOT NULL DEFAULT '',
+			created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 		);`,
+
+		// Index untuk mempercepat lookup transaksi per akun
+		`CREATE INDEX IF NOT EXISTS idx_transactions_from_account ON transactions(from_account_id);`,
+		`CREATE INDEX IF NOT EXISTS idx_transactions_to_account ON transactions(to_account_id);`,
+		`CREATE INDEX IF NOT EXISTS idx_accounts_account_number ON accounts(account_number);`,
+
+		// Auto-update updated_at saat row diupdate
+		`CREATE OR REPLACE FUNCTION set_updated_at()
+		RETURNS TRIGGER AS $$
+		BEGIN
+			NEW.updated_at = NOW();
+			RETURN NEW;
+		END;
+		$$ LANGUAGE plpgsql;`,
+
+		`DO $$
+		BEGIN
+			IF NOT EXISTS (
+				SELECT 1 FROM pg_trigger WHERE tgname = 'trg_accounts_updated_at'
+			) THEN
+				CREATE TRIGGER trg_accounts_updated_at
+				BEFORE UPDATE ON accounts
+				FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+			END IF;
+		END;
+		$$;`,
 	}
 
 	for _, q := range queries {

@@ -17,10 +17,12 @@ func RateLimit(next http.Handler, domain string, feature string) http.HandlerFun
 			ip = r.RemoteAddr
 		}
 
-		key := "bank:" + domain + ":rate_limit:" + feature+ "ip:" + ip
+		key := "bank:" + domain + ":rate_limit:" + feature+ ":ip:" + ip
+
+		ctx := r.Context()
 
 		// INCREASE
-		count, err := config.RDB.Incr(config.Ctx, key).Result()
+		count, err := config.RDB.Incr(ctx, key).Result()
 		if err != nil {
 			// Redis error bukan berarti error aplikasi, jadi log saja dan lanjutkan request
 			log.Println("Redis error:", err)
@@ -30,7 +32,7 @@ func RateLimit(next http.Handler, domain string, feature string) http.HandlerFun
 
 		// Set expire (TTL) saat pertama kali key dibuat
 		if count == 1 {
-			err := config.RDB.Expire(config.Ctx, key, 5*time.Second).Err()
+			err := config.RDB.Expire(ctx, key, 5*time.Second).Err()
 			if err != nil {
 				log.Println("Redis expire error:", err)
 			}
