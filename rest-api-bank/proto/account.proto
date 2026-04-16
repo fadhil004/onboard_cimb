@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "proto/accountpb";
+
+service AccountService {
+  // GetByAccountNumber returns account details by account number
+  rpc GetByAccountNumber(GetByAccountNumberRequest) returns (AccountResponse);
+  
+  // UpdateBalance updates the balance of an account (deposit/withdraw)
+  rpc UpdateBalance(UpdateBalanceRequest) returns (UpdateBalanceResponse);
+  
+  // GetByID returns account details by UUID
+  rpc GetByID(GetByIDRequest) returns (AccountResponse);
+}
+
+message GetByAccountNumberRequest {
+  string account_number = 1;
+}
+
+message GetByIDRequest {
+  string id = 1;
+}
+
+message AccountResponse {
+  string id = 1;
+  string account_number = 2;
+  string account_holder = 3;
+  int64 balance = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+message UpdateBalanceRequest {
+  string account_number = 1;
+  int64 amount = 2; // positive = add, negative = subtract
+}
+
+message UpdateBalanceResponse {
+  bool success = 1;
+  string account_number = 2;
+  int64 new_balance = 3;
+  string message = 4;
+}

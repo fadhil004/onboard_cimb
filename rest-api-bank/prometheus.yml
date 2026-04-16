@@ -1,7 +1,11 @@
 global:
-  scrape_interval: 600000s
+  scrape_interval: 60000000000000000000000000s
 
 scrape_configs:
-  - job_name: "rest-api-bank"
+  - job_name: "account-service"
     static_configs:
-      - targets: ["app:8080"]
+      - targets: ["account-service:8080"]
+
+  - job_name: "transaction-service"
+    static_configs:
+      - targets: ["transaction-service:8080"]

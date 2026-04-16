@@ -1,33 +1,98 @@
 services:
-  app:
-    build: .
-    container_name: go-bank-app
+  # Microservices
+
+  account-service:
+    build: ./account-service
+    container_name: account-service
     ports:
-      - "8081:8080"
+      - "8081:8080" # HTTP
+      - "50051:50051" # gRPC
     volumes:
-      - ./logs:/app/logs
+      - ./account-service/logs:/app/logs
     depends_on:
-      - db
+      - account-db
       - redis
-      - loki
-      - tempo
       - kafka
+      - tempo
+      - loki
     env_file:
-      - .env
+      - ./account-service/.env
     restart: always
 
-  db:
+  transaction-service:
+    build: ./transaction-service
+    container_name: transaction-service
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./transaction-service/logs:/app/logs
+    depends_on:
+      - transaction-db
+      - redis
+      - kafka
+      - account-service
+      - tempo
+      - loki
+    env_file:
+      - ./transaction-service/.env
+    restart: always
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./notification-service/logs:/app/logs
+    depends_on:
+      - notification-db
+      - kafka
+    env_file:
+      - ./notification-service/.env
+    restart: always
+
+  # Databases (one per service)
+
+  account-db:
     image: postgres:15
-    container_name: postgres-db
+    container_name: account-db
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: account_db
     ports:
       - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - account_db_data:/var/lib/postgresql/data
     restart: always
+
+  transaction-db:
+    image: postgres:15
+    container_name: transaction-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: transaction_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - transaction_db_data:/var/lib/postgresql/data
+    restart: always
+
+  notification-db:
+    image: postgres:15
+    container_name: notification-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: notification_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - notification_db_data:/var/lib/postgresql/data
+    restart: always
+
+  # Shared Infrastructure
 
   redis:
     image: redis:7
@@ -40,10 +105,9 @@ services:
     image: confluentinc/cp-kafka:7.6.1
     container_name: kafka
     ports:
-      - "9092:9092" # internal antar container
-      - "9093:9093" # external dari host / tools
+      - "9092:9092"
+      - "9093:9093"
     environment:
-      # KRaft — tidak pakai Zookeeper
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
@@ -52,20 +116,15 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
-
-      # Topic defaults
       KAFKA_NUM_PARTITIONS: 3
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-
-      # Retention
       KAFKA_LOG_RETENTION_HOURS: 168
       KAFKA_LOG_SEGMENT_BYTES: 1073741824
       KAFKA_COMPRESSION_TYPE: snappy
       KAFKA_LOG4J_ROOT_LOGLEVEL: WARN
-
       CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qg"
     volumes:
       - kafka_data:/var/lib/kafka/data
@@ -84,6 +143,8 @@ services:
       DYNAMIC_CONFIG_ENABLED: "true"
       AUTH_TYPE: "DISABLED"
     restart: always
+
+  # Observability
 
   grafana:
     image: grafana/grafana:latest
@@ -106,8 +167,8 @@ services:
     container_name: tempo
     ports:
       - "3200:3200"
-      - "4318:4318" # OTLP HTTP
-      - "4317:4317" # OTLP gRPC
+      - "4318:4318"
+      - "4317:4317"
     command: -config.file=/etc/tempo.yml
     volumes:
       - ./tempo.yml:/etc/tempo.yml
@@ -117,7 +178,9 @@ services:
     container_name: fluent-bit
     volumes:
       - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
-      - ./logs:/logs
+      - ./account-service/logs:/logs/account
+      - ./transaction-service/logs:/logs/transaction
+      - ./notification-service/logs:/logs/notification
     restart: always
 
   prometheus:
@@ -129,5 +192,7 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
 volumes:
-  postgres_data:
+  account_db_data:
+  transaction_db_data:
+  notification_db_data:
   kafka_data:
