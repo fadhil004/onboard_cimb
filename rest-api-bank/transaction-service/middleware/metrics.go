@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"microservices-bank/transaction-service/helper"
+	"microservices-bank/transaction-service/pkg/metrics"
 	"net/http"
 	"time"
-	"transaction-service/helper"
-	"transaction-service/pkg/metrics"
 )
 
 var NormalizePath = helper.NormalizePath

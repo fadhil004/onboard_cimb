@@ -3,9 +3,9 @@ package middleware
 import (
 	"context"
 	"encoding/json"
+	"microservices-bank/transaction-service/helper"
 	"net/http"
 	"time"
-	"transaction-service/helper"
 )
 
 type SnapContext struct{ ServiceCode string }

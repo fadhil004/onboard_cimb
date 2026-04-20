@@ -1,254 +1,66 @@
-{"level":"info","ts":1776245726.9199712,"msg":"http request","method":"GET","path":"/metrics","duration":0.005744042,"trace_id":"9b28972e8a12f2e19ca9febaad3c69b5"}
-{"level":"info","ts":1776245741.9195938,"msg":"http request","method":"GET","path":"/metrics","duration":0.006745567,"trace_id":"e6df996f46b80f9eac347ed031d34961"}
-{"level":"info","ts":1776245756.916845,"msg":"http request","method":"GET","path":"/metrics","duration":0.004325737,"trace_id":"94ac3a09a4e3d2c27fb14395abb60527"}
-{"level":"info","ts":1776245771.9072225,"msg":"http request","method":"GET","path":"/metrics","duration":0.001058,"trace_id":"306ce7c0eafb2875b585d9a7966fb663"}
-{"level":"info","ts":1776245786.9090269,"msg":"http request","method":"GET","path":"/metrics","duration":0.00266427,"trace_id":"e30c5026c3640b93140be2e10877ff0e"}
-{"level":"info","ts":1776245801.9012284,"msg":"http request","method":"GET","path":"/metrics","duration":0.000999717,"trace_id":"879f347e5aed92ade360ed29bf3cfdd4"}
-{"level":"info","ts":1776245816.9015958,"msg":"http request","method":"GET","path":"/metrics","duration":0.001401731,"trace_id":"d582b56b406d55c6aaa61c10afc12037"}
-{"level":"info","ts":1776245831.8995764,"msg":"http request","method":"GET","path":"/metrics","duration":0.001069477,"trace_id":"43d9b3d3db1c142339a77e24f9ffa228"}
-{"level":"info","ts":1776246650.9869974,"msg":"http request","method":"GET","path":"/metrics","duration":0.004847481,"trace_id":"a7f5ed71c5319c9c0a499d9d2acf269a"}
-{"level":"info","ts":1776246665.9828722,"msg":"http request","method":"GET","path":"/metrics","duration":0.003075041,"trace_id":"c0cee567d054414a4c3e96173f4568f3"}
-{"level":"info","ts":1776246680.9845576,"msg":"http request","method":"GET","path":"/metrics","duration":0.003217449,"trace_id":"0b885510731c0b6982c828c17be8e8d9"}
-{"level":"info","ts":1776246695.9821312,"msg":"http request","method":"GET","path":"/metrics","duration":0.004761569,"trace_id":"9a7bbc7b8b89658fcbc2d7fd5c1712b8"}
-{"level":"info","ts":1776246710.9800065,"msg":"http request","method":"GET","path":"/metrics","duration":0.001437497,"trace_id":"083004d3ba94de3f9cfaed5a3ee42a3d"}
-{"level":"info","ts":1776246725.9816463,"msg":"http request","method":"GET","path":"/metrics","duration":0.006411998,"trace_id":"f97520b8fc7e4b4610dc16c1f49b09c0"}
-{"level":"info","ts":1776246740.9758012,"msg":"http request","method":"GET","path":"/metrics","duration":0.001745732,"trace_id":"48be8fc9e2c7bcc4096b0bc8c629a9bb"}
-{"level":"info","ts":1776246745.3148465,"msg":"handling create account request","trace_id":"74d619451b3b74ceb3d6debb279b2d11","method":"POST","path":"/registration-account-creation"}
-{"level":"info","ts":1776246745.315829,"msg":"processing request for creating account","trace_id":"74d619451b3b74ceb3d6debb279b2d11","idem_key":"EXT-CREATE-47fe2757-4ae6-4dc2-aeb9-4794a65c2743","name":"M Fadhil2","partner_reference_no":"REF-918"}
-{"level":"info","ts":1776246745.3166497,"msg":"inserting account into database","account_number":"0888813602206302","account_holder":"M Fadhil2","balance":0}
-{"level":"info","ts":1776246745.3235247,"msg":"registration-account-creation success","trace_id":"74d619451b3b74ceb3d6debb279b2d11","reference_no":"d763a3a3-dc58-4139-976f-a3e3613e304b","account_number":"0888813602206302","name":"M Fadhil2"}
-{"level":"info","ts":1776246745.3239014,"msg":"registration-account-creation success","trace_id":"74d619451b3b74ceb3d6debb279b2d11","account_id":"f98de079-f649-4e46-bbd4-93b7290ba343"}
-{"level":"info","ts":1776246745.3241434,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.010351739,"trace_id":"74d619451b3b74ceb3d6debb279b2d11"}
-{"level":"info","ts":1776246745.3909957,"msg":"kafka published","topic":"account.creation","key":"0888813602206302","trace_id":"74d619451b3b74ceb3d6debb279b2d11"}
-{"level":"info","ts":1776246755.978107,"msg":"http request","method":"GET","path":"/metrics","duration":0.003724807,"trace_id":"7724607a2ef3d0240b4e9907c928a7f0"}
-{"level":"info","ts":1776246770.9740913,"msg":"http request","method":"GET","path":"/metrics","duration":0.001547312,"trace_id":"a9d41e1cb4594e5294044a69f96ea80c"}
-{"level":"info","ts":1776246785.974132,"msg":"http request","method":"GET","path":"/metrics","duration":0.003018332,"trace_id":"104804df87d54cc503b8f08c32a09c50"}
-{"level":"info","ts":1776246800.9732056,"msg":"http request","method":"GET","path":"/metrics","duration":0.001799014,"trace_id":"be160a9a1f2672026fbb42c450277fa0"}
-{"level":"info","ts":1776246815.9710693,"msg":"http request","method":"GET","path":"/metrics","duration":0.001342202,"trace_id":"7a676fc769d7abb6c6ab33bc488a5a41"}
-{"level":"info","ts":1776246830.9705994,"msg":"http request","method":"GET","path":"/metrics","duration":0.002109529,"trace_id":"72042e28516ca8bed956d2c7daf937cf"}
-{"level":"info","ts":1776246845.9702847,"msg":"http request","method":"GET","path":"/metrics","duration":0.002225372,"trace_id":"cb497a15a8306b54bb65ca417189ef2c"}
-{"level":"info","ts":1776246860.9698207,"msg":"http request","method":"GET","path":"/metrics","duration":0.00238168,"trace_id":"ffa8bfdf56d0223501e0d6592b2c6ee0"}
-{"level":"info","ts":1776246875.9647624,"msg":"http request","method":"GET","path":"/metrics","duration":0.001057291,"trace_id":"1eab8b5e986876743db6cd09f442bb89"}
-{"level":"info","ts":1776246890.9712505,"msg":"http request","method":"GET","path":"/metrics","duration":0.005492655,"trace_id":"7017e481057f0d811cc512949aaf14c6"}
-{"level":"info","ts":1776246905.964753,"msg":"http request","method":"GET","path":"/metrics","duration":0.001183889,"trace_id":"c1f6dc60f0894fe126a662c6f571f5d0"}
-{"level":"info","ts":1776246920.9655025,"msg":"http request","method":"GET","path":"/metrics","duration":0.003672561,"trace_id":"4161f62953bf24530a2642446b108409"}
-{"level":"info","ts":1776246935.9611657,"msg":"http request","method":"GET","path":"/metrics","duration":0.001035878,"trace_id":"39241d1edfbc0c9e4ff6c7d6d37bdbfc"}
-{"level":"info","ts":1776246950.961827,"msg":"http request","method":"GET","path":"/metrics","duration":0.002141154,"trace_id":"834dfe9c84fdf8dab7489934705cc259"}
-{"level":"info","ts":1776246965.958467,"msg":"http request","method":"GET","path":"/metrics","duration":0.000990374,"trace_id":"90881d2f320419550f0b31a40618e813"}
-{"level":"info","ts":1776246980.9595656,"msg":"http request","method":"GET","path":"/metrics","duration":0.000988868,"trace_id":"d9fb8db1fddd25511afa88b956073caf"}
-{"level":"info","ts":1776246995.9573126,"msg":"http request","method":"GET","path":"/metrics","duration":0.000776106,"trace_id":"d1aec3acbd04124c5843ef9e8df67ac2"}
-{"level":"info","ts":1776247010.9558053,"msg":"http request","method":"GET","path":"/metrics","duration":0.001199187,"trace_id":"379639725908f0fd42cf2c8148ac1a90"}
-{"level":"info","ts":1776247025.9561186,"msg":"http request","method":"GET","path":"/metrics","duration":0.001826932,"trace_id":"441196088c17d97536f8353d0255e420"}
-{"level":"info","ts":1776247040.9555807,"msg":"http request","method":"GET","path":"/metrics","duration":0.001167851,"trace_id":"87227e2e161ec9a39cac3251fd58a0de"}
-{"level":"info","ts":1776247055.9543447,"msg":"http request","method":"GET","path":"/metrics","duration":0.001793727,"trace_id":"9b85ab2a3058f891800b2a8d572ff6e8"}
-{"level":"info","ts":1776247070.9534647,"msg":"http request","method":"GET","path":"/metrics","duration":0.001800115,"trace_id":"193c1654bb7853f9eb82399f07a0ee86"}
-{"level":"info","ts":1776247085.950979,"msg":"http request","method":"GET","path":"/metrics","duration":0.001070876,"trace_id":"dba5ed80592a73fbb14ebf30e47135f4"}
-{"level":"info","ts":1776247100.9500828,"msg":"http request","method":"GET","path":"/metrics","duration":0.001060571,"trace_id":"2ecfa54ad305315ce02aa0bac86fdb85"}
-{"level":"info","ts":1776247115.9488604,"msg":"http request","method":"GET","path":"/metrics","duration":0.000890765,"trace_id":"013ae72ed7a639fe6cb945bfb16f8b7d"}
-{"level":"info","ts":1776247130.949097,"msg":"http request","method":"GET","path":"/metrics","duration":0.001039456,"trace_id":"392370e0c9998e6cd662d9bb66fae897"}
-{"level":"info","ts":1776247145.9475744,"msg":"http request","method":"GET","path":"/metrics","duration":0.001174981,"trace_id":"e2f34bd880023ccc267fdbee7a5fdaba"}
-{"level":"info","ts":1776247160.9484465,"msg":"http request","method":"GET","path":"/metrics","duration":0.002271154,"trace_id":"da1087067fb984d2f439071202a0a3e8"}
-{"level":"info","ts":1776247175.9457495,"msg":"http request","method":"GET","path":"/metrics","duration":0.001193381,"trace_id":"9ce051fd84445dca84e6a86c62c6819a"}
-{"level":"info","ts":1776247190.9490082,"msg":"http request","method":"GET","path":"/metrics","duration":0.003849948,"trace_id":"d437e9a90940caafe7552c4469b2d480"}
-{"level":"info","ts":1776247205.9441907,"msg":"http request","method":"GET","path":"/metrics","duration":0.001265587,"trace_id":"9f35361d15214f51ae4dfe55201bd875"}
-{"level":"info","ts":1776247220.9438221,"msg":"http request","method":"GET","path":"/metrics","duration":0.001867921,"trace_id":"497b2f1706285c02eab09560ed8030a0"}
-{"level":"info","ts":1776247235.940518,"msg":"http request","method":"GET","path":"/metrics","duration":0.000948268,"trace_id":"0a95c5cf6b9ff7b02c541d6e761289fa"}
-{"level":"info","ts":1776247250.9400127,"msg":"http request","method":"GET","path":"/metrics","duration":0.001102068,"trace_id":"277f7cd7bceed36db27d5ae4106ffb42"}
-{"level":"info","ts":1776247265.9379568,"msg":"http request","method":"GET","path":"/metrics","duration":0.000876659,"trace_id":"2edee8e6ef5ed069f2ffe0e9450304ad"}
-{"level":"info","ts":1776247280.9394872,"msg":"http request","method":"GET","path":"/metrics","duration":0.002437509,"trace_id":"6c40974a85cd73f097137ff72cd8305b"}
-{"level":"info","ts":1776247295.936798,"msg":"http request","method":"GET","path":"/metrics","duration":0.000834756,"trace_id":"4b02f374bc369cbeb2be4a9956596680"}
-{"level":"info","ts":1776247310.936107,"msg":"http request","method":"GET","path":"/metrics","duration":0.00076835,"trace_id":"845f69be716ed9181aba7f46a40c2c67"}
-{"level":"info","ts":1776247325.9358048,"msg":"http request","method":"GET","path":"/metrics","duration":0.001432896,"trace_id":"dd35c5d2077cf5db52b3f1d455958288"}
-{"level":"info","ts":1776247340.9346068,"msg":"http request","method":"GET","path":"/metrics","duration":0.001426393,"trace_id":"0a66a6380b94419eb588d7a8a5a43d4a"}
-{"level":"info","ts":1776247355.934189,"msg":"http request","method":"GET","path":"/metrics","duration":0.00186353,"trace_id":"ee4a2d030acb8ef381cc3aa0d5693b6f"}
-{"level":"info","ts":1776247370.9319801,"msg":"http request","method":"GET","path":"/metrics","duration":0.000835052,"trace_id":"a41949dc5b987ba78cff496b02c213d1"}
-{"level":"info","ts":1776247385.9323738,"msg":"http request","method":"GET","path":"/metrics","duration":0.001198879,"trace_id":"b38de636fa5b5f8ceae9b3b5d049a942"}
-{"level":"info","ts":1776247400.9317117,"msg":"http request","method":"GET","path":"/metrics","duration":0.000731947,"trace_id":"0cbbc07b839069c85070ff6c46e11d29"}
-{"level":"info","ts":1776247415.9291043,"msg":"http request","method":"GET","path":"/metrics","duration":0.001771216,"trace_id":"195a2208185e8a3657632870be8f3108"}
-{"level":"info","ts":1776247430.929875,"msg":"http request","method":"GET","path":"/metrics","duration":0.001429094,"trace_id":"3576a4a7d56150610cbad3fa7e0456e6"}
-{"level":"info","ts":1776247445.9302442,"msg":"http request","method":"GET","path":"/metrics","duration":0.003143307,"trace_id":"c05a727e8b34655e54f87d3d19b5dc8b"}
-{"level":"info","ts":1776247460.928397,"msg":"http request","method":"GET","path":"/metrics","duration":0.000969662,"trace_id":"5762fa9181e7bbc24ec5c6f5d1304cc9"}
-{"level":"info","ts":1776247475.9241939,"msg":"http request","method":"GET","path":"/metrics","duration":0.000953665,"trace_id":"5f01d8bd07ff1ada78706cfd85e74a2d"}
-{"level":"info","ts":1776247490.9265945,"msg":"http request","method":"GET","path":"/metrics","duration":0.000933557,"trace_id":"7fb0471cd71a92745025306600336106"}
-{"level":"info","ts":1776247505.925706,"msg":"http request","method":"GET","path":"/metrics","duration":0.001908624,"trace_id":"6f472b54a643e8a2aaf0058042ce3214"}
-{"level":"info","ts":1776247520.923637,"msg":"http request","method":"GET","path":"/metrics","duration":0.000863851,"trace_id":"6d70de2aca394c00ed2ebe7f936427a0"}
-{"level":"info","ts":1776247535.922169,"msg":"http request","method":"GET","path":"/metrics","duration":0.001117872,"trace_id":"f5441d12d6da922fa73a9806f164f8f6"}
-{"level":"info","ts":1776247550.9231532,"msg":"http request","method":"GET","path":"/metrics","duration":0.003172805,"trace_id":"f6675f7901a86ad195fee6227d90bf96"}
-{"level":"info","ts":1776247565.9208357,"msg":"http request","method":"GET","path":"/metrics","duration":0.001595804,"trace_id":"404ce391504047af6ddc97d45e531631"}
-{"level":"info","ts":1776247580.9210076,"msg":"http request","method":"GET","path":"/metrics","duration":0.001471593,"trace_id":"d4e42f9c1ac1254d11cb1f1489922a4c"}
-{"level":"info","ts":1776247595.91962,"msg":"http request","method":"GET","path":"/metrics","duration":0.001750413,"trace_id":"d39dc533e74b5c7e208fcca0db1b307b"}
-{"level":"info","ts":1776247610.9187937,"msg":"http request","method":"GET","path":"/metrics","duration":0.0015409,"trace_id":"9b88f968b8f10c6c177470ce19902349"}
-{"level":"info","ts":1776247625.9165392,"msg":"http request","method":"GET","path":"/metrics","duration":0.001556601,"trace_id":"fad10595f2afb9961e8ba5403af850bc"}
-{"level":"info","ts":1776247640.9166381,"msg":"http request","method":"GET","path":"/metrics","duration":0.001996304,"trace_id":"5acf214db5d2e89b08948b5110ad79e4"}
-{"level":"info","ts":1776247655.9134343,"msg":"http request","method":"GET","path":"/metrics","duration":0.001028866,"trace_id":"f948da19948d01f43e98e95c4546c070"}
-{"level":"info","ts":1776247670.9146554,"msg":"http request","method":"GET","path":"/metrics","duration":0.001101271,"trace_id":"186758770663122b0bb6874827069a20"}
-{"level":"info","ts":1776247685.9110093,"msg":"http request","method":"GET","path":"/metrics","duration":0.000896759,"trace_id":"787048f21b493e197a2720140a4eb1ef"}
-{"level":"info","ts":1776247700.9128022,"msg":"http request","method":"GET","path":"/metrics","duration":0.00093616,"trace_id":"971ac1e1befd2a6741e3f436a730a4b4"}
-{"level":"info","ts":1776247715.9093525,"msg":"http request","method":"GET","path":"/metrics","duration":0.001001665,"trace_id":"859fb85705fdba74fca4564c1089b0a4"}
-{"level":"info","ts":1776247730.9106736,"msg":"http request","method":"GET","path":"/metrics","duration":0.001645706,"trace_id":"9a16cf7d0fec024a3613db522c317177"}
-{"level":"info","ts":1776247745.90832,"msg":"http request","method":"GET","path":"/metrics","duration":0.001022566,"trace_id":"fe017e00674d0fc0d9a2993a0415aaa6"}
-{"level":"info","ts":1776247760.9083629,"msg":"http request","method":"GET","path":"/metrics","duration":0.001839698,"trace_id":"b98b6bf82401e1e5ad128f0bf2fd42d6"}
-{"level":"info","ts":1776247775.9072747,"msg":"http request","method":"GET","path":"/metrics","duration":0.00093216,"trace_id":"17422025014c18c48f33e0feff4bb889"}
-{"level":"info","ts":1776247790.9078422,"msg":"http request","method":"GET","path":"/metrics","duration":0.003282506,"trace_id":"6399b5539517abbb281721f5b4c91b60"}
-{"level":"info","ts":1776247805.9057722,"msg":"http request","method":"GET","path":"/metrics","duration":0.001423591,"trace_id":"df571ab7d1848b4d314b0b275facfd1e"}
-{"level":"info","ts":1776247820.9066966,"msg":"http request","method":"GET","path":"/metrics","duration":0.003651114,"trace_id":"35b3b376ad24eac79864c8f188d015ad"}
-{"level":"info","ts":1776247835.9029355,"msg":"http request","method":"GET","path":"/metrics","duration":0.001664406,"trace_id":"5b0e17fabe772477a6db77734bef7a5a"}
-{"level":"info","ts":1776247850.9030452,"msg":"http request","method":"GET","path":"/metrics","duration":0.001433888,"trace_id":"a68283abc4d12c93069e2089297fa65a"}
-{"level":"info","ts":1776247865.9015176,"msg":"http request","method":"GET","path":"/metrics","duration":0.001342585,"trace_id":"ecf301e8a2d760cc193a570a42ac476f"}
-{"level":"info","ts":1776247880.9003284,"msg":"http request","method":"GET","path":"/metrics","duration":0.000915448,"trace_id":"7c848178edc0766894239dea89708f48"}
-{"level":"info","ts":1776247895.9004433,"msg":"http request","method":"GET","path":"/metrics","duration":0.002766376,"trace_id":"e5a06fb031a84ab6032a3fc37140a7c5"}
-{"level":"info","ts":1776247910.8990057,"msg":"http request","method":"GET","path":"/metrics","duration":0.000955461,"trace_id":"be6234cd75b3249905d6261f3fa5c1ab"}
-{"level":"info","ts":1776247925.8969927,"msg":"http request","method":"GET","path":"/metrics","duration":0.001543998,"trace_id":"b14133bd372ac41c5353c0d5f78ddff4"}
-{"level":"info","ts":1776247940.899377,"msg":"http request","method":"GET","path":"/metrics","duration":0.003129898,"trace_id":"8d1664f6048d6d66ad71f832f8faf27a"}
-{"level":"info","ts":1776247955.8947365,"msg":"http request","method":"GET","path":"/metrics","duration":0.001363687,"trace_id":"5bf9559ef43e2b2714139b38483f2c1d"}
-{"level":"info","ts":1776247970.8963933,"msg":"http request","method":"GET","path":"/metrics","duration":0.001383487,"trace_id":"8a6a0129b167b0948fd3273d54369e07"}
-{"level":"info","ts":1776247974.5705228,"msg":"handling create account request","trace_id":"112f51b5344f8aae080c77eb3a3a91cc","method":"POST","path":"/registration-account-creation"}
-{"level":"info","ts":1776247974.5714257,"msg":"processing request for creating account","trace_id":"112f51b5344f8aae080c77eb3a3a91cc","idem_key":"EXT-CREATE-21d5d9ea-b787-408d-b0b8-b0d3c9992205","name":"M Fadhil3","partner_reference_no":"REF-664"}
-{"level":"info","ts":1776247974.5723608,"msg":"inserting account into database","account_number":"0888548567788792","account_holder":"M Fadhil3","balance":0}
-{"level":"info","ts":1776247974.5797513,"msg":"registration-account-creation success","trace_id":"112f51b5344f8aae080c77eb3a3a91cc","reference_no":"8963c0e5-fd90-4fb6-924f-f57699219074","account_number":"0888548567788792","name":"M Fadhil3"}
-{"level":"info","ts":1776247974.5801506,"msg":"registration-account-creation success","trace_id":"112f51b5344f8aae080c77eb3a3a91cc","account_id":"43e8f03a-c5b7-4cdb-b115-331bb60a04ff"}
-{"level":"info","ts":1776247974.580401,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.011698936,"trace_id":"112f51b5344f8aae080c77eb3a3a91cc"}
-{"level":"info","ts":1776247974.5986216,"msg":"kafka published","topic":"account.creation","key":"0888548567788792","trace_id":"112f51b5344f8aae080c77eb3a3a91cc"}
-{"level":"info","ts":1776247985.8931932,"msg":"http request","method":"GET","path":"/metrics","duration":0.000988863,"trace_id":"88195777d8a697b8b8eca72b69861db2"}
-{"level":"info","ts":1776248000.8950167,"msg":"http request","method":"GET","path":"/metrics","duration":0.001723399,"trace_id":"44a2c66de84a0a383fc19ac00f293e30"}
-{"level":"info","ts":1776248015.8923488,"msg":"http request","method":"GET","path":"/metrics","duration":0.001436399,"trace_id":"623da89325b34bdd767cc1e63a89cd7c"}
-{"level":"info","ts":1776248030.8909898,"msg":"http request","method":"GET","path":"/metrics","duration":0.001838718,"trace_id":"a3276e577fa4c72df39108eeef2f5222"}
-{"level":"info","ts":1776248045.8892589,"msg":"http request","method":"GET","path":"/metrics","duration":0.001220605,"trace_id":"a2b2633aa9c76f8c9c439d2ffe130e42"}
-{"level":"info","ts":1776248060.8921115,"msg":"http request","method":"GET","path":"/metrics","duration":0.002237013,"trace_id":"b9da12ba27b91b477c7cb132c5c3ae8e"}
-{"level":"info","ts":1776248075.887464,"msg":"http request","method":"GET","path":"/metrics","duration":0.00110737,"trace_id":"fb6cb61c3725995012ab135704913634"}
-{"level":"info","ts":1776248090.8881052,"msg":"http request","method":"GET","path":"/metrics","duration":0.001140372,"trace_id":"cb746694c31735d45a0ffdbe9813ec33"}
-{"level":"info","ts":1776248105.8861942,"msg":"http request","method":"GET","path":"/metrics","duration":0.001613103,"trace_id":"a6802539258f1ee0427f971eccc92dba"}
-{"level":"info","ts":1776248120.886696,"msg":"http request","method":"GET","path":"/metrics","duration":0.001800213,"trace_id":"eba1d4ac99ec321da322255b44976e17"}
-{"level":"info","ts":1776248135.8835304,"msg":"http request","method":"GET","path":"/metrics","duration":0.000837855,"trace_id":"69c52a252931651aa011ee5c4ae72f5f"}
-{"level":"info","ts":1776248150.8830936,"msg":"http request","method":"GET","path":"/metrics","duration":0.001168675,"trace_id":"5b2c71c43ba9a02ad63e47b14d52b4e6"}
-{"level":"info","ts":1776248165.8832135,"msg":"http request","method":"GET","path":"/metrics","duration":0.001907128,"trace_id":"29a3eee0c43d19ee804298fdfc0e8db3"}
-{"level":"info","ts":1776248180.883205,"msg":"http request","method":"GET","path":"/metrics","duration":0.001639488,"trace_id":"92f249ac6201aef35357c1a5331c7329"}
-{"level":"info","ts":1776248195.881186,"msg":"http request","method":"GET","path":"/metrics","duration":0.002014028,"trace_id":"3b9fda6b4bda6f7136061b1b73e9556d"}
-{"level":"info","ts":1776248210.880805,"msg":"http request","method":"GET","path":"/metrics","duration":0.001360885,"trace_id":"8d5c5499f58f1d66268edbdd711989a0"}
-{"level":"info","ts":1776248225.877125,"msg":"http request","method":"GET","path":"/metrics","duration":0.000931459,"trace_id":"30020c06d3d5ad97744e1af146390857"}
-{"level":"info","ts":1776248240.8852277,"msg":"http request","method":"GET","path":"/metrics","duration":0.001801413,"trace_id":"1e3cfe09204030fa8ef5bd6dcb354444"}
-{"level":"info","ts":1776248255.877092,"msg":"http request","method":"GET","path":"/metrics","duration":0.00141899,"trace_id":"10aa0033826d0c6a79fef3760190d062"}
-{"level":"info","ts":1776248270.8763561,"msg":"http request","method":"GET","path":"/metrics","duration":0.000987263,"trace_id":"3705efcccc9949a7b437a317f9672204"}
-{"level":"info","ts":1776248285.8745959,"msg":"http request","method":"GET","path":"/metrics","duration":0.001339904,"trace_id":"85a1a7cc17b27433d38355cf48756393"}
-{"level":"info","ts":1776248300.8747997,"msg":"http request","method":"GET","path":"/metrics","duration":0.001466194,"trace_id":"f67bf584552509d2bb5ded4cba4392fd"}
-{"level":"info","ts":1776248315.869246,"msg":"http request","method":"GET","path":"/metrics","duration":0.001337286,"trace_id":"fbb16bb3572b706ceafde8dd8424d1f3"}
-{"level":"info","ts":1776248330.8712115,"msg":"http request","method":"GET","path":"/metrics","duration":0.001811316,"trace_id":"c03dfff0790aa0007eab81389334afc2"}
-{"level":"info","ts":1776248345.8703253,"msg":"http request","method":"GET","path":"/metrics","duration":0.000879357,"trace_id":"926e9ce3959a2a4c97cc85b679d22d01"}
-{"level":"info","ts":1776248360.8701038,"msg":"http request","method":"GET","path":"/metrics","duration":0.001704208,"trace_id":"fc67f6758ad1fc922e94b1f3b3fbe2b6"}
-{"level":"info","ts":1776248375.869708,"msg":"http request","method":"GET","path":"/metrics","duration":0.00293619,"trace_id":"0932d7b77c9e4d7c472f10cc0776034b"}
-{"level":"info","ts":1776248390.86931,"msg":"http request","method":"GET","path":"/metrics","duration":0.001680909,"trace_id":"412d4a78ad69841bc55d72c0d63e9852"}
-{"level":"info","ts":1776248405.8672397,"msg":"http request","method":"GET","path":"/metrics","duration":0.000985969,"trace_id":"c78722b5608f10076ebdb4913fa6d9b8"}
-{"level":"info","ts":1776248420.8667474,"msg":"http request","method":"GET","path":"/metrics","duration":0.001142971,"trace_id":"152f091f59b55b8dedb8824b25dbb0b9"}
-{"level":"info","ts":1776248435.8656814,"msg":"http request","method":"GET","path":"/metrics","duration":0.003050195,"trace_id":"6feacc01170549ebca91921f820af65b"}
-{"level":"info","ts":1776248450.865426,"msg":"http request","method":"GET","path":"/metrics","duration":0.002207041,"trace_id":"c3b951ef050f9ca60d06c0c0c30169cc"}
-{"level":"info","ts":1776248465.8630245,"msg":"http request","method":"GET","path":"/metrics","duration":0.001944724,"trace_id":"0862d68d11a2c13d2adcaf05ef09096d"}
-{"level":"info","ts":1776248480.864576,"msg":"http request","method":"GET","path":"/metrics","duration":0.002871379,"trace_id":"5874e9bb2e8b85a1ef38363cc8f36906"}
-{"level":"info","ts":1776248495.8600311,"msg":"http request","method":"GET","path":"/metrics","duration":0.001098871,"trace_id":"5a66b8c28392e8c0fe2b77874e6036eb"}
-{"level":"info","ts":1776248510.8595977,"msg":"http request","method":"GET","path":"/metrics","duration":0.001044867,"trace_id":"2c69e111fa771dbfd7b254adb96476bf"}
-{"level":"info","ts":1776248525.8592486,"msg":"http request","method":"GET","path":"/metrics","duration":0.001746413,"trace_id":"ecab862f8db03c0694124c02519441ee"}
-{"level":"info","ts":1776248540.858272,"msg":"http request","method":"GET","path":"/metrics","duration":0.001424783,"trace_id":"020d08674265ec86670681e527a2c4e6"}
-{"level":"info","ts":1776248555.8584425,"msg":"http request","method":"GET","path":"/metrics","duration":0.001526298,"trace_id":"87734a868cb68012b75596d63c7a2433"}
-{"level":"info","ts":1776248570.8564608,"msg":"http request","method":"GET","path":"/metrics","duration":0.001533992,"trace_id":"18dcadc190b4e5497822c97e04de65cc"}
-{"level":"info","ts":1776248585.8563943,"msg":"http request","method":"GET","path":"/metrics","duration":0.002181238,"trace_id":"74c63f687ef27a948dd1c8ff22bc0407"}
-{"level":"info","ts":1776248600.8542254,"msg":"http request","method":"GET","path":"/metrics","duration":0.001029665,"trace_id":"4b37c4d5e1472f7b4b8e8ad69ba0ffbf"}
-{"level":"info","ts":1776248615.853812,"msg":"http request","method":"GET","path":"/metrics","duration":0.001257179,"trace_id":"ac2e7d51dd9fc133b85781e714cde457"}
-{"level":"info","ts":1776248630.8529277,"msg":"http request","method":"GET","path":"/metrics","duration":0.001488494,"trace_id":"08efdb171cb48b08c68dd81c85785081"}
-{"level":"info","ts":1776306816.0012214,"msg":"http request","method":"GET","path":"/metrics","duration":0.007831346,"trace_id":"a0001d93360927e2e24dc5787cce2b69"}
-{"level":"info","ts":1776306830.9813304,"msg":"http request","method":"GET","path":"/metrics","duration":0.001288262,"trace_id":"dcdda452cf197e33abe9558649317afd"}
-{"level":"info","ts":1776306845.9802206,"msg":"http request","method":"GET","path":"/metrics","duration":0.000958318,"trace_id":"8d62585912a69ef4a937ff2b5e16b37d"}
-{"level":"info","ts":1776306860.9820092,"msg":"http request","method":"GET","path":"/metrics","duration":0.008141801,"trace_id":"03676d7e494f68228bf15fbcccfa807b"}
-{"level":"info","ts":1776306875.9773526,"msg":"http request","method":"GET","path":"/metrics","duration":0.004190693,"trace_id":"6bfebbf247f4c539b089a0b3da870d46"}
-{"level":"info","ts":1776306890.9698083,"msg":"http request","method":"GET","path":"/metrics","duration":0.000966488,"trace_id":"b8fbd31cadcfac19253978c43d98049c"}
-{"level":"info","ts":1776306905.9688642,"msg":"http request","method":"GET","path":"/metrics","duration":0.000743331,"trace_id":"35977df8ab7dde09fb25594f356e1c04"}
-{"level":"info","ts":1776306920.9754004,"msg":"http request","method":"GET","path":"/metrics","duration":0.004533971,"trace_id":"e2f508b5dbe21b533b4a31703893383f"}
-{"level":"info","ts":1776306935.9650056,"msg":"http request","method":"GET","path":"/metrics","duration":0.001054297,"trace_id":"54831c92815a0f1f58148bdfb83b96bf"}
-{"level":"info","ts":1776306950.961438,"msg":"http request","method":"GET","path":"/metrics","duration":0.001265189,"trace_id":"bf5c0800b9f219a637098dda8dd39ea4"}
-{"level":"info","ts":1776306965.960996,"msg":"http request","method":"GET","path":"/metrics","duration":0.001046265,"trace_id":"6badab6567db9c956db07283fc2247aa"}
-{"level":"info","ts":1776306980.9590306,"msg":"http request","method":"GET","path":"/metrics","duration":0.0013243,"trace_id":"69387df6c22ed22a7533533ae2f84db1"}
-{"level":"info","ts":1776306995.9579003,"msg":"http request","method":"GET","path":"/metrics","duration":0.00087583,"trace_id":"af299054387193c67f6eef7e2e923c59"}
-{"level":"info","ts":1776307010.9537427,"msg":"http request","method":"GET","path":"/metrics","duration":0.000786409,"trace_id":"b97934b6f39bfd9febc5af83986aa91e"}
-{"level":"info","ts":1776307025.954021,"msg":"http request","method":"GET","path":"/metrics","duration":0.000881422,"trace_id":"4ae111397bb987d7b7acc7aea39f3ee3"}
-{"level":"info","ts":1776307040.9513621,"msg":"http request","method":"GET","path":"/metrics","duration":0.001199316,"trace_id":"7bdbe84cfe7f96938612364e26dd3228"}
-{"level":"info","ts":1776307055.9514108,"msg":"http request","method":"GET","path":"/metrics","duration":0.001080434,"trace_id":"23e7164490c027ea5a94505a33e4da35"}
-{"level":"info","ts":1776307070.9474964,"msg":"http request","method":"GET","path":"/metrics","duration":0.00095272,"trace_id":"fcbec2e06a74605e04625e5ca55717ab"}
-{"level":"info","ts":1776307085.9486349,"msg":"http request","method":"GET","path":"/metrics","duration":0.001555185,"trace_id":"22ddb2ce7d894a1842735c171b5168a4"}
-{"level":"info","ts":1776307100.9450667,"msg":"http request","method":"GET","path":"/metrics","duration":0.001162636,"trace_id":"39522cd1f3665d4ec521f29432ca56fd"}
-{"level":"info","ts":1776307115.9448013,"msg":"http request","method":"GET","path":"/metrics","duration":0.000837098,"trace_id":"a06761898c78fedf48756e737f16a252"}
-{"level":"info","ts":1776307130.9426415,"msg":"http request","method":"GET","path":"/metrics","duration":0.001949748,"trace_id":"f15c437470164184c4c2d8a6045ea10f"}
-{"level":"info","ts":1776307145.9414778,"msg":"http request","method":"GET","path":"/metrics","duration":0.000834593,"trace_id":"8e98ac6b3870e1b11baf3bda6821fe4d"}
-{"level":"info","ts":1776307160.9387262,"msg":"http request","method":"GET","path":"/metrics","duration":0.001026983,"trace_id":"4fc55929858637fccb78142193790097"}
-{"level":"info","ts":1776307175.9399998,"msg":"http request","method":"GET","path":"/metrics","duration":0.002221144,"trace_id":"96b1af401b1d6723cd255d74fc808c84"}
-{"level":"info","ts":1776307190.9366078,"msg":"http request","method":"GET","path":"/metrics","duration":0.000900593,"trace_id":"37dc544c121a38eea5095bc677cc2319"}
-{"level":"info","ts":1776307205.9361477,"msg":"http request","method":"GET","path":"/metrics","duration":0.001008903,"trace_id":"f4633bc1e1e23135a9ce4c593599feb2"}
-{"level":"info","ts":1776307220.9328542,"msg":"http request","method":"GET","path":"/metrics","duration":0.000936796,"trace_id":"b01e21f219d4190ab4e1acb51518c768"}
-{"level":"info","ts":1776307235.9328098,"msg":"http request","method":"GET","path":"/metrics","duration":0.000851489,"trace_id":"81e77508342f428e00c8b8b1073170fa"}
-{"level":"info","ts":1776307250.9301984,"msg":"http request","method":"GET","path":"/metrics","duration":0.001124966,"trace_id":"aa077e33832c13aec2f6e1196977b8d0"}
-{"level":"info","ts":1776307265.9315634,"msg":"http request","method":"GET","path":"/metrics","duration":0.001933201,"trace_id":"f1509505e88ac92c7fedf20a8f3341b4"}
-{"level":"info","ts":1776307280.9280028,"msg":"http request","method":"GET","path":"/metrics","duration":0.001156551,"trace_id":"29f8a5a66b60d11a3b3cc69bc756f765"}
-{"level":"info","ts":1776307295.9281685,"msg":"http request","method":"GET","path":"/metrics","duration":0.001207523,"trace_id":"f43350b3ef3ff1875e76a95a16e1ad4b"}
-{"level":"info","ts":1776307310.9241884,"msg":"http request","method":"GET","path":"/metrics","duration":0.000873385,"trace_id":"ffc2e4f710fe527cef6b6b69a135ba1b"}
-{"level":"info","ts":1776307325.9249313,"msg":"http request","method":"GET","path":"/metrics","duration":0.001319931,"trace_id":"7247c21d49573ea62b7dd6db71c30da1"}
-{"level":"info","ts":1776307340.9226546,"msg":"http request","method":"GET","path":"/metrics","duration":0.001005398,"trace_id":"74e0dda8cd2b03710739bce3637e4884"}
-{"level":"info","ts":1776307355.9231615,"msg":"http request","method":"GET","path":"/metrics","duration":0.001115404,"trace_id":"febe696b9d61c12a42610915dc4bc90f"}
-{"level":"info","ts":1776307370.920736,"msg":"http request","method":"GET","path":"/metrics","duration":0.001179431,"trace_id":"cf4ad14955911a69f7c4e296fba3a381"}
-{"level":"info","ts":1776307385.919953,"msg":"http request","method":"GET","path":"/metrics","duration":0.001082599,"trace_id":"8d3afe05d3d40357d41ac7932af1baa4"}
-{"level":"info","ts":1776307400.9178498,"msg":"http request","method":"GET","path":"/metrics","duration":0.001060092,"trace_id":"d832ebef085be2c40602427b0052556d"}
-{"level":"info","ts":1776307415.9178646,"msg":"http request","method":"GET","path":"/metrics","duration":0.000808976,"trace_id":"398a050d94150124a3ee74f7c41cbff6"}
-{"level":"info","ts":1776307430.9151871,"msg":"http request","method":"GET","path":"/metrics","duration":0.001147195,"trace_id":"fcc347c69ee823cca3af101bf2e0ad6f"}
-{"level":"info","ts":1776307445.9151523,"msg":"http request","method":"GET","path":"/metrics","duration":0.001346417,"trace_id":"92f2546a0f3accfb053040d2a13e4638"}
-{"level":"info","ts":1776307460.9125295,"msg":"http request","method":"GET","path":"/metrics","duration":0.000873971,"trace_id":"88d25f5998705e2f208caf4d5b5ccaf2"}
-{"level":"info","ts":1776307475.9124808,"msg":"http request","method":"GET","path":"/metrics","duration":0.001469529,"trace_id":"e0eee9a381c469731070c3575c489841"}
-{"level":"info","ts":1776307490.910625,"msg":"http request","method":"GET","path":"/metrics","duration":0.001212399,"trace_id":"8ce06f804f57028eefff3b1ff35f23c7"}
-{"level":"info","ts":1776307505.9104028,"msg":"http request","method":"GET","path":"/metrics","duration":0.001312713,"trace_id":"ac883234941475a44ff520312ddcca76"}
-{"level":"info","ts":1776307520.910679,"msg":"http request","method":"GET","path":"/metrics","duration":0.00387461,"trace_id":"06a6ebb03f3d43888538d9c212635674"}
-{"level":"info","ts":1776307535.9082823,"msg":"http request","method":"GET","path":"/metrics","duration":0.00166534,"trace_id":"c4d8923a4fdc826c5de4168f88db88f4"}
-{"level":"info","ts":1776307550.905261,"msg":"http request","method":"GET","path":"/metrics","duration":0.001249204,"trace_id":"85c6390924bbba02fd1e5ff2994de350"}
-{"level":"info","ts":1776307565.9050703,"msg":"http request","method":"GET","path":"/metrics","duration":0.001234402,"trace_id":"cba3ea8d7be277210a4b2e06d7fb0ee2"}
-{"level":"info","ts":1776307580.9027011,"msg":"http request","method":"GET","path":"/metrics","duration":0.000828868,"trace_id":"27d5dc5205569e028d0cd766bf32d521"}
-{"level":"info","ts":1776307595.902983,"msg":"http request","method":"GET","path":"/metrics","duration":0.001070988,"trace_id":"b085070c5936d782784d5c50d0aa3038"}
-{"level":"info","ts":1776309485.9862623,"msg":"http request","method":"GET","path":"/metrics","duration":0.004328956,"trace_id":"c3b0baba63fa0454f0fbdce034d126d6"}
-{"level":"info","ts":1776309500.9841416,"msg":"http request","method":"GET","path":"/metrics","duration":0.004761382,"trace_id":"49700896cae22ffcebab65ec9f1ea1a5"}
-{"level":"info","ts":1776309515.9771435,"msg":"http request","method":"GET","path":"/metrics","duration":0.001206678,"trace_id":"893034d0b266c47b35e13bf91d95fa19"}
-{"level":"info","ts":1776309530.9771445,"msg":"http request","method":"GET","path":"/metrics","duration":0.001696102,"trace_id":"696cef51b0f3af98bba62d9213a8406b"}
-{"level":"info","ts":1776309545.9784636,"msg":"http request","method":"GET","path":"/metrics","duration":0.00115787,"trace_id":"ae0752c7966a589f20f6de14fd4db7c0"}
-{"level":"info","ts":1776309560.9791753,"msg":"http request","method":"GET","path":"/metrics","duration":0.003444803,"trace_id":"edb3202207b61038dd06d00e150a62aa"}
-{"level":"info","ts":1776309575.9750328,"msg":"http request","method":"GET","path":"/metrics","duration":0.001284177,"trace_id":"01539c433dc63d1881dff469967a8e94"}
-{"level":"info","ts":1776309590.9728446,"msg":"http request","method":"GET","path":"/metrics","duration":0.001627087,"trace_id":"6fb070f680b837218ac92bc102fcfa63"}
-{"level":"info","ts":1776309605.9749677,"msg":"http request","method":"GET","path":"/metrics","duration":0.00086455,"trace_id":"f7ee902fb912cc850c931e0f2d358d1f"}
-{"level":"info","ts":1776309620.9726477,"msg":"http request","method":"GET","path":"/metrics","duration":0.000827245,"trace_id":"97f32876818fe8c8c85d426bb3d9025a"}
-{"level":"info","ts":1776309635.9723032,"msg":"http request","method":"GET","path":"/metrics","duration":0.000864353,"trace_id":"a3a21dd288d47819a22fd6da73f8d57d"}
-{"level":"info","ts":1776309650.9716642,"msg":"http request","method":"GET","path":"/metrics","duration":0.000956757,"trace_id":"adee267b69d353f335487c12c0d098b9"}
-{"level":"info","ts":1776309665.9683537,"msg":"http request","method":"GET","path":"/metrics","duration":0.000800748,"trace_id":"a4e0e1316e289234cf1c37c59e611233"}
-{"level":"info","ts":1776309680.1944408,"msg":"handling get all account request","method":"GET","path":"/accounts"}
-{"level":"info","ts":1776309680.1949005,"msg":"getting all accounts","trace_id":"2d8abb7a8637511a49f74c3b7e5cbd62"}
-{"level":"info","ts":1776309680.1952188,"msg":"getting all accounts"}
-{"level":"info","ts":1776309680.1975093,"msg":"http request","method":"GET","path":"/accounts","duration":0.005411003,"trace_id":"2d8abb7a8637511a49f74c3b7e5cbd62"}
-{"level":"info","ts":1776309680.9703786,"msg":"http request","method":"GET","path":"/metrics","duration":0.00196011,"trace_id":"10ae56a444b0bf79bdf9005e7cf25067"}
-{"level":"info","ts":1776309695.9666505,"msg":"http request","method":"GET","path":"/metrics","duration":0.000899553,"trace_id":"555fc8c2fc496d53d634c51ff4a5f4d6"}
-{"level":"info","ts":1776309710.9640992,"msg":"http request","method":"GET","path":"/metrics","duration":0.000756928,"trace_id":"617c41944c21958a3598f004063f5e34"}
-{"level":"info","ts":1776309720.3415785,"msg":"handling deposit","trace_id":"0515de603a63030c7531e52f5bdd0adb"}
-{"level":"info","ts":1776309720.3425028,"msg":"processing deposit","trace_id":"0515de603a63030c7531e52f5bdd0adb","account_number":"0888813602206302","amount":1000000}
-{"level":"info","ts":1776309720.342884,"msg":"getting account by account number","account_number":"0888813602206302"}
-{"level":"info","ts":1776309720.3459628,"msg":"updating account","id":"f98de079-f649-4e46-bbd4-93b7290ba343","account_holder":"M Fadhil2","balance":1000000}
-{"level":"info","ts":1776309720.3522778,"msg":"deposit success","trace_id":"0515de603a63030c7531e52f5bdd0adb","account_number":"0888813602206302","new_balance":1000000}
-{"level":"info","ts":1776309720.3529735,"msg":"http request","method":"POST","path":"/balance/{accountNumber}","duration":0.012439528,"trace_id":"0515de603a63030c7531e52f5bdd0adb"}
-{"level":"info","ts":1776309720.4759119,"msg":"kafka published","topic":"account.balance_change","key":"0888813602206302","trace_id":"0515de603a63030c7531e52f5bdd0adb"}
-{"level":"info","ts":1776309725.9670117,"msg":"http request","method":"GET","path":"/metrics","duration":0.002294835,"trace_id":"ba5123e15038ef8f0561022a8408f144"}
-{"level":"info","ts":1776309740.9677193,"msg":"http request","method":"GET","path":"/metrics","duration":0.002853667,"trace_id":"44f0fc363251b03988321da4ee85beed"}
-{"level":"info","ts":1776309755.966339,"msg":"http request","method":"GET","path":"/metrics","duration":0.000960357,"trace_id":"5de29a8177150d5ca4cde41131f13a3e"}
-{"level":"info","ts":1776309770.9640653,"msg":"http request","method":"GET","path":"/metrics","duration":0.000968756,"trace_id":"73b38966abb84132636ccebd52901797"}
-{"level":"info","ts":1776309773.6101704,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000061004,"trace_id":"1c7d46e88dac5dcd73642422c471b850"}
-{"level":"info","ts":1776309785.9639456,"msg":"http request","method":"GET","path":"/metrics","duration":0.001254274,"trace_id":"38ee307c83d2c922d133bf31fcd129b7"}
-{"level":"info","ts":1776309800.9635828,"msg":"http request","method":"GET","path":"/metrics","duration":0.00187991,"trace_id":"503ff6653528c68b34f9981280ade821"}
-{"level":"info","ts":1776309815.963432,"msg":"http request","method":"GET","path":"/metrics","duration":0.001210872,"trace_id":"77237f4d19dfb0c4c6e528c7b9bee878"}
-{"level":"info","ts":1776309830.9618258,"msg":"http request","method":"GET","path":"/metrics","duration":0.001512961,"trace_id":"93ae74679c75937d6afe17b189e6f46a"}
-{"level":"info","ts":1776309845.9591265,"msg":"http request","method":"GET","path":"/metrics","duration":0.001153371,"trace_id":"6af7ac854e33e2c2af73e1cc11fbc825"}
-{"level":"info","ts":1776309860.9596446,"msg":"http request","method":"GET","path":"/metrics","duration":0.001232775,"trace_id":"42427427390287952f78dcff65a570fa"}
-{"level":"info","ts":1776309868.0271132,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000134815,"trace_id":"d7f72cf5e18741ba7eb041a08a9558b8"}
-{"level":"info","ts":1776309875.9605193,"msg":"http request","method":"GET","path":"/metrics","duration":0.002404249,"trace_id":"9a62c2f57c6ea5b0530f4f2525e2c519"}
-{"level":"info","ts":1776309890.9588015,"msg":"http request","method":"GET","path":"/metrics","duration":0.001480183,"trace_id":"a6ecd0fadb731095c7dc55a406d4c3e0"}
-{"level":"info","ts":1776309954.3206782,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000427127,"trace_id":"0d6b10b80800d7e9a5f94f69b52be1d2"}
-{"level":"info","ts":1776310021.7877505,"msg":"handling get all account request","method":"GET","path":"/accounts"}
-{"level":"info","ts":1776310021.7882233,"msg":"getting all accounts","trace_id":"7ffcf2b7614c6bd5a5c8e3717394b8d3"}
-{"level":"info","ts":1776310021.7885084,"msg":"getting all accounts"}
-{"level":"info","ts":1776310021.7916112,"msg":"http request","method":"GET","path":"/accounts","duration":0.00531491,"trace_id":"7ffcf2b7614c6bd5a5c8e3717394b8d3"}
+{"level":"info","ts":1776323014.62834,"msg":"[gRPC] GetByAccountNumber","account_number":"0888813602206302"}
+{"level":"info","ts":1776323014.6293461,"msg":"getting account by account number","account_number":"0888813602206302"}
+{"level":"error","ts":1776323014.6422122,"msg":"failed to get account by number","error":"sql: no rows in result set"}
+{"level":"error","ts":1776323014.6427138,"msg":"[gRPC] account not found","account_number":"0888813602206302","error":"account not found"}
+{"level":"info","ts":1776323072.0160391,"msg":"handling get all account request","method":"GET","path":"/accounts"}
+{"level":"info","ts":1776323072.0164957,"msg":"getting all accounts","trace_id":"81d1a06c086542eadf68a1ce868d3e1d"}
+{"level":"info","ts":1776323072.016742,"msg":"getting all accounts"}
+{"level":"info","ts":1776323072.0185409,"msg":"http request","method":"GET","path":"/accounts","duration":0.00354375,"trace_id":"81d1a06c086542eadf68a1ce868d3e1d"}
+{"level":"info","ts":1776323082.252632,"msg":"handling create account request","trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12","method":"POST","path":"/registration-account-creation"}
+{"level":"info","ts":1776323082.2534075,"msg":"processing request for creating account","trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12","idem_key":"EXT-CREATE-21775de7-d7d9-482e-9261-cd634560e5c4","name":"M Fadhil1","partner_reference_no":"REF-782"}
+{"level":"info","ts":1776323082.2546785,"msg":"inserting account into database","account_number":"0888350429800487","account_holder":"M Fadhil1","balance":0}
+{"level":"info","ts":1776323082.261111,"msg":"registration-account-creation success","trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12","reference_no":"ff22f324-90c4-4455-8a31-76fcb01ac37c","account_number":"0888350429800487","name":"M Fadhil1"}
+{"level":"info","ts":1776323082.2616594,"msg":"registration-account-creation success","trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12","account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da"}
+{"level":"info","ts":1776323082.262555,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.010660148,"trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12"}
+{"level":"info","ts":1776323082.3475034,"msg":"kafka published","topic":"account.creation","key":"0888350429800487","trace_id":"e2d0b8bcb3a548c4f03971eef6a97c12"}
+{"level":"info","ts":1776323086.7928538,"msg":"handling create account request","trace_id":"579daceb787a1b61518056a3af7fae4a","method":"POST","path":"/registration-account-creation"}
+{"level":"info","ts":1776323086.7935002,"msg":"processing request for creating account","trace_id":"579daceb787a1b61518056a3af7fae4a","idem_key":"EXT-CREATE-5f6d597a-b2ee-41d2-b6ec-59396995bdb7","name":"M Fadhil2","partner_reference_no":"REF-375"}
+{"level":"info","ts":1776323086.7941597,"msg":"inserting account into database","account_number":"0888731717206956","account_holder":"M Fadhil2","balance":0}
+{"level":"info","ts":1776323086.7968376,"msg":"registration-account-creation success","trace_id":"579daceb787a1b61518056a3af7fae4a","reference_no":"76d949bb-7165-4bc9-ac67-9e17e4a58166","account_number":"0888731717206956","name":"M Fadhil2"}
+{"level":"info","ts":1776323086.7971935,"msg":"registration-account-creation success","trace_id":"579daceb787a1b61518056a3af7fae4a","account_id":"43eb76ff-913d-4195-8bce-4a54018bc35d"}
+{"level":"info","ts":1776323086.7975755,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.00516774,"trace_id":"579daceb787a1b61518056a3af7fae4a"}
+{"level":"info","ts":1776323086.8100555,"msg":"kafka published","topic":"account.creation","key":"0888731717206956","trace_id":"579daceb787a1b61518056a3af7fae4a"}
+{"level":"info","ts":1776323101.631731,"msg":"handling deposit","trace_id":"19240d56c7b0771fbf64aa904fb399c8"}
+{"level":"info","ts":1776323101.6348982,"msg":"processing deposit","trace_id":"19240d56c7b0771fbf64aa904fb399c8","account_number":"0888731717206956","amount":1000000}
+{"level":"info","ts":1776323101.6351948,"msg":"getting account by account number","account_number":"0888731717206956"}
+{"level":"info","ts":1776323101.6379428,"msg":"updating account","id":"43eb76ff-913d-4195-8bce-4a54018bc35d","account_holder":"M Fadhil2","balance":1000000}
+{"level":"info","ts":1776323101.642498,"msg":"deposit success","trace_id":"19240d56c7b0771fbf64aa904fb399c8","account_number":"0888731717206956","new_balance":1000000}
+{"level":"info","ts":1776323101.643031,"msg":"http request","method":"POST","path":"/balance/{accountNumber}","duration":0.012003831,"trace_id":"19240d56c7b0771fbf64aa904fb399c8"}
+{"level":"info","ts":1776323101.6567228,"msg":"kafka published","topic":"account.balance_change","key":"0888731717206956","trace_id":"19240d56c7b0771fbf64aa904fb399c8"}
+{"level":"info","ts":1776323106.4528847,"msg":"handling get all account request","method":"GET","path":"/accounts"}
+{"level":"info","ts":1776323106.4535985,"msg":"getting all accounts","trace_id":"93d13d5d12292fbe9a7a043dbeddb962"}
+{"level":"info","ts":1776323106.4540582,"msg":"getting all accounts"}
+{"level":"info","ts":1776323106.4553208,"msg":"http request","method":"GET","path":"/accounts","duration":0.003385463,"trace_id":"93d13d5d12292fbe9a7a043dbeddb962"}
+{"level":"info","ts":1776323124.4744446,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000069505,"trace_id":"33d49b316c6bb2733570bd5a4e9c9eeb"}
+{"level":"info","ts":1776323244.5866814,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.000061204,"trace_id":"e63b022bfdf4e3ce3ef423d411990e29"}
+{"level":"info","ts":1776323282.3624985,"msg":"[gRPC] GetByAccountNumber","account_number":"0888731717206956"}
+{"level":"info","ts":1776323282.3628094,"msg":"getting account by account number","account_number":"0888731717206956"}
+{"level":"info","ts":1776323282.366408,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776323282.3667536,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776323282.3689623,"msg":"[gRPC] UpdateBalance","account_number":"0888731717206956","amount":-670000}
+{"level":"info","ts":1776323282.369236,"msg":"getting account by account number","account_number":"0888731717206956"}
+{"level":"info","ts":1776323282.3704505,"msg":"updating account","id":"43eb76ff-913d-4195-8bce-4a54018bc35d","account_holder":"M Fadhil2","balance":330000}
+{"level":"info","ts":1776323282.3732932,"msg":"[gRPC] balance updated successfully","account_number":"0888731717206956","new_balance":330000}
+{"level":"info","ts":1776323282.3749278,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":670000}
+{"level":"info","ts":1776323282.3752239,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776323282.376315,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":670000}
+{"level":"info","ts":1776323282.3788052,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":670000}
+{"level":"info","ts":1776409090.3298917,"msg":"handling create account request","trace_id":"f54dfdf8217939727eb5980e9bf70c4e","method":"POST","path":"/registration-account-creation"}
+{"level":"info","ts":1776409090.3526082,"msg":"processing request for creating account","trace_id":"f54dfdf8217939727eb5980e9bf70c4e","idem_key":"EXT-CREATE-525dd38c-330b-4607-bd90-917213d7ad95","name":"M Fadhil3","partner_reference_no":"REF-973"}
+{"level":"info","ts":1776409090.3593538,"msg":"inserting account into database","account_number":"0888219281823724","account_holder":"M Fadhil3","balance":0}
+{"level":"info","ts":1776409090.4823916,"msg":"registration-account-creation success","trace_id":"f54dfdf8217939727eb5980e9bf70c4e","reference_no":"c352cae4-f235-468f-8170-95d783234e0e","account_number":"0888219281823724","name":"M Fadhil3"}
+{"level":"info","ts":1776409090.4836214,"msg":"registration-account-creation success","trace_id":"f54dfdf8217939727eb5980e9bf70c4e","account_id":"4e215498-2a0a-4810-a9ed-c7115b277fcc"}
+{"level":"info","ts":1776409090.4852304,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.248366896,"trace_id":"f54dfdf8217939727eb5980e9bf70c4e"}
+{"level":"info","ts":1776409091.425168,"msg":"kafka published","topic":"account.creation","key":"0888219281823724","trace_id":"f54dfdf8217939727eb5980e9bf70c4e"}
+{"level":"info","ts":1776409162.0204961,"msg":"[gRPC] GetByAccountNumber","account_number":"0888731717206956"}
+{"level":"info","ts":1776409162.0211024,"msg":"getting account by account number","account_number":"0888731717206956"}
+{"level":"info","ts":1776409162.0567572,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776409162.057112,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776409162.0600433,"msg":"[gRPC] UpdateBalance","account_number":"0888731717206956","amount":-100000}
+{"level":"info","ts":1776409162.0602922,"msg":"getting account by account number","account_number":"0888731717206956"}
+{"level":"info","ts":1776409162.061239,"msg":"updating account","id":"43eb76ff-913d-4195-8bce-4a54018bc35d","account_holder":"M Fadhil2","balance":230000}
+{"level":"info","ts":1776409162.0889661,"msg":"[gRPC] balance updated successfully","account_number":"0888731717206956","new_balance":230000}
+{"level":"info","ts":1776409162.0910976,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":100000}
+{"level":"info","ts":1776409162.0913365,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776409162.0929403,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":770000}
+{"level":"info","ts":1776409162.0948617,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":770000}

@@ -2,7 +2,9 @@ services:
   # Microservices
 
   account-service:
-    build: ./account-service
+    build:
+      context: .
+      dockerfile: account-service/Dockerfile
     container_name: account-service
     ports:
       - "8081:8080" # HTTP
@@ -20,7 +22,9 @@ services:
     restart: always
 
   transaction-service:
-    build: ./transaction-service
+    build:
+      context: .
+      dockerfile: transaction-service/Dockerfile
     container_name: transaction-service
     ports:
       - "8082:8080"
@@ -38,15 +42,19 @@ services:
     restart: always
 
   notification-service:
-    build: ./notification-service
+    build:
+      context: .
+      dockerfile: notification-service/Dockerfile
     container_name: notification-service
     ports:
       - "8083:8080"
     volumes:
       - ./notification-service/logs:/app/logs
     depends_on:
-      - notification-db
-      - kafka
+      notification-db:
+        condition: service_started
+      kafka:
+        condition: service_healthy
     env_file:
       - ./notification-service/.env
     restart: always
@@ -125,7 +133,20 @@ services:
       KAFKA_LOG_SEGMENT_BYTES: 1073741824
       KAFKA_COMPRESSION_TYPE: snappy
       KAFKA_LOG4J_ROOT_LOGLEVEL: WARN
+      KAFKA_BROKCERS: kafka:29092
       CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qg"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "kafka-broker-api-versions",
+          "--bootstrap-server",
+          "kafka:29092",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
     volumes:
       - kafka_data:/var/lib/kafka/data
     restart: always

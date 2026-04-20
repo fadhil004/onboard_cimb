@@ -2,10 +2,10 @@ package grpcserver
 
 import (
 	"context"
-	"account-service/middleware"
-	"account-service/pkg/logger"
-	"account-service/repository"
-	pb "account-service/proto/accountpb"
+	"microservices-bank/account-service/middleware"
+	"microservices-bank/account-service/pkg/logger"
+	"microservices-bank/account-service/repository"
+	pb "microservices-bank/proto/accountpb"
 
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"

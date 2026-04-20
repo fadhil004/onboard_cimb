@@ -3,10 +3,10 @@ package repository
 import (
 	"context"
 	"errors"
-	"account-service/middleware"
-	"account-service/models"
-	"account-service/pkg/logger"
-	"account-service/pkg/metrics"
+	"microservices-bank/account-service/middleware"
+	"microservices-bank/account-service/models"
+	"microservices-bank/account-service/pkg/logger"
+	"microservices-bank/account-service/pkg/metrics"
 	"time"
 
 	"github.com/google/uuid"

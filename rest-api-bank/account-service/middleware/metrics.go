@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	"account-service/helper"
-	"account-service/pkg/metrics"
+	"microservices-bank/account-service/helper"
+	"microservices-bank/account-service/pkg/metrics"
 )
 
 var (

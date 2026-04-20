@@ -1,9 +1,9 @@
 package middleware
 
 import (
+	"microservices-bank/account-service/helper"
+	"microservices-bank/account-service/pkg/logger"
 	"net/http"
-	"account-service/helper"
-	"account-service/pkg/logger"
 	"time"
 
 	"go.opentelemetry.io/otel"

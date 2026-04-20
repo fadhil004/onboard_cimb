@@ -3,8 +3,8 @@ package middleware
 import (
 	"context"
 	"encoding/json"
+	"microservices-bank/account-service/helper"
 	"net/http"
-	"account-service/helper"
 	"time"
 )
 

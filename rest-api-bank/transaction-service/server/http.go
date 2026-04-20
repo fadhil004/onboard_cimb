@@ -2,8 +2,8 @@ package server
 
 import (
 	"encoding/json"
+	"microservices-bank/transaction-service/dto"
 	"net/http"
-	"transaction-service/dto"
 )
 
 func ApplicationMiddlewareResponse(h http.Handler) http.HandlerFunc {

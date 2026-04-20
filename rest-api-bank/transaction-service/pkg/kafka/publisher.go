@@ -10,8 +10,8 @@ import (
 	"github.com/segmentio/kafka-go"
 	"go.uber.org/zap"
 
-	"transaction-service/helper"
-	"transaction-service/pkg/logger"
+	"microservices-bank/transaction-service/helper"
+	"microservices-bank/transaction-service/pkg/logger"
 )
 
 type Publisher interface {

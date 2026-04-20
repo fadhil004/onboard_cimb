@@ -1,10 +1,10 @@
 package middleware
 
 import (
+	"microservices-bank/transaction-service/helper"
+	"microservices-bank/transaction-service/pkg/logger"
 	"net/http"
 	"time"
-	"transaction-service/helper"
-	"transaction-service/pkg/logger"
 
 	"go.opentelemetry.io/otel"
 	"go.uber.org/zap"

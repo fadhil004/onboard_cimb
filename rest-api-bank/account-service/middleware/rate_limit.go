@@ -3,10 +3,10 @@ package middleware
 import (
 	"encoding/json"
 	"log"
+	"microservices-bank/account-service/config"
+	"microservices-bank/account-service/dto"
 	"net"
 	"net/http"
-	"account-service/config"
-	"account-service/dto"
 	"time"
 )
 

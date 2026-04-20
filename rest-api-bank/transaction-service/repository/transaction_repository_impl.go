@@ -2,10 +2,10 @@ package repository
 
 import (
 	"context"
-	"transaction-service/helper"
-	"transaction-service/middleware"
-	"transaction-service/models"
-	"transaction-service/pkg/logger"
+	"microservices-bank/transaction-service/helper"
+	"microservices-bank/transaction-service/middleware"
+	"microservices-bank/transaction-service/models"
+	"microservices-bank/transaction-service/pkg/logger"
 
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"

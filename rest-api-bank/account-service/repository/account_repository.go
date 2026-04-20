@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"account-service/models"
+	"microservices-bank/account-service/models"
 
 	"github.com/google/uuid"
 )

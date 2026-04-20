@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"transaction-service/dto"
-	"transaction-service/helper"
-	"transaction-service/middleware"
-	"transaction-service/pkg/logger"
-	"transaction-service/service"
+	"microservices-bank/transaction-service/dto"
+	"microservices-bank/transaction-service/helper"
+	"microservices-bank/transaction-service/middleware"
+	"microservices-bank/transaction-service/pkg/logger"
+	"microservices-bank/transaction-service/service"
 
 	"go.uber.org/zap"
 )

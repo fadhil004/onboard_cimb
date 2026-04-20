@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	pb "transaction-service/proto/accountpb"
+	pb "microservices-bank/proto/accountpb"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

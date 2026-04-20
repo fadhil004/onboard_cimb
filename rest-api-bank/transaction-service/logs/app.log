@@ -1,222 +1,41 @@
-{"level":"info","ts":1776245727.6643116,"msg":"http request","method":"GET","path":"/metrics","duration":0.017920552,"trace_id":"3d2922500c8223987499e0ca62605975"}
-{"level":"info","ts":1776245742.6501405,"msg":"http request","method":"GET","path":"/metrics","duration":0.007466442,"trace_id":"2ac23c8b73afde41ecf2e8e97b2c3a16"}
-{"level":"info","ts":1776245757.6445835,"msg":"http request","method":"GET","path":"/metrics","duration":0.002011104,"trace_id":"5e92a9cf4d13e6a93eb77c56747cf701"}
-{"level":"info","ts":1776245772.6379392,"msg":"http request","method":"GET","path":"/metrics","duration":0.001775875,"trace_id":"e6c0955d877e6efab42d2a6be10224df"}
-{"level":"info","ts":1776245787.6370153,"msg":"http request","method":"GET","path":"/metrics","duration":0.001306533,"trace_id":"a7f023bbc1e7ac10b0c8f7f7ea4b4a57"}
-{"level":"info","ts":1776245802.633798,"msg":"http request","method":"GET","path":"/metrics","duration":0.000990815,"trace_id":"6beed214a5249212b9e8d5f09b6982f9"}
-{"level":"info","ts":1776245817.6365557,"msg":"http request","method":"GET","path":"/metrics","duration":0.003255437,"trace_id":"14b183bda70eea85bd3295f4fae97178"}
-{"level":"info","ts":1776245832.63038,"msg":"http request","method":"GET","path":"/metrics","duration":0.001465306,"trace_id":"85abd3c161438552dc6437b7523fdbf3"}
-{"level":"info","ts":1776246647.7756605,"msg":"http request","method":"GET","path":"/metrics","duration":0.004811778,"trace_id":"a909ceeae0fa272d1c90c5c77c127e1a"}
-{"level":"info","ts":1776246662.7674046,"msg":"http request","method":"GET","path":"/metrics","duration":0.002319782,"trace_id":"3c59c7a342ab8dc0e356add91eca60c8"}
-{"level":"info","ts":1776246677.7690341,"msg":"http request","method":"GET","path":"/metrics","duration":0.002152868,"trace_id":"c2c166c2c2111a9e65147c8748458d5e"}
-{"level":"info","ts":1776246692.776163,"msg":"http request","method":"GET","path":"/metrics","duration":0.01229575,"trace_id":"936e4f0f2c084f91ec1b24c424403aa5"}
-{"level":"info","ts":1776246707.7687726,"msg":"http request","method":"GET","path":"/metrics","duration":0.003627276,"trace_id":"5df91b239afdc0b1695daf9696272eac"}
-{"level":"info","ts":1776246722.7623148,"msg":"http request","method":"GET","path":"/metrics","duration":0.002555798,"trace_id":"9dd493b9f112f4c2a5eab6c510e7b0b2"}
-{"level":"info","ts":1776246737.7641408,"msg":"http request","method":"GET","path":"/metrics","duration":0.001752333,"trace_id":"2afc8141a0d598bdeb0f7dd70f83362a"}
-{"level":"info","ts":1776246752.7616348,"msg":"http request","method":"GET","path":"/metrics","duration":0.001364513,"trace_id":"b43bfe64257007f3a447be307dcae73d"}
-{"level":"info","ts":1776246767.7622848,"msg":"http request","method":"GET","path":"/metrics","duration":0.001480007,"trace_id":"0d978c0a9be05d76749411e4aa8de03e"}
-{"level":"info","ts":1776246782.7590966,"msg":"http request","method":"GET","path":"/metrics","duration":0.003265351,"trace_id":"0c5ed54f45ba3121a4d795d417cde4ae"}
-{"level":"info","ts":1776246797.7601888,"msg":"http request","method":"GET","path":"/metrics","duration":0.001982049,"trace_id":"a5d0465a1d6c7c0550d46c734fd21105"}
-{"level":"info","ts":1776246812.7585082,"msg":"http request","method":"GET","path":"/metrics","duration":0.002540989,"trace_id":"c718474539070635383bf64bc05bd1a4"}
-{"level":"info","ts":1776246827.7541745,"msg":"http request","method":"GET","path":"/metrics","duration":0.001363201,"trace_id":"55cbe12058519aa05964f17b6b7d959d"}
-{"level":"info","ts":1776246842.7564654,"msg":"http request","method":"GET","path":"/metrics","duration":0.002000955,"trace_id":"91a58f34ad3b0158aca7c033a72eff28"}
-{"level":"info","ts":1776246857.7544231,"msg":"http request","method":"GET","path":"/metrics","duration":0.00092017,"trace_id":"a0471b14d24531d1cac8340a8d65763c"}
-{"level":"info","ts":1776246872.7507496,"msg":"http request","method":"GET","path":"/metrics","duration":0.002045175,"trace_id":"930b69d94126c2216235e8b652acee8c"}
-{"level":"info","ts":1776246887.752972,"msg":"http request","method":"GET","path":"/metrics","duration":0.000902242,"trace_id":"54bd5bfe452a5ab8851eb5d6463c6011"}
-{"level":"info","ts":1776246902.748694,"msg":"http request","method":"GET","path":"/metrics","duration":0.000790359,"trace_id":"78cade043b9f0765b0f453a945fe82ab"}
-{"level":"info","ts":1776246917.7514706,"msg":"http request","method":"GET","path":"/metrics","duration":0.001807536,"trace_id":"7566ca1c826abc3ed9aad3573b4e6806"}
-{"level":"info","ts":1776246932.747898,"msg":"http request","method":"GET","path":"/metrics","duration":0.001012675,"trace_id":"1ac39c1ba3f9d8297a59f420aef51c8c"}
-{"level":"info","ts":1776246947.749394,"msg":"http request","method":"GET","path":"/metrics","duration":0.002889215,"trace_id":"acb5bd430adb7a620d736592f6120fa9"}
-{"level":"info","ts":1776246962.7461493,"msg":"http request","method":"GET","path":"/metrics","duration":0.00121889,"trace_id":"29d76c0cd71e73ee6bbbf9b864aa11ff"}
-{"level":"info","ts":1776246977.7436543,"msg":"http request","method":"GET","path":"/metrics","duration":0.001337692,"trace_id":"f703009f31055b3ef5be5159b218e79d"}
-{"level":"info","ts":1776246992.7398481,"msg":"http request","method":"GET","path":"/metrics","duration":0.00095733,"trace_id":"88afa7153e33720b1463a98dc610f1c3"}
-{"level":"info","ts":1776247007.7419007,"msg":"http request","method":"GET","path":"/metrics","duration":0.001508509,"trace_id":"67c6986a692375f1b1d1b23e49602ea6"}
-{"level":"info","ts":1776247022.7390935,"msg":"http request","method":"GET","path":"/metrics","duration":0.00082606,"trace_id":"6ed524c31afcc5f02ee670132764ab91"}
-{"level":"info","ts":1776247037.7421005,"msg":"http request","method":"GET","path":"/metrics","duration":0.000919161,"trace_id":"ca0c3bed8973b20227d3463fcb02a813"}
-{"level":"info","ts":1776247052.7402995,"msg":"http request","method":"GET","path":"/metrics","duration":0.001146581,"trace_id":"5db7ad0628f9ad3e5fa0bd804abc304a"}
-{"level":"info","ts":1776247067.738165,"msg":"http request","method":"GET","path":"/metrics","duration":0.001661415,"trace_id":"55fb52a42250218329c030dd2205e293"}
-{"level":"info","ts":1776247082.7377028,"msg":"http request","method":"GET","path":"/metrics","duration":0.000957667,"trace_id":"fe39efc37446e70d7fc92eb90fcfac91"}
-{"level":"info","ts":1776247097.738229,"msg":"http request","method":"GET","path":"/metrics","duration":0.001669911,"trace_id":"9f57eeec4ca69ad7cec7bb495f9100b7"}
-{"level":"info","ts":1776247112.732634,"msg":"http request","method":"GET","path":"/metrics","duration":0.000986372,"trace_id":"97678391d433e9c3cc232c537e391ca3"}
-{"level":"info","ts":1776247127.7359087,"msg":"http request","method":"GET","path":"/metrics","duration":0.001215665,"trace_id":"7b4316410791c23f078d50b7b241115f"}
-{"level":"info","ts":1776247142.733687,"msg":"http request","method":"GET","path":"/metrics","duration":0.00102287,"trace_id":"68368eec01938fc21ae015c9c68ed350"}
-{"level":"info","ts":1776247157.7368488,"msg":"http request","method":"GET","path":"/metrics","duration":0.002438168,"trace_id":"c912754e0212e74d40a64c3ace2e6249"}
-{"level":"info","ts":1776247172.732187,"msg":"http request","method":"GET","path":"/metrics","duration":0.000964866,"trace_id":"41f1942cef6c10721d0c56a15ad8bc66"}
-{"level":"info","ts":1776247187.732,"msg":"http request","method":"GET","path":"/metrics","duration":0.001218683,"trace_id":"f8d24c8a38269184190ca6604340245e"}
-{"level":"info","ts":1776247202.73045,"msg":"http request","method":"GET","path":"/metrics","duration":0.001712917,"trace_id":"5748041843aa73960c5a96913b4169f6"}
-{"level":"info","ts":1776247217.7322805,"msg":"http request","method":"GET","path":"/metrics","duration":0.002759078,"trace_id":"56cd1426074e256739c74522f52c6a33"}
-{"level":"info","ts":1776247232.728012,"msg":"http request","method":"GET","path":"/metrics","duration":0.001167984,"trace_id":"844b1d2caea93b01f1c25457164f0cb9"}
-{"level":"info","ts":1776247247.7279794,"msg":"http request","method":"GET","path":"/metrics","duration":0.000932857,"trace_id":"0cb057597fb2b4c5543851e9aa5b7605"}
-{"level":"info","ts":1776247262.7259622,"msg":"http request","method":"GET","path":"/metrics","duration":0.001271085,"trace_id":"aeb4b2ac94a879157a529cc30494d1f0"}
-{"level":"info","ts":1776247277.7233014,"msg":"http request","method":"GET","path":"/metrics","duration":0.00087816,"trace_id":"c9083bb036e6b5e72b4ca5134cf88d05"}
-{"level":"info","ts":1776247292.7239833,"msg":"http request","method":"GET","path":"/metrics","duration":0.000949163,"trace_id":"88d662fdaa14e5196d64f50e609802b1"}
-{"level":"info","ts":1776247307.7237902,"msg":"http request","method":"GET","path":"/metrics","duration":0.000777251,"trace_id":"6f1ae96a7378717a5f33c52d2a491b02"}
-{"level":"info","ts":1776247322.7230158,"msg":"http request","method":"GET","path":"/metrics","duration":0.001298787,"trace_id":"9bdae61ec7811be5af2552cb62fb41e3"}
-{"level":"info","ts":1776247337.7237604,"msg":"http request","method":"GET","path":"/metrics","duration":0.002503663,"trace_id":"ddfb48a1e2e4d8780772c93b170e6ead"}
-{"level":"info","ts":1776247352.7219787,"msg":"http request","method":"GET","path":"/metrics","duration":0.001739822,"trace_id":"4e450a7011f72ba597dda03a1dfb1332"}
-{"level":"info","ts":1776247367.720457,"msg":"http request","method":"GET","path":"/metrics","duration":0.001192274,"trace_id":"6c2e1652180ab60feeb3d49c11c867fe"}
-{"level":"info","ts":1776247382.7188232,"msg":"http request","method":"GET","path":"/metrics","duration":0.001488496,"trace_id":"e907b40ebc31fa9ad645e6262f0789b6"}
-{"level":"info","ts":1776247397.7200284,"msg":"http request","method":"GET","path":"/metrics","duration":0.00273428,"trace_id":"c07cd1dba9a64248d33fc7e45bd1005e"}
-{"level":"info","ts":1776247412.7168984,"msg":"http request","method":"GET","path":"/metrics","duration":0.001605105,"trace_id":"989aa10e5aa9af3effd83e11f56aa674"}
-{"level":"info","ts":1776247427.7173376,"msg":"http request","method":"GET","path":"/metrics","duration":0.001858822,"trace_id":"efc4b0a068f7853ed158297aca192ffc"}
-{"level":"info","ts":1776247442.715077,"msg":"http request","method":"GET","path":"/metrics","duration":0.001589805,"trace_id":"3b980d2ac11a5c025aff1a26f490eaae"}
-{"level":"info","ts":1776247457.7155366,"msg":"http request","method":"GET","path":"/metrics","duration":0.002321249,"trace_id":"da378eaf42ce871b81e600c8d2f7ba35"}
-{"level":"info","ts":1776247472.7137969,"msg":"http request","method":"GET","path":"/metrics","duration":0.001594508,"trace_id":"d13dabb522a49e199905c1c71420c4f5"}
-{"level":"info","ts":1776247487.716349,"msg":"http request","method":"GET","path":"/metrics","duration":0.00442587,"trace_id":"ce4f157222d431963837af7d8a020848"}
-{"level":"info","ts":1776247502.7121801,"msg":"http request","method":"GET","path":"/metrics","duration":0.002479159,"trace_id":"9720f3358ce66cfa3824540edb67d0fd"}
-{"level":"info","ts":1776247517.7120776,"msg":"http request","method":"GET","path":"/metrics","duration":0.002048531,"trace_id":"ca6958fa2e9b3d8b59d1d1b2f001ad35"}
-{"level":"info","ts":1776247532.7089713,"msg":"http request","method":"GET","path":"/metrics","duration":0.001339986,"trace_id":"2a8c1fcd8b7b343ae8290c32d57ccda5"}
-{"level":"info","ts":1776247547.7053335,"msg":"http request","method":"GET","path":"/metrics","duration":0.001069269,"trace_id":"00c26c4529da60878e2371c7d7583c5f"}
-{"level":"info","ts":1776247562.7042754,"msg":"http request","method":"GET","path":"/metrics","duration":0.001149775,"trace_id":"9f121968230a383744185ecdf15ab65a"}
-{"level":"info","ts":1776247577.7074008,"msg":"http request","method":"GET","path":"/metrics","duration":0.001069968,"trace_id":"c1cd289f17f554c6e883126a553ddabd"}
-{"level":"info","ts":1776247592.705676,"msg":"http request","method":"GET","path":"/metrics","duration":0.001980428,"trace_id":"aabab96b65fe64e9d2d50e5880b6986e"}
-{"level":"info","ts":1776247607.706718,"msg":"http request","method":"GET","path":"/metrics","duration":0.002666472,"trace_id":"1f4deb523eacbb3db9425290db30430f"}
-{"level":"info","ts":1776247622.7031937,"msg":"http request","method":"GET","path":"/metrics","duration":0.000966263,"trace_id":"c738e0d4fd3b1a76294941de99a2ed84"}
-{"level":"info","ts":1776247637.6999185,"msg":"http request","method":"GET","path":"/metrics","duration":0.001217079,"trace_id":"624e5ad3456674c32fa6ea1db9eec6b3"}
-{"level":"info","ts":1776247652.7010574,"msg":"http request","method":"GET","path":"/metrics","duration":0.00126438,"trace_id":"5a049b7443374b864d187d150e2a2b23"}
-{"level":"info","ts":1776247667.6971736,"msg":"http request","method":"GET","path":"/metrics","duration":0.001121972,"trace_id":"c60b34ff4f7f6604c71164d488184ce8"}
-{"level":"info","ts":1776247682.700902,"msg":"http request","method":"GET","path":"/metrics","duration":0.003326319,"trace_id":"f8318cde54de859b22adaec509137c0d"}
-{"level":"info","ts":1776247697.7006938,"msg":"http request","method":"GET","path":"/metrics","duration":0.000996364,"trace_id":"a519c1b7b45fd3b4b37e65345ad92b81"}
-{"level":"info","ts":1776247712.6972709,"msg":"http request","method":"GET","path":"/metrics","duration":0.001275383,"trace_id":"093204db05529afe7804739106e607f4"}
-{"level":"info","ts":1776247727.6949735,"msg":"http request","method":"GET","path":"/metrics","duration":0.000845955,"trace_id":"7c716a3f0331c9da6634db4bff80df41"}
-{"level":"info","ts":1776247742.6953692,"msg":"http request","method":"GET","path":"/metrics","duration":0.001175676,"trace_id":"02546be01f6652fb6c7d3b190ec32572"}
-{"level":"info","ts":1776247757.6954498,"msg":"http request","method":"GET","path":"/metrics","duration":0.001104972,"trace_id":"8aeb76e8317c2379c66d45bfa106d31f"}
-{"level":"info","ts":1776247772.6942961,"msg":"http request","method":"GET","path":"/metrics","duration":0.001715307,"trace_id":"950af775d438af08f312974ed8a5516e"}
-{"level":"info","ts":1776247787.6934452,"msg":"http request","method":"GET","path":"/metrics","duration":0.000910557,"trace_id":"dd8c580df232b88846270ded0abc2144"}
-{"level":"info","ts":1776247802.6934698,"msg":"http request","method":"GET","path":"/metrics","duration":0.002312548,"trace_id":"74663dc1d6d587fd3f422d41c7eed9b2"}
-{"level":"info","ts":1776247817.6923263,"msg":"http request","method":"GET","path":"/metrics","duration":0.001358079,"trace_id":"22c2fc9aed712d172b19239afe02b207"}
-{"level":"info","ts":1776247832.6900184,"msg":"http request","method":"GET","path":"/metrics","duration":0.001028466,"trace_id":"451d48a144d1e15ce31a067099b1a022"}
-{"level":"info","ts":1776247847.691093,"msg":"http request","method":"GET","path":"/metrics","duration":0.001558196,"trace_id":"04cd1fbecc7719b803c66d2f3724d080"}
-{"level":"info","ts":1776247862.6870837,"msg":"http request","method":"GET","path":"/metrics","duration":0.001148573,"trace_id":"748671640761c119d45f9101007045d7"}
-{"level":"info","ts":1776247877.6890442,"msg":"http request","method":"GET","path":"/metrics","duration":0.001802215,"trace_id":"6b076a9f13457f130f493a41d027b31f"}
-{"level":"info","ts":1776247892.6852782,"msg":"http request","method":"GET","path":"/metrics","duration":0.001010763,"trace_id":"75a0532d06531a40110ebd525eba934a"}
-{"level":"info","ts":1776247907.6856017,"msg":"http request","method":"GET","path":"/metrics","duration":0.001205576,"trace_id":"a03e84c87d207aadbe2bb877ea4f03a0"}
-{"level":"info","ts":1776247922.68115,"msg":"http request","method":"GET","path":"/metrics","duration":0.001157174,"trace_id":"4c74ad7fa2c4bf3e3a7cc572abd61bfa"}
-{"level":"info","ts":1776247937.686341,"msg":"http request","method":"GET","path":"/metrics","duration":0.001564099,"trace_id":"77546697ccf99b1a900c0a30a4f9a811"}
-{"level":"info","ts":1776247952.682527,"msg":"http request","method":"GET","path":"/metrics","duration":0.001226978,"trace_id":"3728ca64a32ed275a33d16fc92cb4a2d"}
-{"level":"info","ts":1776247967.6825087,"msg":"http request","method":"GET","path":"/metrics","duration":0.001168575,"trace_id":"c630d39c944ff9e47ea4ad3a6645cf91"}
-{"level":"info","ts":1776247982.6806626,"msg":"http request","method":"GET","path":"/metrics","duration":0.001148373,"trace_id":"8f8383d4e60b19258219c2d59fd5c1aa"}
-{"level":"info","ts":1776247997.6808605,"msg":"http request","method":"GET","path":"/metrics","duration":0.001573502,"trace_id":"4e7fc1e9f8b8774bbe82fcd0d2988ea9"}
-{"level":"info","ts":1776248012.6790042,"msg":"http request","method":"GET","path":"/metrics","duration":0.001557306,"trace_id":"1b58491ff59be746321dc8b2f9432b67"}
-{"level":"info","ts":1776248027.6783106,"msg":"http request","method":"GET","path":"/metrics","duration":0.001242379,"trace_id":"993a59e3defde5fd777f46e2bb3a378e"}
-{"level":"info","ts":1776248042.6767066,"msg":"http request","method":"GET","path":"/metrics","duration":0.001199704,"trace_id":"56c001a935838b7badeb42453b7f1279"}
-{"level":"info","ts":1776248057.6765575,"msg":"http request","method":"GET","path":"/metrics","duration":0.001022052,"trace_id":"75098ccd85f35179bfb44b38d985b579"}
-{"level":"info","ts":1776248072.6739407,"msg":"http request","method":"GET","path":"/metrics","duration":0.000963861,"trace_id":"2b89fa35abdff6a25d6fabcc58635728"}
-{"level":"info","ts":1776248087.6746938,"msg":"http request","method":"GET","path":"/metrics","duration":0.001179575,"trace_id":"25f24e25fff82d2dd370918ac9172160"}
-{"level":"info","ts":1776248102.6730814,"msg":"http request","method":"GET","path":"/metrics","duration":0.001375187,"trace_id":"2244e3d8f76f26e9ebc0c0ef145b8cb0"}
-{"level":"info","ts":1776248117.6726077,"msg":"http request","method":"GET","path":"/metrics","duration":0.000928159,"trace_id":"9a462e3c33c02b2685570e2b16c4c631"}
-{"level":"info","ts":1776248132.6676927,"msg":"http request","method":"GET","path":"/metrics","duration":0.001002565,"trace_id":"c987d1839016fc1c0f94e5e37511813f"}
-{"level":"info","ts":1776248147.6710815,"msg":"http request","method":"GET","path":"/metrics","duration":0.001174475,"trace_id":"d31353677ad216a1c181d3e539066cf8"}
-{"level":"info","ts":1776248162.6688938,"msg":"http request","method":"GET","path":"/metrics","duration":0.000990466,"trace_id":"7d9a10a6df36f0a44c699a79537b7fdf"}
-{"level":"info","ts":1776248177.668913,"msg":"http request","method":"GET","path":"/metrics","duration":0.000855047,"trace_id":"fa00c20a1ce1f58f969e9251c6aaf463"}
-{"level":"info","ts":1776248192.6673377,"msg":"http request","method":"GET","path":"/metrics","duration":0.001305183,"trace_id":"a90495de27d694c33597985d8f3676d4"}
-{"level":"info","ts":1776248207.6636057,"msg":"http request","method":"GET","path":"/metrics","duration":0.00126258,"trace_id":"bb90f10e3f41cc718aa00f8f4c78a757"}
-{"level":"info","ts":1776248222.6622427,"msg":"http request","method":"GET","path":"/metrics","duration":0.000990562,"trace_id":"cd9f204a25dccffdd4145bc5afcc1d94"}
-{"level":"info","ts":1776248237.665103,"msg":"http request","method":"GET","path":"/metrics","duration":0.001252279,"trace_id":"871c46e8f0aa038a873f7ad847dfca62"}
-{"level":"info","ts":1776248252.6641097,"msg":"http request","method":"GET","path":"/metrics","duration":0.001323784,"trace_id":"26feeb97f4842f660eda52f15d81cf78"}
-{"level":"info","ts":1776248267.6593184,"msg":"http request","method":"GET","path":"/metrics","duration":0.000853754,"trace_id":"8226855b44f2dc0d6f430d5babe8f17b"}
-{"level":"info","ts":1776248282.6626544,"msg":"http request","method":"GET","path":"/metrics","duration":0.002135266,"trace_id":"288fbc2e4f9bc4036106a4a9f62d9b2f"}
-{"level":"info","ts":1776248297.6609778,"msg":"http request","method":"GET","path":"/metrics","duration":0.001049767,"trace_id":"be5de5ec47f19d2d61550759a9a9cc4d"}
-{"level":"info","ts":1776248312.6585584,"msg":"http request","method":"GET","path":"/metrics","duration":0.002250544,"trace_id":"6185e2aafaac0c850a418c04c32fb6b6"}
-{"level":"info","ts":1776248327.6552424,"msg":"http request","method":"GET","path":"/metrics","duration":0.001564301,"trace_id":"01bef1054c872a71bedccfa64f9f6667"}
-{"level":"info","ts":1776248342.6589344,"msg":"http request","method":"GET","path":"/metrics","duration":0.00216914,"trace_id":"b825e00c3d6a2646017c203fc0a58987"}
-{"level":"info","ts":1776248357.6590507,"msg":"http request","method":"GET","path":"/metrics","duration":0.002990892,"trace_id":"14299a8a459c1b0a17ab28b157b9f299"}
-{"level":"info","ts":1776248372.6571019,"msg":"http request","method":"GET","path":"/metrics","duration":0.002188442,"trace_id":"774aac1a52e8decf7f2de8e5932be14a"}
-{"level":"info","ts":1776248387.6559231,"msg":"http request","method":"GET","path":"/metrics","duration":0.001332687,"trace_id":"b5e85f2fd76b770a51d7d0ee3fddeade"}
-{"level":"info","ts":1776248402.6535137,"msg":"http request","method":"GET","path":"/metrics","duration":0.001047673,"trace_id":"9561c7b30da0b041f1db3eff9f8ad45f"}
-{"level":"info","ts":1776248417.6544535,"msg":"http request","method":"GET","path":"/metrics","duration":0.001732109,"trace_id":"39505df65d012cd3ed22dda688b24e82"}
-{"level":"info","ts":1776248432.6486967,"msg":"http request","method":"GET","path":"/metrics","duration":0.001620604,"trace_id":"3f18c0a544c6e1f5d92e45e744b3d7b3"}
-{"level":"info","ts":1776248447.6513016,"msg":"http request","method":"GET","path":"/metrics","duration":0.000954161,"trace_id":"1c493717b71a1a224b3bd332f23a4a60"}
-{"level":"info","ts":1776248462.6494784,"msg":"http request","method":"GET","path":"/metrics","duration":0.000930759,"trace_id":"b9b32369e76ce3b5bea331efa0474b97"}
-{"level":"info","ts":1776248477.650039,"msg":"http request","method":"GET","path":"/metrics","duration":0.001257481,"trace_id":"d6485275487e34fb34eb186fd832f8ff"}
-{"level":"info","ts":1776248492.6477523,"msg":"http request","method":"GET","path":"/metrics","duration":0.000975863,"trace_id":"010dce83eb3c47376528310f192044f3"}
-{"level":"info","ts":1776248507.6438942,"msg":"http request","method":"GET","path":"/metrics","duration":0.00108477,"trace_id":"2835d721a5c2a9c9a1d8edb55fc8f405"}
-{"level":"info","ts":1776248522.6431332,"msg":"http request","method":"GET","path":"/metrics","duration":0.001020167,"trace_id":"39d2f3d8e37b3cddf4e2ab00c4ce4db2"}
-{"level":"info","ts":1776248537.645643,"msg":"http request","method":"GET","path":"/metrics","duration":0.001068262,"trace_id":"b72e522e26f88c69bfa4bb061041ffb6"}
-{"level":"info","ts":1776248552.6443744,"msg":"http request","method":"GET","path":"/metrics","duration":0.000973459,"trace_id":"1229e7449e64479304f6698e26a27e35"}
-{"level":"info","ts":1776248567.644295,"msg":"http request","method":"GET","path":"/metrics","duration":0.001020766,"trace_id":"1c801d03cf03a96ae0f7758e26c0de67"}
-{"level":"info","ts":1776248582.6422017,"msg":"http request","method":"GET","path":"/metrics","duration":0.000919357,"trace_id":"2e904f1a9f25537915262d94360e5b20"}
-{"level":"info","ts":1776248597.642238,"msg":"http request","method":"GET","path":"/metrics","duration":0.00110287,"trace_id":"3b08aeb6cf0e17cae747a65790c4e08a"}
-{"level":"info","ts":1776248612.6411984,"msg":"http request","method":"GET","path":"/metrics","duration":0.001523496,"trace_id":"73153981d24e584b180a587026b8bae9"}
-{"level":"info","ts":1776248627.640056,"msg":"http request","method":"GET","path":"/metrics","duration":0.001093969,"trace_id":"732df58ef4ec048b5ba0ced43d4ae982"}
-{"level":"info","ts":1776248642.639143,"msg":"http request","method":"GET","path":"/metrics","duration":0.001499396,"trace_id":"57980a621dada9ce2ee579320e9bb038"}
-{"level":"info","ts":1776306827.7789507,"msg":"http request","method":"GET","path":"/metrics","duration":0.008012657,"trace_id":"b2deab857c677bd5cee470e809f7da87"}
-{"level":"info","ts":1776306842.772377,"msg":"http request","method":"GET","path":"/metrics","duration":0.002457925,"trace_id":"d04d0e75b58b4dbca0fb4dbefe5cdece"}
-{"level":"info","ts":1776306857.765106,"msg":"http request","method":"GET","path":"/metrics","duration":0.001299085,"trace_id":"2d9c147fca9783e864656f5b8f369cbe"}
-{"level":"info","ts":1776306872.7667985,"msg":"http request","method":"GET","path":"/metrics","duration":0.002758185,"trace_id":"4a2aa63a0a0d2fd0d0ee5279fb0550e2"}
-{"level":"info","ts":1776306887.7615426,"msg":"http request","method":"GET","path":"/metrics","duration":0.00254102,"trace_id":"7fa5a34805b77974a4f1e3f6ed684b70"}
-{"level":"info","ts":1776306902.7602262,"msg":"http request","method":"GET","path":"/metrics","duration":0.001390746,"trace_id":"ae1b1494b1cb9e7384df0b67b58ab57a"}
-{"level":"info","ts":1776306917.7553918,"msg":"http request","method":"GET","path":"/metrics","duration":0.000861113,"trace_id":"eeda2c4e780329f46bd591ee7bebba74"}
-{"level":"info","ts":1776306932.7571015,"msg":"http request","method":"GET","path":"/metrics","duration":0.002330536,"trace_id":"521d508cc56d1fbf626f7d131e18f213"}
-{"level":"info","ts":1776306947.7523754,"msg":"http request","method":"GET","path":"/metrics","duration":0.00106069,"trace_id":"d6536ceb7b4c38d5ae9debd86f5a2d13"}
-{"level":"info","ts":1776306962.753216,"msg":"http request","method":"GET","path":"/metrics","duration":0.002051499,"trace_id":"745d8757d18fa6cd2673339c5f37b6a0"}
-{"level":"info","ts":1776306977.7488365,"msg":"http request","method":"GET","path":"/metrics","duration":0.000860033,"trace_id":"4e8624006f745360a5fe3768407b7019"}
-{"level":"info","ts":1776306992.7482862,"msg":"http request","method":"GET","path":"/metrics","duration":0.000982446,"trace_id":"bf344c370e9f7e54731b97e014977597"}
-{"level":"info","ts":1776307007.7446003,"msg":"http request","method":"GET","path":"/metrics","duration":0.00088121,"trace_id":"526d5807a576585658ac76e1641d9bf5"}
-{"level":"info","ts":1776307022.744929,"msg":"http request","method":"GET","path":"/metrics","duration":0.000966332,"trace_id":"c4bf6cb9a60d1fc7fcd23eab325cc246"}
-{"level":"info","ts":1776307037.7410371,"msg":"http request","method":"GET","path":"/metrics","duration":0.000879785,"trace_id":"ca5a9f33bd5bfdf7bc4c0fd34d99baef"}
-{"level":"info","ts":1776307052.7413101,"msg":"http request","method":"GET","path":"/metrics","duration":0.001080234,"trace_id":"ca6a1bd92f5da405ef2f24c78118fda1"}
-{"level":"info","ts":1776307067.73993,"msg":"http request","method":"GET","path":"/metrics","duration":0.002313238,"trace_id":"7eaa2664a040011bdda6cb55529960cf"}
-{"level":"info","ts":1776307082.7389467,"msg":"http request","method":"GET","path":"/metrics","duration":0.001645909,"trace_id":"f0c07154365e504f51e411e87bdfe0c5"}
-{"level":"info","ts":1776307097.738008,"msg":"http request","method":"GET","path":"/metrics","duration":0.002033647,"trace_id":"15ca2f5d07f4045b5344169b56952437"}
-{"level":"info","ts":1776307112.7359376,"msg":"http request","method":"GET","path":"/metrics","duration":0.001016719,"trace_id":"58cf739df2943331e61c9f926c76c83e"}
-{"level":"info","ts":1776307127.7329292,"msg":"http request","method":"GET","path":"/metrics","duration":0.001031626,"trace_id":"52c312e6dc428ce32e712da197fcc401"}
-{"level":"info","ts":1776307142.73064,"msg":"http request","method":"GET","path":"/metrics","duration":0.001299945,"trace_id":"f6618fd6795fb071d0c2e4d7c0f40237"}
-{"level":"info","ts":1776307157.7318904,"msg":"http request","method":"GET","path":"/metrics","duration":0.002727122,"trace_id":"e3ad904dc24b496a753da6e9d5019dd6"}
-{"level":"info","ts":1776307172.7299383,"msg":"http request","method":"GET","path":"/metrics","duration":0.001352749,"trace_id":"fc93f6f352ecf40a7e1c96a9b1721b5d"}
-{"level":"info","ts":1776307187.727356,"msg":"http request","method":"GET","path":"/metrics","duration":0.001397912,"trace_id":"f5260053eb28426f33f3d788c80dcef9"}
-{"level":"info","ts":1776307202.7273204,"msg":"http request","method":"GET","path":"/metrics","duration":0.001395849,"trace_id":"2f661dae0a39e067ccb01046cf32cea8"}
-{"level":"info","ts":1776307217.7252817,"msg":"http request","method":"GET","path":"/metrics","duration":0.002598104,"trace_id":"209d2535cddf17a6e4399423c91ddafb"}
-{"level":"info","ts":1776307232.724073,"msg":"http request","method":"GET","path":"/metrics","duration":0.00106451,"trace_id":"e5d366b29aaf1886a9ebc59867393859"}
-{"level":"info","ts":1776307247.7215078,"msg":"http request","method":"GET","path":"/metrics","duration":0.001436284,"trace_id":"5465522bc8b2d493fc3a8a55787b4591"}
-{"level":"info","ts":1776307262.720478,"msg":"http request","method":"GET","path":"/metrics","duration":0.000778181,"trace_id":"2f44163a5b2e342d378d82b6b829eb2e"}
-{"level":"info","ts":1776307277.717723,"msg":"http request","method":"GET","path":"/metrics","duration":0.001003545,"trace_id":"2a6aa0be4d1eeabdc571c4342145dc2d"}
-{"level":"info","ts":1776307292.7191427,"msg":"http request","method":"GET","path":"/metrics","duration":0.002052616,"trace_id":"777c521a72bd07c70116349ef435cd66"}
-{"level":"info","ts":1776307307.7151217,"msg":"http request","method":"GET","path":"/metrics","duration":0.000964189,"trace_id":"b5b38657729e88bf5755922c513d26b2"}
-{"level":"info","ts":1776307322.71566,"msg":"http request","method":"GET","path":"/metrics","duration":0.001420741,"trace_id":"e90d42f88cb921cbf91991dc3a17bbe8"}
-{"level":"info","ts":1776307337.7127657,"msg":"http request","method":"GET","path":"/metrics","duration":0.000970173,"trace_id":"0261e257747b1f0a6666cb0ab51859a4"}
-{"level":"info","ts":1776307352.7130823,"msg":"http request","method":"GET","path":"/metrics","duration":0.001040497,"trace_id":"fd02b38229ce65f7fdf2ef0dc865b8bc"}
-{"level":"info","ts":1776307367.7121708,"msg":"http request","method":"GET","path":"/metrics","duration":0.002135656,"trace_id":"c8b225076bf15746498b8966e679588d"}
-{"level":"info","ts":1776307382.7102995,"msg":"http request","method":"GET","path":"/metrics","duration":0.000916683,"trace_id":"50de0cfee5dfdbf18155d619918736cd"}
-{"level":"info","ts":1776307397.7080998,"msg":"http request","method":"GET","path":"/metrics","duration":0.000891326,"trace_id":"1b342337a6333f7710f9468420547bb6"}
-{"level":"info","ts":1776307412.7076008,"msg":"http request","method":"GET","path":"/metrics","duration":0.001123698,"trace_id":"def2fa8b43402c7e53f1100cbdfd9b71"}
-{"level":"info","ts":1776307427.7056127,"msg":"http request","method":"GET","path":"/metrics","duration":0.0012145,"trace_id":"f81d9f2385d91b240d922e6600d4f4ae"}
-{"level":"info","ts":1776307442.706272,"msg":"http request","method":"GET","path":"/metrics","duration":0.001972571,"trace_id":"d7d2bcfb543b48cf3c3bb1233293d6be"}
-{"level":"info","ts":1776307457.7024007,"msg":"http request","method":"GET","path":"/metrics","duration":0.001048385,"trace_id":"c3eed3b834001b2480eb7299743770c5"}
-{"level":"info","ts":1776307472.702057,"msg":"http request","method":"GET","path":"/metrics","duration":0.000880677,"trace_id":"8ed05346a35c6d93383b232e759c8ec0"}
-{"level":"info","ts":1776307487.7002974,"msg":"http request","method":"GET","path":"/metrics","duration":0.000771463,"trace_id":"c85114d71f519a72c5643c6c21ae5173"}
-{"level":"info","ts":1776307502.701392,"msg":"http request","method":"GET","path":"/metrics","duration":0.001745551,"trace_id":"f8ae794edd0df51f74a0e23e017d462c"}
-{"level":"info","ts":1776307517.698337,"msg":"http request","method":"GET","path":"/metrics","duration":0.001041603,"trace_id":"610802b08f7007b7c90753ad1da79d4f"}
-{"level":"info","ts":1776307532.6988108,"msg":"http request","method":"GET","path":"/metrics","duration":0.001139695,"trace_id":"0c902b9f779c10796122a80a0c1ae69a"}
-{"level":"info","ts":1776307547.6966033,"msg":"http request","method":"GET","path":"/metrics","duration":0.002151323,"trace_id":"1e123db7acedbea254809dfa9dd010e4"}
-{"level":"info","ts":1776307562.6953042,"msg":"http request","method":"GET","path":"/metrics","duration":0.000785165,"trace_id":"a0a229916fc373821f657e836201ac3b"}
-{"level":"info","ts":1776307577.693488,"msg":"http request","method":"GET","path":"/metrics","duration":0.000770963,"trace_id":"a81639bfb86bce0e8e85285d2ca2cea7"}
-{"level":"info","ts":1776307592.692185,"msg":"http request","method":"GET","path":"/metrics","duration":0.001076689,"trace_id":"339fbb626e43c865839a66671cd903a1"}
-{"level":"info","ts":1776309482.7696614,"msg":"http request","method":"GET","path":"/metrics","duration":0.004470564,"trace_id":"aef3939b6a2a7549279b65f3c5c40e1f"}
-{"level":"info","ts":1776309497.7645156,"msg":"http request","method":"GET","path":"/metrics","duration":0.004431463,"trace_id":"6229d767fa2cb05a2434916e4996e1c7"}
-{"level":"info","ts":1776309512.7611256,"msg":"http request","method":"GET","path":"/metrics","duration":0.001250077,"trace_id":"a975ec1be54de2b8645da820abd4a8b0"}
-{"level":"info","ts":1776309527.7602084,"msg":"http request","method":"GET","path":"/metrics","duration":0.000893455,"trace_id":"ec7662f4c592c30bc5e1f58fbd439604"}
-{"level":"info","ts":1776309542.7616518,"msg":"http request","method":"GET","path":"/metrics","duration":0.002448451,"trace_id":"b76d74abec73cc304b6e24906cd70719"}
-{"level":"info","ts":1776309557.7606328,"msg":"http request","method":"GET","path":"/metrics","duration":0.002499547,"trace_id":"2f5877ca1983bbbe2fb825a876a03e59"}
-{"level":"info","ts":1776309572.7602313,"msg":"http request","method":"GET","path":"/metrics","duration":0.003208691,"trace_id":"8b13163b941121d4a96fd602a62fd107"}
-{"level":"info","ts":1776309587.7570384,"msg":"http request","method":"GET","path":"/metrics","duration":0.001335471,"trace_id":"910edb65cf1601cb3ad5de7f79e73c27"}
-{"level":"info","ts":1776309602.7566564,"msg":"http request","method":"GET","path":"/metrics","duration":0.000960356,"trace_id":"75d4ac9a354efa4f2063943f6aa3e107"}
-{"level":"info","ts":1776309617.754411,"msg":"http request","method":"GET","path":"/metrics","duration":0.000773442,"trace_id":"1d31f9a3d8a6d45fe75f5ef769464c3a"}
-{"level":"info","ts":1776309632.75605,"msg":"http request","method":"GET","path":"/metrics","duration":0.002945076,"trace_id":"11ce491ff492ee489f85613f7ef51716"}
-{"level":"info","ts":1776309647.7538772,"msg":"http request","method":"GET","path":"/metrics","duration":0.002279435,"trace_id":"728a594e187bb70baefc7ec80a752dce"}
-{"level":"info","ts":1776309662.7537804,"msg":"http request","method":"GET","path":"/metrics","duration":0.001901313,"trace_id":"9246de44d8a0641e680e01a00d411c2c"}
-{"level":"info","ts":1776309677.750784,"msg":"http request","method":"GET","path":"/metrics","duration":0.00088325,"trace_id":"f8b85010be703a16ce3119c0b5198cb8"}
-{"level":"info","ts":1776309692.7523515,"msg":"http request","method":"GET","path":"/metrics","duration":0.001710101,"trace_id":"8897fd1468ae023ec4d197490327bbd7"}
-{"level":"info","ts":1776309707.7489958,"msg":"http request","method":"GET","path":"/metrics","duration":0.000892233,"trace_id":"d8caf6c7728d2f69eff7d1488b10bce9"}
-{"level":"info","ts":1776309722.7490206,"msg":"http request","method":"GET","path":"/metrics","duration":0.00152549,"trace_id":"2b5ad43e4bdf58c9f51f2acccbda3255"}
-{"level":"info","ts":1776309737.7506447,"msg":"http request","method":"GET","path":"/metrics","duration":0.002981574,"trace_id":"87fbe0560145c1add64651764e4eba59"}
-{"level":"info","ts":1776309752.7477415,"msg":"http request","method":"GET","path":"/metrics","duration":0.001212472,"trace_id":"c9d6edb0e5d7d09589a2f5dcb16525fb"}
-{"level":"info","ts":1776309767.745992,"msg":"http request","method":"GET","path":"/metrics","duration":0.000895953,"trace_id":"a2f6b27e97c4b8437907d6d6d979575b"}
-{"level":"info","ts":1776309782.7452586,"msg":"http request","method":"GET","path":"/metrics","duration":0.000972757,"trace_id":"b74e35f51b45b15ad34e53963094bab4"}
-{"level":"info","ts":1776309797.7446318,"msg":"http request","method":"GET","path":"/metrics","duration":0.001662097,"trace_id":"ec8aa9aac5348f5fe70bc2dec6c5bf3a"}
-{"level":"info","ts":1776309812.7456336,"msg":"http request","method":"GET","path":"/metrics","duration":0.001834809,"trace_id":"8c5f8ed222987b2c5ace1c81d2675e7f"}
-{"level":"info","ts":1776309827.7436094,"msg":"http request","method":"GET","path":"/metrics","duration":0.001521262,"trace_id":"96d2ce40bdba1c331c21f7b479567d75"}
-{"level":"info","ts":1776309842.743236,"msg":"http request","method":"GET","path":"/metrics","duration":0.001012763,"trace_id":"db0a802b62be013803aea5b0e2265c48"}
-{"level":"info","ts":1776309857.7431197,"msg":"http request","method":"GET","path":"/metrics","duration":0.003221935,"trace_id":"3bd6a3c35f6e6004f609c85cdc13abad"}
-{"level":"info","ts":1776309872.7415044,"msg":"http request","method":"GET","path":"/metrics","duration":0.001744301,"trace_id":"483a8572bdd6aafe687367a5fae97a17"}
-{"level":"info","ts":1776309887.738876,"msg":"http request","method":"GET","path":"/metrics","duration":0.001452678,"trace_id":"18e0a2215a09f84e90bdccd0351e0dfc"}
+{"level":"info","ts":1776311713.724288,"msg":"handling transfer request","trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776311713.7311559,"msg":"processing transfer","trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589","from_account_id":"0888813602206302","to_account_id":"0888548567788792","amount":"670000.00","idempotency_key":"EXT-TRF-1a954b8c-f632-470d-a07e-91b3d263383c"}
+{"level":"info","ts":1776311713.7328904,"msg":"processing transfer via gRPC","trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589","from":"0888813602206302","to":"0888548567788792","amount":"670000.00"}
+{"level":"error","ts":1776311713.7855449,"msg":"source account not found via gRPC","source_account_no":"0888813602206302","error":"rpc error: code = Internal desc = grpc: error while marshaling: proto: failed to marshal, message is *accountpb.GetByAccountNumberRequest, want proto.Message"}
+{"level":"error","ts":1776311713.7904656,"msg":"transfer failed","trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589","error":"account not found"}
+{"level":"error","ts":1776311713.7927668,"msg":"failed to process transfer","error":"account not found","trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589"}
+{"level":"info","ts":1776311713.7956583,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.081018896,"trace_id":"9aba6e8c3386dbf0e0ad82f9029bb589"}
+{"level":"info","ts":1776314316.6898348,"msg":"handling transfer request","trace_id":"b8e00adb08b918404f4b9343d8d17215","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776314316.692317,"msg":"processing transfer","trace_id":"b8e00adb08b918404f4b9343d8d17215","from_account_id":"0888813602206302","to_account_id":"0888548567788792","amount":"670000.00","idempotency_key":"EXT-TRF-45ff79ab-dacb-45ab-b8b8-002f3ade7be2"}
+{"level":"info","ts":1776314316.6936176,"msg":"processing transfer via gRPC","trace_id":"b8e00adb08b918404f4b9343d8d17215","from":"0888813602206302","to":"0888548567788792","amount":"670000.00"}
+{"level":"error","ts":1776314316.8094044,"msg":"source account not found via gRPC","source_account_no":"0888813602206302","error":"rpc error: code = Internal desc = grpc: error while marshaling: proto: failed to marshal, message is *accountpb.GetByAccountNumberRequest, want proto.Message"}
+{"level":"error","ts":1776314316.8102152,"msg":"transfer failed","trace_id":"b8e00adb08b918404f4b9343d8d17215","error":"account not found"}
+{"level":"error","ts":1776314316.8105335,"msg":"failed to process transfer","error":"account not found","trace_id":"b8e00adb08b918404f4b9343d8d17215"}
+{"level":"info","ts":1776314316.8109577,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.123708994,"trace_id":"b8e00adb08b918404f4b9343d8d17215"}
+{"level":"info","ts":1776314451.5041034,"msg":"handling transfer request","trace_id":"3151a750e33a33f870c135a129dbdcf9","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776314451.5060186,"msg":"processing transfer","trace_id":"3151a750e33a33f870c135a129dbdcf9","from_account_id":"0888813602206302","to_account_id":"0888548567788792","amount":"670000.00","idempotency_key":"EXT-TRF-bbb9ea08-dc61-40c7-b470-9fdc96b56c71"}
+{"level":"info","ts":1776314451.5083272,"msg":"processing transfer via gRPC","trace_id":"3151a750e33a33f870c135a129dbdcf9","from":"0888813602206302","to":"0888548567788792","amount":"670000.00"}
+{"level":"error","ts":1776314451.6559844,"msg":"source account not found via gRPC","source_account_no":"0888813602206302","error":"rpc error: code = Internal desc = grpc: error while marshaling: proto: failed to marshal, message is *accountpb.GetByAccountNumberRequest, want proto.Message"}
+{"level":"error","ts":1776314451.6563635,"msg":"transfer failed","trace_id":"3151a750e33a33f870c135a129dbdcf9","error":"account not found"}
+{"level":"error","ts":1776314451.6566823,"msg":"failed to process transfer","error":"account not found","trace_id":"3151a750e33a33f870c135a129dbdcf9"}
+{"level":"info","ts":1776314451.6571538,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.154212377,"trace_id":"3151a750e33a33f870c135a129dbdcf9"}
+{"level":"info","ts":1776323014.5281897,"msg":"handling transfer request","trace_id":"ca0a65b776260f120c894c80bca1572c","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776323014.5294983,"msg":"processing transfer","trace_id":"ca0a65b776260f120c894c80bca1572c","from_account_id":"0888813602206302","to_account_id":"0888548567788792","amount":"670000.00","idempotency_key":"EXT-TRF-0ebaebe4-82e8-444a-9909-6a05751b51b8"}
+{"level":"info","ts":1776323014.53112,"msg":"processing transfer via gRPC","trace_id":"ca0a65b776260f120c894c80bca1572c","from":"0888813602206302","to":"0888548567788792","amount":"670000.00"}
+{"level":"error","ts":1776323014.646188,"msg":"source account not found via gRPC","source_account_no":"0888813602206302","error":"rpc error: code = NotFound desc = account not found: 0888813602206302"}
+{"level":"error","ts":1776323014.6484396,"msg":"transfer failed","trace_id":"ca0a65b776260f120c894c80bca1572c","error":"account not found"}
+{"level":"error","ts":1776323014.6487198,"msg":"failed to process transfer","error":"account not found","trace_id":"ca0a65b776260f120c894c80bca1572c"}
+{"level":"info","ts":1776323014.649158,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.122070187,"trace_id":"ca0a65b776260f120c894c80bca1572c"}
+{"level":"info","ts":1776323065.4219675,"msg":"http request","method":"GET","path":"/accounts","duration":0.000164799,"trace_id":"df1c386caae2df530a7eba6793b4b29e"}
+{"level":"info","ts":1776323282.35955,"msg":"handling transfer request","trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776323282.3604078,"msg":"processing transfer","trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57","from_account_id":"0888731717206956","to_account_id":"0888350429800487","amount":"670000.00","idempotency_key":"EXT-TRF-e1bef2ce-19b3-4d4f-bcae-b88f2de854da"}
+{"level":"info","ts":1776323282.3613434,"msg":"processing transfer via gRPC","trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57","from":"0888731717206956","to":"0888350429800487","amount":"670000.00"}
+{"level":"info","ts":1776323282.3797183,"msg":"inserting transaction into database","trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57","from_account_id":"43eb76ff-913d-4195-8bce-4a54018bc35d","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":670000}
+{"level":"info","ts":1776323282.3851905,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.02653733,"trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57"}
+{"level":"info","ts":1776323282.4102876,"msg":"kafka published","topic":"account.transaction","key":"0888731717206956","trace_id":"a4dc8faedf6b93b7c23c93c5227ffe57"}
+{"level":"info","ts":1776409161.57358,"msg":"handling transfer request","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776409161.5957289,"msg":"processing transfer","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de","from_account_id":"0888731717206956","to_account_id":"0888350429800487","amount":"100000.00","idempotency_key":"EXT-TRF-54055518-20d6-4d2e-937d-e6d1919a8ab2"}
+{"level":"info","ts":1776409161.5972269,"msg":"processing transfer via gRPC","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de","from":"0888731717206956","to":"0888350429800487","amount":"100000.00"}
+{"level":"info","ts":1776409162.0966043,"msg":"inserting transaction into database","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de","from_account_id":"43eb76ff-913d-4195-8bce-4a54018bc35d","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":100000}
+{"level":"info","ts":1776409162.1625812,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.645735202,"trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de"}
+{"level":"info","ts":1776409162.2154028,"msg":"kafka published","topic":"account.transaction","key":"0888731717206956","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de"}

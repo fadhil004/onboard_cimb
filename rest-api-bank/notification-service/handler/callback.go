@@ -10,7 +10,7 @@ import (
 	"os"
 	"time"
 
-	"notification-service/pkg/logger"
+	"microservices-bank/notification-service/pkg/logger"
 
 	"github.com/jmoiron/sqlx"
 	"go.uber.org/zap"

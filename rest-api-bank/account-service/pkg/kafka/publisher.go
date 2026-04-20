@@ -10,8 +10,8 @@ import (
 	"github.com/segmentio/kafka-go"
 	"go.uber.org/zap"
 
-	"account-service/helper"
-	"account-service/pkg/logger"
+	"microservices-bank/account-service/helper"
+	"microservices-bank/account-service/pkg/logger"
 )
 
 // Publisher adalah interface yang di-inject ke service.

@@ -7,7 +7,7 @@ RUN go mod tidy
 
 COPY . .
 
-RUN go build -o main ./cmd
+RUN go build -o main ./notification-service/cmd
 
 FROM alpine:latest
 

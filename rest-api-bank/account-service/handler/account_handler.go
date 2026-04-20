@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"account-service/dto"
-	"account-service/helper"
-	"account-service/middleware"
-	"account-service/pkg/logger"
-	"account-service/service"
+	"microservices-bank/account-service/dto"
+	"microservices-bank/account-service/helper"
+	"microservices-bank/account-service/middleware"
+	"microservices-bank/account-service/pkg/logger"
+	"microservices-bank/account-service/service"
 
 	"github.com/google/uuid"
 	"go.uber.org/zap"

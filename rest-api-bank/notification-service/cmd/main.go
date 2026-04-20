@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -12,9 +13,9 @@ import (
 	"syscall"
 	"time"
 
-	"notification-service/config"
-	"notification-service/handler"
-	"notification-service/pkg/logger"
+	"microservices-bank/notification-service/config"
+	"microservices-bank/notification-service/handler"
+	"microservices-bank/notification-service/pkg/logger"
 
 	"github.com/joho/godotenv"
 	"github.com/segmentio/kafka-go"
@@ -29,6 +30,20 @@ func main() {
 
 	database := config.InitDB()
 	config.RunMigrations(database)
+
+	// Wait for Kafka to be reachable before starting consumers
+	brokers := kafkaBrokers()
+	if err := waitForKafka(brokers[0], 60*time.Second); err != nil {
+		log.Fatal("[Kafka] Could not connect to broker:", err)
+	}
+	log.Printf("[Kafka] Connected to broker: %s", brokers[0])
+
+	// Ensure consumed topics exist
+	ensureTopics(brokers, []string{
+		"account.creation",
+		"account.transaction",
+		"account.balance_change",
+	})
 
 	callbackHandler := handler.NewCallbackHandler(database)
 
@@ -140,6 +155,57 @@ func kafkaBrokers() []string {
 	return strings.Split(raw, ",")
 }
 
+func waitForKafka(broker string, timeout time.Duration) error {
+	deadline := time.Now().Add(timeout)
+	for time.Now().Before(deadline) {
+		conn, err := net.DialTimeout("tcp", broker, 2*time.Second)
+		if err == nil {
+			conn.Close()
+			return nil
+		}
+		log.Printf("[Kafka] Waiting for broker %s...", broker)
+		time.Sleep(3 * time.Second)
+	}
+	return context.DeadlineExceeded
+}
+
+func ensureTopics(brokers []string, topics []string) {
+	conn, err := kafka.Dial("tcp", brokers[0])
+	if err != nil {
+		log.Println("[Kafka] ensureTopics: dial failed:", err)
+		return
+	}
+	defer conn.Close()
+
+	controller, err := conn.Controller()
+	if err != nil {
+		log.Println("[Kafka] ensureTopics: get controller failed:", err)
+		return
+	}
+
+	ctrlConn, err := kafka.Dial("tcp", fmt.Sprintf("%s:%d", controller.Host, controller.Port))
+	if err != nil {
+		log.Println("[Kafka] ensureTopics: dial controller failed:", err)
+		return
+	}
+	defer ctrlConn.Close()
+
+	var configs []kafka.TopicConfig
+	for _, t := range topics {
+		configs = append(configs, kafka.TopicConfig{
+			Topic:             t,
+			NumPartitions:     3,
+			ReplicationFactor: 1,
+		})
+	}
+
+	if err := ctrlConn.CreateTopics(configs...); err != nil {
+		log.Println("[Kafka] ensureTopics (non-fatal):", err)
+		return
+	}
+	log.Printf("[Kafka] Topics ensured: %v", topics)
+}
+
 func startConsumer(ctx context.Context, groupID, topic string, h *handler.CallbackHandler) {
 	reader := kafka.NewReader(kafka.ReaderConfig{
 		Brokers:        kafkaBrokers(),
@@ -159,6 +225,9 @@ func startConsumer(ctx context.Context, groupID, topic string, h *handler.Callba
 
 	log.Printf("[Kafka] Consumer started: %s (group: %s)", topic, groupID)
 
+	backoff := 500 * time.Millisecond
+	const maxBackoff = 30 * time.Second
+
 	for {
 		msg, err := reader.FetchMessage(ctx)
 		if err != nil {
@@ -166,9 +235,23 @@ func startConsumer(ctx context.Context, groupID, topic string, h *handler.Callba
 				return
 			}
 			logger.Logger.Error("kafka fetch error", zap.String("topic", topic), zap.Error(err))
-			time.Sleep(time.Second)
+			// Exponential backoff to handle transient errors like Group Load In Progress
+			// and connection issues without hammering the broker
+			select {
+			case <-ctx.Done():
+				return
+			case <-time.After(backoff):
+			}
+			if backoff < maxBackoff {
+				backoff *= 2
+				if backoff > maxBackoff {
+					backoff = maxBackoff
+				}
+			}
 			continue
 		}
+		// Reset backoff on successful fetch
+		backoff = 500 * time.Millisecond
 
 		if err := h.HandleEvent(ctx, msg.Topic, string(msg.Key), msg.Value); err != nil {
 			logger.Logger.Error("handler error",

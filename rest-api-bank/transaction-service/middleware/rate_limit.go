@@ -3,11 +3,11 @@ package middleware
 import (
 	"encoding/json"
 	"log"
+	"microservices-bank/transaction-service/config"
+	"microservices-bank/transaction-service/dto"
 	"net"
 	"net/http"
 	"time"
-	"transaction-service/config"
-	"transaction-service/dto"
 )
 
 func RateLimit(next http.Handler, domain string, feature string) http.HandlerFunc {
