@@ -8,6 +8,7 @@ import (
 	pb "microservices-bank/proto/accountpb"
 	fraudpb "microservices-bank/proto/fraudpb"
 
+	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -28,6 +29,8 @@ func InitGRPCClient() *grpc.ClientConn {
 	for i := 0; i < 10; i++ {
 		conn, err = grpc.NewClient(addr,
 			grpc.WithTransportCredentials(insecure.NewCredentials()),
+			// Propagate OTel trace context via gRPC metadata on every call.
+			grpc.WithStatsHandler(otelgrpc.NewClientHandler()),
 		)
 		if err == nil {
 			AccountClient = pb.NewAccountServiceClient(conn)
@@ -54,6 +57,8 @@ func InitFraudGRPCClient() *grpc.ClientConn {
 	for i := 0; i < 10; i++ {
 		conn, err = grpc.NewClient(addr,
 			grpc.WithTransportCredentials(insecure.NewCredentials()),
+			// Propagate OTel trace context via gRPC metadata on every call.
+			grpc.WithStatsHandler(otelgrpc.NewClientHandler()),
 		)
 		if err == nil {
 			FraudClient = fraudpb.NewFraudDetectionServiceClient(conn)

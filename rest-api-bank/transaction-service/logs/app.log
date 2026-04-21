@@ -133,3 +133,51 @@
 {"level":"info","ts":1776699418.0147994,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"BLOCKED_ACCOUNT","risk_level":"CRITICAL"}
 {"level":"error","ts":1776699418.0151901,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"ae04c31e84b4d434307b4301a4913065"}
 {"level":"info","ts":1776699418.0156195,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.024757468,"trace_id":"ae04c31e84b4d434307b4301a4913065"}
+{"level":"info","ts":1776752011.3687248,"msg":"handling transfer request","trace_id":"b193c3e015e3246707e4c5c2019e25ed","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776752011.3721883,"msg":"processing transfer","trace_id":"b193c3e015e3246707e4c5c2019e25ed","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-32b3b43d-46ed-44dc-ba49-82131425fb76"}
+{"level":"error","ts":1776752011.5428677,"msg":"fraud-detection-service unreachable — failing open","trace_id":"b193c3e015e3246707e4c5c2019e25ed","error":"rpc error: code = Internal desc = Internal fraud check error"}
+{"level":"info","ts":1776752011.5451164,"msg":"processing transfer via gRPC","trace_id":"b193c3e015e3246707e4c5c2019e25ed","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776752011.7000825,"msg":"inserting transaction into database","trace_id":"b193c3e015e3246707e4c5c2019e25ed","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776752011.7147527,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.350856853,"trace_id":"b193c3e015e3246707e4c5c2019e25ed"}
+{"level":"info","ts":1776752011.7920508,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"b193c3e015e3246707e4c5c2019e25ed"}
+{"level":"info","ts":1776753127.642667,"msg":"handling transfer request","trace_id":"f693db324520d40888dc658156b3cb9f","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753127.651408,"msg":"processing transfer","trace_id":"f693db324520d40888dc658156b3cb9f","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-c8677890-2ca0-49b1-bf49-3d136b4237dc"}
+{"level":"info","ts":1776753127.7935977,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW","score":15,"decision":"ALLOW"}
+{"level":"info","ts":1776753127.7945733,"msg":"processing transfer via gRPC","trace_id":"f693db324520d40888dc658156b3cb9f","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776753127.9214816,"msg":"inserting transaction into database","trace_id":"f693db324520d40888dc658156b3cb9f","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776753127.9371789,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.299810915,"trace_id":"f693db324520d40888dc658156b3cb9f"}
+{"level":"info","ts":1776753128.0149598,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"f693db324520d40888dc658156b3cb9f"}
+{"level":"info","ts":1776753270.7424688,"msg":"handling transfer request","trace_id":"f11e68960cb2e76b5f6c5fe12835a79c","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753270.743237,"msg":"processing transfer","trace_id":"f11e68960cb2e76b5f6c5fe12835a79c","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-6ad4808e-cd95-4959-9187-ce8c4d006ea1"}
+{"level":"info","ts":1776753270.7705078,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW","score":0,"decision":"ALLOW"}
+{"level":"info","ts":1776753270.7710397,"msg":"processing transfer via gRPC","trace_id":"f11e68960cb2e76b5f6c5fe12835a79c","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776753270.7902038,"msg":"inserting transaction into database","trace_id":"f11e68960cb2e76b5f6c5fe12835a79c","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776753270.7935245,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.052850684,"trace_id":"f11e68960cb2e76b5f6c5fe12835a79c"}
+{"level":"info","ts":1776753270.8132453,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"f11e68960cb2e76b5f6c5fe12835a79c"}
+{"level":"info","ts":1776753272.1460512,"msg":"handling transfer request","trace_id":"a081b9817c26eb7e8f920ac7658c8e6c","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753272.1464329,"msg":"processing transfer","trace_id":"a081b9817c26eb7e8f920ac7658c8e6c","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-9a599986-5f44-4ef3-81ad-9153795fd5d6"}
+{"level":"info","ts":1776753272.1538975,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW","score":0,"decision":"ALLOW"}
+{"level":"info","ts":1776753272.154301,"msg":"processing transfer via gRPC","trace_id":"a081b9817c26eb7e8f920ac7658c8e6c","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776753272.1687195,"msg":"inserting transaction into database","trace_id":"a081b9817c26eb7e8f920ac7658c8e6c","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776753272.171279,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.025546092,"trace_id":"a081b9817c26eb7e8f920ac7658c8e6c"}
+{"level":"info","ts":1776753272.1840293,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"a081b9817c26eb7e8f920ac7658c8e6c"}
+{"level":"info","ts":1776753273.3410075,"msg":"handling transfer request","trace_id":"f8b88310dd01b794dbbe3aedaab581b9","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753273.3416498,"msg":"processing transfer","trace_id":"f8b88310dd01b794dbbe3aedaab581b9","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-68e4f1d2-c037-4b1e-8f57-7fc085b1926b"}
+{"level":"info","ts":1776753273.3491971,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW","score":0,"decision":"ALLOW"}
+{"level":"info","ts":1776753273.3496227,"msg":"processing transfer via gRPC","trace_id":"f8b88310dd01b794dbbe3aedaab581b9","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776753273.3675551,"msg":"inserting transaction into database","trace_id":"f8b88310dd01b794dbbe3aedaab581b9","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776753273.3704832,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.029907799,"trace_id":"f8b88310dd01b794dbbe3aedaab581b9"}
+{"level":"info","ts":1776753273.3834143,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"f8b88310dd01b794dbbe3aedaab581b9"}
+{"level":"info","ts":1776753274.8200955,"msg":"handling transfer request","trace_id":"4447a51a4de6d34dfe9b00839101d97b","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753274.8204443,"msg":"processing transfer","trace_id":"4447a51a4de6d34dfe9b00839101d97b","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-f7cc043d-d9d3-4cbd-844c-f4b21ba4acd7"}
+{"level":"info","ts":1776753274.8295422,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW","score":0,"decision":"ALLOW"}
+{"level":"info","ts":1776753274.8298798,"msg":"processing transfer via gRPC","trace_id":"4447a51a4de6d34dfe9b00839101d97b","from":"0888309327636587","to":"0888350429800487","amount":"10.00"}
+{"level":"info","ts":1776753274.8472452,"msg":"inserting transaction into database","trace_id":"4447a51a4de6d34dfe9b00839101d97b","from_account_id":"7bba7490-df65-46cb-9edb-e4c4f089c8b7","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10}
+{"level":"info","ts":1776753274.8501472,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.030332128,"trace_id":"4447a51a4de6d34dfe9b00839101d97b"}
+{"level":"info","ts":1776753274.862779,"msg":"kafka published","topic":"account.transaction","key":"0888309327636587","trace_id":"4447a51a4de6d34dfe9b00839101d97b"}
+{"level":"info","ts":1776753276.43283,"msg":"handling transfer request","trace_id":"3a7744cf1f699d070a9ada49d430baa4","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776753276.4336555,"msg":"processing transfer","trace_id":"3a7744cf1f699d070a9ada49d430baa4","from_account_id":"0888309327636587","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-9efc1614-5957-4a9c-8f24-00533a92f620"}
+{"level":"info","ts":1776753276.4402187,"msg":"fraud check result","source":"0888309327636587","beneficiary":"0888350429800487","allowed":false,"fraud_code":"ACCOUNT_RESTRICTED","risk_level":"CRITICAL","score":100,"decision":"REJECT"}
+{"level":"warn","ts":1776753276.440626,"msg":"account restricted","source":"0888309327636587","score":100}
+{"level":"error","ts":1776753276.4410312,"msg":"failed to process transfer","error":"transaction limit","trace_id":"3a7744cf1f699d070a9ada49d430baa4"}
+{"level":"info","ts":1776753276.4416468,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.009655877,"trace_id":"3a7744cf1f699d070a9ada49d430baa4"}

@@ -54,13 +54,26 @@ async function runFraudChecks({
   );
 
   if (velocityCount >= RULES.VELOCITY_THRESHOLD) {
-    score += 40;
-    reasons.push("High velocity");
+    const alreadyRestricted = await store.isRestricted(sourceAccountNo);
+
+    if (!alreadyRestricted) {
+      await store.restrictAccount(
+        sourceAccountNo,
+        `Fraud detected: ${reasons.join(", ")}`,
+        RULES.RESTRICT_DURATION_MS,
+      );
+    }
+
+    logger.warn("Velocity anomaly", {
+      sourceAccountNo,
+      score,
+      reasons,
+    });
   }
 
   // 3. Amount anomaly
   if (amount > RULES.MAX_AMOUNT) {
-    score += 50;
+    score += 60;
     reasons.push("Amount exceeds limit");
   } else if (amount > RULES.MAX_AMOUNT * 0.8) {
     score += 25;
@@ -81,7 +94,6 @@ async function runFraudChecks({
   }
 
   // 6. New beneficiary
-  // (butuh Redis tracking sederhana)
   const isNew = await store.isNewBeneficiary(
     sourceAccountNo,
     beneficiaryAccountNo,
@@ -97,12 +109,16 @@ async function runFraudChecks({
   const riskLevel = getRiskLevel(score);
   const decision = getDecision(score);
 
-  if (decision === "REJECT") {
-    await store.restrictAccount(
-      sourceAccountNo,
-      `Fraud detected: ${reasons.join(", ")}`,
-      RULES.RESTRICT_DURATION_MS,
-    );
+  if (riskLevel === "CRITICAl") {
+    const alreadyRestricted = await store.isRestricted(sourceAccountNo);
+
+    if (!alreadyRestricted) {
+      await store.restrictAccount(
+        sourceAccountNo,
+        `Fraud detected: ${reasons.join(", ")}`,
+        RULES.RESTRICT_DURATION_MS,
+      );
+    }
 
     logger.warn("ACCOUNT_RESTRICTED_BY_SCORE", {
       sourceAccountNo,

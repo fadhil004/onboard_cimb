@@ -1,5 +1,8 @@
 'use strict';
 
+// ⚠️  Must be the very first require — instruments gRPC before server starts.
+require('./tracing');
+
 require('dotenv').config();
 
 const grpc = require('@grpc/grpc-js');

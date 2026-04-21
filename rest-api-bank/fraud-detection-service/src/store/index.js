@@ -84,4 +84,5 @@ module.exports = {
   isRestricted,
   getRestrictionInfo,
   recordAndCountVelocity,
+  isNewBeneficiary,
 };

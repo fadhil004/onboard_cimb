@@ -27,6 +27,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/segmentio/kafka-go"
+	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 	"google.golang.org/grpc"
 )
 
@@ -78,7 +79,10 @@ func main() {
 		log.Fatalf("failed to listen on gRPC port %s: %v", grpcPort, err)
 	}
 
-	grpcSrv := grpc.NewServer()
+	grpcSrv := grpc.NewServer(
+		// Extract OTel trace context from incoming gRPC metadata.
+		grpc.StatsHandler(otelgrpc.NewServerHandler()),
+	)
 	pb.RegisterAccountServiceServer(grpcSrv, grpcserver.NewAccountGRPCServer(accountRepo))
 
 	go func() {

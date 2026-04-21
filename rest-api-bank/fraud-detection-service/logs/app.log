@@ -49,3 +49,23 @@
 {"level":"warn","message":"BLOCKED_ACCOUNT hit","sourceAccountNo":"0888176674904952","timestamp":"2026-04-20T15:36:57.996Z"}
 {"allowed":false,"fraudCode":"BLOCKED_ACCOUNT","level":"info","message":"FraudCheck result","riskLevel":"CRITICAL","timestamp":"2026-04-20T15:36:57.996Z"}
 {"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-21T02:11:41.377Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-21T06:11:25.691Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:13:31.526Z"}
+{"err":"store.isNewBeneficiary is not a function","level":"error","message":"CheckTransaction error","timestamp":"2026-04-21T06:13:31.535Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-21T06:17:50.675Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-21T06:20:55.552Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-21T06:25:36.553Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-21T06:28:04.167Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:32:07.772Z"}
+{"allowed":true,"decision":"ALLOW","fraudCode":"OK","level":"info","message":"FraudCheck result New beneficiary","riskLevel":"LOW","score":15,"timestamp":"2026-04-21T06:32:07.783Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:34:30.748Z"}
+{"allowed":true,"decision":"ALLOW","fraudCode":"OK","level":"info","message":"FraudCheck result Transaction normal","riskLevel":"LOW","score":0,"timestamp":"2026-04-21T06:34:30.753Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:34:32.148Z"}
+{"allowed":true,"decision":"ALLOW","fraudCode":"OK","level":"info","message":"FraudCheck result Transaction normal","riskLevel":"LOW","score":0,"timestamp":"2026-04-21T06:34:32.150Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:34:33.343Z"}
+{"allowed":true,"decision":"ALLOW","fraudCode":"OK","level":"info","message":"FraudCheck result Transaction normal","riskLevel":"LOW","score":0,"timestamp":"2026-04-21T06:34:33.346Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:34:34.822Z"}
+{"level":"warn","message":"Velocity anomaly","reasons":[],"score":0,"sourceAccountNo":"0888309327636587","timestamp":"2026-04-21T06:34:34.826Z"}
+{"allowed":true,"decision":"ALLOW","fraudCode":"OK","level":"info","message":"FraudCheck result Transaction normal","riskLevel":"LOW","score":0,"timestamp":"2026-04-21T06:34:34.827Z"}
+{"amount":10,"beneficiary":"0888350429800487","level":"info","message":"CheckTransaction","source":"0888309327636587","timestamp":"2026-04-21T06:34:36.436Z"}
+{"allowed":false,"decision":"REJECT","fraudCode":"ACCOUNT_RESTRICTED","level":"info","message":"FraudCheck result Account temporarily restricted","riskLevel":"CRITICAL","score":100,"timestamp":"2026-04-21T06:34:36.438Z"}

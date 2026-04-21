@@ -166,6 +166,15 @@ func (s *TransferService) runFraudCheck(ctx context.Context, req dto.SnapTransfe
 		return helper.ErrNeedReview
 	}
 	
+	if fraudResp.FraudCode == "ACCOUNT_RESTRICTED" {
+		metrics.TransferFailed.Inc()
+		logger.Logger.Warn("account restricted",
+			zap.String("source", req.SourceAccountNo),
+			zap.Int32("score", fraudResp.Score),
+		)
+		return helper.ErrAccountRestricted
+	}
+
 	if !fraudResp.Allowed{
 		metrics.TransferFailed.Inc()
 		return helper.ErrSupectedFraud

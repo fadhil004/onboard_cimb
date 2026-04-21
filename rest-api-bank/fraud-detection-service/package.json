@@ -10,6 +10,11 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.10.3",
     "@grpc/proto-loader": "^0.7.13",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
+    "@opentelemetry/instrumentation-grpc": "^0.57.0",
+    "@opentelemetry/resources": "^1.30.0",
+    "@opentelemetry/sdk-node": "^0.57.0",
+    "@opentelemetry/semantic-conventions": "^1.30.0",
     "dotenv": "^16.4.5",
     "ioredis": "^5.3.2",
     "winston": "^3.13.0"
