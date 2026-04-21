@@ -6,12 +6,14 @@ import (
 	"time"
 
 	pb "microservices-bank/proto/accountpb"
+	fraudpb "microservices-bank/proto/fraudpb"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
 
 var AccountClient pb.AccountServiceClient
+var FraudClient fraudpb.FraudDetectionServiceClient
 
 func InitGRPCClient() *grpc.ClientConn {
 	addr := os.Getenv("ACCOUNT_GRPC_ADDR")
@@ -37,5 +39,31 @@ func InitGRPCClient() *grpc.ClientConn {
 	}
 
 	log.Fatalf("[gRPC] Could not connect to account-service at %s: %v", addr, err)
+	return nil
+}
+
+func InitFraudGRPCClient() *grpc.ClientConn {
+	addr := os.Getenv("FRAUD_GRPC_ADDR")
+	if addr == "" {
+		addr = "fraud-detection-service:50052"
+	}
+
+	var conn *grpc.ClientConn
+	var err error
+
+	for i := 0; i < 10; i++ {
+		conn, err = grpc.NewClient(addr,
+			grpc.WithTransportCredentials(insecure.NewCredentials()),
+		)
+		if err == nil {
+			FraudClient = fraudpb.NewFraudDetectionServiceClient(conn)
+			log.Printf("[gRPC] Connected to fraud-detection-service at %s", addr)
+			return conn
+		}
+		log.Printf("[gRPC] Waiting for fraud-detection-service at %s... (%d/10)", addr, i+1)
+		time.Sleep(3 * time.Second)
+	}
+
+	log.Fatalf("[gRPC] Could not connect to fraud-detection-service at %s: %v", addr, err)
 	return nil
 }

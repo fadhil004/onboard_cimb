@@ -54,6 +54,10 @@ func main() {
 	grpcConn := config.InitGRPCClient()
 	defer grpcConn.Close()
 
+	// gRPC Client to Fraud Detection Service (Node.js)
+	fraudConn := config.InitFraudGRPCClient()
+	defer fraudConn.Close()
+
 	// Publisher
 	publisher := kafkapkg.NewKafkaPublisher(config.KafkaWriter)
 
@@ -63,8 +67,9 @@ func main() {
 	// Service
 	transferService := &service.TransferService{
 		TransactionRepo: transactionRepo,
-		Publisher:        publisher,
+		Publisher:       publisher,
 		AccountClient:   config.AccountClient,
+		FraudClient:     config.FraudClient,
 	}
 
 	// HTTP
@@ -76,7 +81,6 @@ func main() {
 	mux := http.NewServeMux()
 	mux.Handle("/metrics", promhttp.Handler())
 
-	// Health check endpoint
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte(`{"status":"ok","service":"transaction-service"}`))

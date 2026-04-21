@@ -39,3 +39,97 @@
 {"level":"info","ts":1776409162.0966043,"msg":"inserting transaction into database","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de","from_account_id":"43eb76ff-913d-4195-8bce-4a54018bc35d","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":100000}
 {"level":"info","ts":1776409162.1625812,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.645735202,"trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de"}
 {"level":"info","ts":1776409162.2154028,"msg":"kafka published","topic":"account.transaction","key":"0888731717206956","trace_id":"be3a12abc5a8c1c0eb4a21c9b94026de"}
+{"level":"info","ts":1776695635.3968153,"msg":"handling transfer request","trace_id":"03245afc87befc30dc097af4ac1566e0","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776695635.4303255,"msg":"processing transfer","trace_id":"03245afc87befc30dc097af4ac1566e0","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-967fc73d-8244-42bb-b95b-6a39a667d8e8"}
+{"level":"info","ts":1776695635.9521072,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776695635.954102,"msg":"processing transfer via gRPC","trace_id":"03245afc87befc30dc097af4ac1566e0","from":"0888176674904952","to":"0888350429800487","amount":"1100000.00"}
+{"level":"info","ts":1776695636.3205295,"msg":"inserting transaction into database","trace_id":"03245afc87befc30dc097af4ac1566e0","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1100000}
+{"level":"info","ts":1776695636.3530023,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.982728492,"trace_id":"03245afc87befc30dc097af4ac1566e0"}
+{"level":"info","ts":1776695636.424644,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"03245afc87befc30dc097af4ac1566e0"}
+{"level":"info","ts":1776695814.7959056,"msg":"handling transfer request","trace_id":"9c1684bba8747ef708a8919cf44ac6f6","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776695814.797058,"msg":"processing transfer","trace_id":"9c1684bba8747ef708a8919cf44ac6f6","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-559215c5-7bfd-49be-a9de-6f2eea76b3e9"}
+{"level":"info","ts":1776695815.1227212,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776695815.1234722,"msg":"processing transfer via gRPC","trace_id":"9c1684bba8747ef708a8919cf44ac6f6","from":"0888176674904952","to":"0888350429800487","amount":"1100000.00"}
+{"level":"info","ts":1776695815.4471035,"msg":"inserting transaction into database","trace_id":"9c1684bba8747ef708a8919cf44ac6f6","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1100000}
+{"level":"info","ts":1776695815.4517574,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.65651954,"trace_id":"9c1684bba8747ef708a8919cf44ac6f6"}
+{"level":"info","ts":1776695815.5397472,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"9c1684bba8747ef708a8919cf44ac6f6"}
+{"level":"info","ts":1776695866.3499362,"msg":"handling transfer request","trace_id":"0eb58835f8b2b782d5fa10624d7b2545","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776695866.350447,"msg":"processing transfer","trace_id":"0eb58835f8b2b782d5fa10624d7b2545","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-fbed2c53-a742-4839-8439-d339f8dd9d48"}
+{"level":"info","ts":1776695866.356319,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776695866.3567376,"msg":"processing transfer via gRPC","trace_id":"0eb58835f8b2b782d5fa10624d7b2545","from":"0888176674904952","to":"0888350429800487","amount":"1100000.00"}
+{"level":"error","ts":1776695866.3624265,"msg":"insufficient balance","balance":300000,"required":1100000}
+{"level":"error","ts":1776695866.3629062,"msg":"transfer failed","trace_id":"0eb58835f8b2b782d5fa10624d7b2545","error":"insufficient balance"}
+{"level":"error","ts":1776695866.3632755,"msg":"failed to process transfer","error":"insufficient balance","trace_id":"0eb58835f8b2b782d5fa10624d7b2545"}
+{"level":"info","ts":1776695866.3636556,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.014297517,"trace_id":"0eb58835f8b2b782d5fa10624d7b2545"}
+{"level":"info","ts":1776697965.294589,"msg":"handling transfer request","trace_id":"618a45c1b90d0108b64ea8c29fdf462a","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776697965.302509,"msg":"processing transfer","trace_id":"618a45c1b90d0108b64ea8c29fdf462a","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-15d92f65-ee17-4857-8c7a-b329625ccdb3"}
+{"level":"info","ts":1776697965.6223104,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776697965.6286747,"msg":"processing transfer via gRPC","trace_id":"618a45c1b90d0108b64ea8c29fdf462a","from":"0888176674904952","to":"0888350429800487","amount":"1100000.00"}
+{"level":"info","ts":1776697965.9237154,"msg":"inserting transaction into database","trace_id":"618a45c1b90d0108b64ea8c29fdf462a","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1100000}
+{"level":"info","ts":1776697965.9372556,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.647627412,"trace_id":"618a45c1b90d0108b64ea8c29fdf462a"}
+{"level":"info","ts":1776697966.026571,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"618a45c1b90d0108b64ea8c29fdf462a"}
+{"level":"info","ts":1776698335.3858397,"msg":"handling transfer request","trace_id":"7890ae4667bce7841cd2a73260fc65dc","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776698335.395819,"msg":"processing transfer","trace_id":"7890ae4667bce7841cd2a73260fc65dc","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-8211585d-941f-4531-95e8-68b2308a218f"}
+{"level":"info","ts":1776698336.0143027,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776698336.0151987,"msg":"processing transfer via gRPC","trace_id":"7890ae4667bce7841cd2a73260fc65dc","from":"0888176674904952","to":"0888350429800487","amount":"1100000.00"}
+{"level":"info","ts":1776698336.505728,"msg":"inserting transaction into database","trace_id":"7890ae4667bce7841cd2a73260fc65dc","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1100000}
+{"level":"info","ts":1776698336.5213175,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":1.143560903,"trace_id":"7890ae4667bce7841cd2a73260fc65dc"}
+{"level":"info","ts":1776698336.637352,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"7890ae4667bce7841cd2a73260fc65dc"}
+{"level":"info","ts":1776698649.7737384,"msg":"handling transfer request","trace_id":"1e84ce73f4a345f086318a0fe30c99f1","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776698649.777748,"msg":"processing transfer","trace_id":"1e84ce73f4a345f086318a0fe30c99f1","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-361da3f6-fffb-48da-891b-1544a6b48e0d"}
+{"level":"info","ts":1776698650.0859895,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"AMOUNT_EXCEEDED","risk_level":"HIGH"}
+{"level":"error","ts":1776698650.0867527,"msg":"failed to process transfer","error":"transaction rejected by fraud detection: [AMOUNT_EXCEEDED] Transfer amount 1100000 exceeds the maximum allowed 1000000","trace_id":"1e84ce73f4a345f086318a0fe30c99f1"}
+{"level":"info","ts":1776698650.0874865,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.316482629,"trace_id":"1e84ce73f4a345f086318a0fe30c99f1"}
+{"level":"info","ts":1776699165.5495255,"msg":"handling transfer request","trace_id":"b2f9087a5f4a2d840b59a8b16d537bce","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699165.5516827,"msg":"processing transfer","trace_id":"b2f9087a5f4a2d840b59a8b16d537bce","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-c0e413e2-7d73-4227-ab4a-59eaf6187061"}
+{"level":"info","ts":1776699166.0281575,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"AMOUNT_EXCEEDED","risk_level":"HIGH"}
+{"level":"error","ts":1776699166.0290108,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"b2f9087a5f4a2d840b59a8b16d537bce"}
+{"level":"info","ts":1776699166.0296633,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.48192322,"trace_id":"b2f9087a5f4a2d840b59a8b16d537bce"}
+{"level":"info","ts":1776699174.906199,"msg":"handling transfer request","trace_id":"b38adc6a18659e411db92f8d3a85d047","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699174.906891,"msg":"processing transfer","trace_id":"b38adc6a18659e411db92f8d3a85d047","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1100000.00","idempotency_key":"EXT-TRF-a9c990e8-fc1d-4bb7-a297-954f75e0a757"}
+{"level":"info","ts":1776699174.9157376,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"AMOUNT_EXCEEDED","risk_level":"HIGH"}
+{"level":"error","ts":1776699174.9169812,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"b38adc6a18659e411db92f8d3a85d047"}
+{"level":"info","ts":1776699174.9184127,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.01319632,"trace_id":"b38adc6a18659e411db92f8d3a85d047"}
+{"level":"info","ts":1776699182.4859009,"msg":"handling transfer request","trace_id":"fcd58029d39da25871c2e6cd1719cfca","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699182.4866183,"msg":"processing transfer","trace_id":"fcd58029d39da25871c2e6cd1719cfca","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"10000.00","idempotency_key":"EXT-TRF-3d21dfe0-3c78-4608-9932-183179fdf1dd"}
+{"level":"info","ts":1776699182.492971,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776699182.4933546,"msg":"processing transfer via gRPC","trace_id":"fcd58029d39da25871c2e6cd1719cfca","from":"0888176674904952","to":"0888350429800487","amount":"10000.00"}
+{"level":"info","ts":1776699182.8636997,"msg":"inserting transaction into database","trace_id":"fcd58029d39da25871c2e6cd1719cfca","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":10000}
+{"level":"info","ts":1776699182.8751109,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.389797028,"trace_id":"fcd58029d39da25871c2e6cd1719cfca"}
+{"level":"info","ts":1776699182.945252,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"fcd58029d39da25871c2e6cd1719cfca"}
+{"level":"info","ts":1776699216.351786,"msg":"handling transfer request","trace_id":"5ce47f83e93038a086018b0b21485936","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699216.352882,"msg":"processing transfer","trace_id":"5ce47f83e93038a086018b0b21485936","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1000000000.00","idempotency_key":"EXT-TRF-564d3e5a-643e-456d-af3c-c497d3097383"}
+{"level":"info","ts":1776699216.3705716,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"AMOUNT_EXCEEDED","risk_level":"HIGH"}
+{"level":"error","ts":1776699216.3721433,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"5ce47f83e93038a086018b0b21485936"}
+{"level":"info","ts":1776699216.3731163,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.022244874,"trace_id":"5ce47f83e93038a086018b0b21485936"}
+{"level":"info","ts":1776699405.527898,"msg":"handling transfer request","trace_id":"04735120dc979b5615a649779c2c7077","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699405.5290625,"msg":"processing transfer","trace_id":"04735120dc979b5615a649779c2c7077","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1.00","idempotency_key":"EXT-TRF-e8b3f9e7-3165-4580-8175-f6987ad8d0ae"}
+{"level":"info","ts":1776699405.540488,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"LOW"}
+{"level":"info","ts":1776699405.5408816,"msg":"processing transfer via gRPC","trace_id":"04735120dc979b5615a649779c2c7077","from":"0888176674904952","to":"0888350429800487","amount":"1.00"}
+{"level":"info","ts":1776699405.587839,"msg":"inserting transaction into database","trace_id":"04735120dc979b5615a649779c2c7077","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1}
+{"level":"info","ts":1776699405.5939653,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.069051741,"trace_id":"04735120dc979b5615a649779c2c7077"}
+{"level":"info","ts":1776699405.6210556,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"04735120dc979b5615a649779c2c7077"}
+{"level":"info","ts":1776699406.658726,"msg":"handling transfer request","trace_id":"7979e2395ff1d97a0bf1245fb8574a08","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699406.6595535,"msg":"processing transfer","trace_id":"7979e2395ff1d97a0bf1245fb8574a08","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1.00","idempotency_key":"EXT-TRF-61a367ce-5ec3-42c6-ae09-7d80c8446eb7"}
+{"level":"info","ts":1776699406.6656148,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"MEDIUM"}
+{"level":"info","ts":1776699406.6661227,"msg":"processing transfer via gRPC","trace_id":"7979e2395ff1d97a0bf1245fb8574a08","from":"0888176674904952","to":"0888350429800487","amount":"1.00"}
+{"level":"info","ts":1776699406.684376,"msg":"inserting transaction into database","trace_id":"7979e2395ff1d97a0bf1245fb8574a08","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1}
+{"level":"info","ts":1776699406.6885252,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.030222388,"trace_id":"7979e2395ff1d97a0bf1245fb8574a08"}
+{"level":"info","ts":1776699406.701698,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"7979e2395ff1d97a0bf1245fb8574a08"}
+{"level":"info","ts":1776699407.7001803,"msg":"handling transfer request","trace_id":"9bc5905fda94a00ea303d9a80b2b2867","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699407.7007966,"msg":"processing transfer","trace_id":"9bc5905fda94a00ea303d9a80b2b2867","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1.00","idempotency_key":"EXT-TRF-9277f649-60cb-4561-ae90-4a0987b8cb0a"}
+{"level":"info","ts":1776699407.7045963,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":true,"fraud_code":"OK","risk_level":"MEDIUM"}
+{"level":"info","ts":1776699407.7049637,"msg":"processing transfer via gRPC","trace_id":"9bc5905fda94a00ea303d9a80b2b2867","from":"0888176674904952","to":"0888350429800487","amount":"1.00"}
+{"level":"info","ts":1776699407.7246397,"msg":"inserting transaction into database","trace_id":"9bc5905fda94a00ea303d9a80b2b2867","from_account_id":"3121c453-96fe-46d0-b935-5423760348c3","to_account_id":"27a62707-6636-48bd-b6b3-0cd464fca7da","amount":1}
+{"level":"info","ts":1776699407.7280436,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.028195607,"trace_id":"9bc5905fda94a00ea303d9a80b2b2867"}
+{"level":"info","ts":1776699407.7409449,"msg":"kafka published","topic":"account.transaction","key":"0888176674904952","trace_id":"9bc5905fda94a00ea303d9a80b2b2867"}
+{"level":"info","ts":1776699408.6517286,"msg":"handling transfer request","trace_id":"b1b432a27e79aef901e3d8778441bc23","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699408.6523137,"msg":"processing transfer","trace_id":"b1b432a27e79aef901e3d8778441bc23","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"1.00","idempotency_key":"EXT-TRF-06a3d032-60b1-4516-b1b9-a09199e4845b"}
+{"level":"info","ts":1776699408.6649601,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"VELOCITY_BREACH","risk_level":"CRITICAL"}
+{"level":"error","ts":1776699408.6655576,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"b1b432a27e79aef901e3d8778441bc23"}
+{"level":"info","ts":1776699408.6661437,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.014800917,"trace_id":"b1b432a27e79aef901e3d8778441bc23"}
+{"level":"info","ts":1776699417.9919946,"msg":"handling transfer request","trace_id":"ae04c31e84b4d434307b4301a4913065","method":"POST","path":"/transfers-intrabank"}
+{"level":"info","ts":1776699417.992532,"msg":"processing transfer","trace_id":"ae04c31e84b4d434307b4301a4913065","from_account_id":"0888176674904952","to_account_id":"0888350429800487","amount":"10.00","idempotency_key":"EXT-TRF-b06e325a-7698-44cd-97a4-7f87b303b0a7"}
+{"level":"info","ts":1776699418.0147994,"msg":"fraud check result","source":"0888176674904952","beneficiary":"0888350429800487","allowed":false,"fraud_code":"BLOCKED_ACCOUNT","risk_level":"CRITICAL"}
+{"level":"error","ts":1776699418.0151901,"msg":"failed to process transfer","error":"suspected fraud","trace_id":"ae04c31e84b4d434307b4301a4913065"}
+{"level":"info","ts":1776699418.0156195,"msg":"http request","method":"POST","path":"/transfers-intrabank","duration":0.024757468,"trace_id":"ae04c31e84b4d434307b4301a4913065"}

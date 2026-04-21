@@ -9,6 +9,7 @@ import (
 	"time"
 
 	pb "microservices-bank/proto/accountpb"
+	fraudpb "microservices-bank/proto/fraudpb"
 	"microservices-bank/transaction-service/config"
 	"microservices-bank/transaction-service/dto"
 	"microservices-bank/transaction-service/helper"
@@ -24,10 +25,14 @@ import (
 	"go.uber.org/zap"
 )
 
+// ErrFraudDetected is returned when FDS rejects a transaction.
+var ErrFraudDetected = errors.New("transaction rejected by fraud detection")
+
 type TransferService struct {
 	TransactionRepo repository.TransactionRepository
 	Publisher       kafkapkg.Publisher
 	AccountClient   pb.AccountServiceClient
+	FraudClient     fraudpb.FraudDetectionServiceClient
 }
 
 func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.SnapTransferRequest) (dto.SnapTransferResponse, error) {
@@ -57,6 +62,11 @@ func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.
 		logger.Logger.Error("redis get error (fallback to db)", zap.String("key", key), zap.Error(err))
 	}
 
+	// Fraud Detection — called before any balance operation
+	if err := s.runFraudCheck(ctx, req); err != nil {
+		return dto.SnapTransferResponse{}, err
+	}
+
 	txID, err := s.processTransfer(ctx, req)
 	if err != nil {
 		logger.Logger.Error("transfer failed",
@@ -69,10 +79,9 @@ func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.
 	referenceNo := uuid.New().String()
 
 	result := dto.SnapTransferResponse{
-		ResponseCode:    helper.SnapResponseCode(200, snap.ServiceCode, "00"),
-		ResponseMessage: "Request has been processed successfully",
-		ReferenceNo:     referenceNo,
-
+		ResponseCode:         helper.SnapResponseCode(200, snap.ServiceCode, "00"),
+		ResponseMessage:      "Request has been processed successfully",
+		ReferenceNo:          referenceNo,
 		PartnerReferenceNo:   req.PartnerReferenceNo,
 		Amount:               req.Amount,
 		BeneficiaryAccountNo: req.BeneficiaryAccountNo,
@@ -109,6 +118,61 @@ func (s *TransferService) Transfer(ctx context.Context, idemKey string, req dto.
 	return result, nil
 }
 
+// runFraudCheck calls fraud-detection-service (Node.js) via gRPC.
+// Fail-open policy: if FDS unreachable, log error and allow the transaction.
+func (s *TransferService) runFraudCheck(ctx context.Context, req dto.SnapTransferRequest) error {
+	ctx, span := middleware.Tracer.Start(ctx, "TransferService.runFraudCheck")
+	defer span.End()
+
+	if s.FraudClient == nil {
+		logger.Logger.Warn("FraudClient not configured — skipping fraud check")
+		return nil
+	}
+
+	amountFloat, _ := strconv.ParseFloat(req.Amount.Value, 64)
+
+	fraudResp, err := s.FraudClient.CheckTransaction(ctx, &fraudpb.FraudCheckRequest{
+		SourceAccountNo:      req.SourceAccountNo,
+		BeneficiaryAccountNo: req.BeneficiaryAccountNo,
+		Amount:               amountFloat,
+		Currency:             req.Currency,
+		PartnerReferenceNo:   req.PartnerReferenceNo,
+		TransactionDate:      req.TransactionDate,
+	})
+	if err != nil {
+		logger.Logger.Error("fraud-detection-service unreachable — failing open",
+			zap.String("trace_id", helper.GetTraceID(ctx)),
+			zap.Error(err),
+		)
+		return nil
+	}
+
+	logger.Logger.Info("fraud check result",
+		zap.String("source", req.SourceAccountNo),
+		zap.String("beneficiary", req.BeneficiaryAccountNo),
+		zap.Bool("allowed", fraudResp.Allowed),
+		zap.String("fraud_code", fraudResp.FraudCode),
+		zap.String("risk_level", fraudResp.RiskLevel),
+	)
+
+	if fraudResp.FraudCode == "BLOCKED_ACCOUNT" {
+		metrics.TransferFailed.Inc()
+		return helper.ErrCardBlocked
+	}
+
+	if fraudResp.FraudCode == "BLOCKED_BENEFICIARY" {
+		metrics.TransferFailed.Inc()
+		return helper.ErrCardBlocked
+	}
+
+	if !fraudResp.Allowed {
+		metrics.TransferFailed.Inc()
+		return helper.ErrSupectedFraud
+	}
+
+	return nil
+}
+
 func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTransferRequest) (txID string, err error) {
 	ctx, span := middleware.Tracer.Start(ctx, "TransferService.processTransfer")
 	defer span.End()
@@ -120,7 +184,6 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		zap.String("amount", req.Amount.Value),
 	)
 
-	// Validate source account via gRPC
 	fromAcc, err := s.AccountClient.GetByAccountNumber(ctx, &pb.GetByAccountNumberRequest{
 		AccountNumber: req.SourceAccountNo,
 	})
@@ -129,7 +192,6 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		return "", helper.ErrAccountNotFound
 	}
 
-	// Validate beneficiary account via gRPC
 	toAcc, err := s.AccountClient.GetByAccountNumber(ctx, &pb.GetByAccountNumberRequest{
 		AccountNumber: req.BeneficiaryAccountNo,
 	})
@@ -149,7 +211,6 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		return "", fmt.Errorf("%w: amount must be greater than 0", helper.ErrInvalidField)
 	}
 
-	// Check balance
 	if fromAcc.Balance < amountInt {
 		logger.Logger.Error("insufficient balance",
 			zap.Int64("balance", fromAcc.Balance),
@@ -158,7 +219,6 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		return "", helper.ErrInsufficientFunds
 	}
 
-	// Debit source account via gRPC
 	debitResp, err := s.AccountClient.UpdateBalance(ctx, &pb.UpdateBalanceRequest{
 		AccountNumber: req.SourceAccountNo,
 		Amount:        -amountInt,
@@ -169,14 +229,12 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		return "", helper.ErrInsufficientFunds
 	}
 
-	// Credit beneficiary account via gRPC
 	creditResp, err := s.AccountClient.UpdateBalance(ctx, &pb.UpdateBalanceRequest{
 		AccountNumber: req.BeneficiaryAccountNo,
 		Amount:        amountInt,
 	})
 	if err != nil || !creditResp.Success {
 		logger.Logger.Error("failed to credit beneficiary account, rolling back debit", zap.Error(err))
-		// Rollback: re-credit the source
 		s.AccountClient.UpdateBalance(ctx, &pb.UpdateBalanceRequest{
 			AccountNumber: req.SourceAccountNo,
 			Amount:        amountInt,
@@ -185,7 +243,6 @@ func (s *TransferService) processTransfer(ctx context.Context, req dto.SnapTrans
 		return "", fmt.Errorf("failed to credit beneficiary account")
 	}
 
-	// Store transaction record locally
 	fromID, _ := uuid.Parse(fromAcc.Id)
 	toID, _ := uuid.Parse(toAcc.Id)
 	newTxID := uuid.New()

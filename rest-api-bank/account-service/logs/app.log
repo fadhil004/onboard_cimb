@@ -64,3 +64,124 @@
 {"level":"info","ts":1776409162.0913365,"msg":"getting account by account number","account_number":"0888350429800487"}
 {"level":"info","ts":1776409162.0929403,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":770000}
 {"level":"info","ts":1776409162.0948617,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":770000}
+{"level":"info","ts":1776695566.8184981,"msg":"handling create account request","trace_id":"175e1f0fad8957c47c3df2ec684b9e29","method":"POST","path":"/registration-account-creation"}
+{"level":"info","ts":1776695566.821009,"msg":"processing request for creating account","trace_id":"175e1f0fad8957c47c3df2ec684b9e29","idem_key":"EXT-CREATE-7153f73a-f2c5-421e-b87a-d3b1f6c124f6","name":"M Fadhil4","partner_reference_no":"REF-668"}
+{"level":"info","ts":1776695566.822369,"msg":"inserting account into database","account_number":"0888176674904952","account_holder":"M Fadhil4","balance":0}
+{"level":"info","ts":1776695566.849613,"msg":"registration-account-creation success","trace_id":"175e1f0fad8957c47c3df2ec684b9e29","reference_no":"e80b0f5d-3e7f-4ce8-822b-cc0ed4596293","account_number":"0888176674904952","name":"M Fadhil4"}
+{"level":"info","ts":1776695566.8511205,"msg":"registration-account-creation success","trace_id":"175e1f0fad8957c47c3df2ec684b9e29","account_id":"3121c453-96fe-46d0-b935-5423760348c3"}
+{"level":"info","ts":1776695566.851818,"msg":"http request","method":"POST","path":"/registration-account-creation","duration":0.035507596,"trace_id":"175e1f0fad8957c47c3df2ec684b9e29"}
+{"level":"info","ts":1776695566.983784,"msg":"kafka published","topic":"account.creation","key":"0888176674904952","trace_id":"175e1f0fad8957c47c3df2ec684b9e29"}
+{"level":"info","ts":1776695588.0633533,"msg":"handling deposit","trace_id":"a0aa71e0cc0c94f5812b8de172c70ce7"}
+{"level":"info","ts":1776695588.0638852,"msg":"processing deposit","trace_id":"a0aa71e0cc0c94f5812b8de172c70ce7","account_number":"0888176674904952","amount":2500000}
+{"level":"info","ts":1776695588.0644557,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695588.07319,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":2500000}
+{"level":"info","ts":1776695588.0781264,"msg":"deposit success","trace_id":"a0aa71e0cc0c94f5812b8de172c70ce7","account_number":"0888176674904952","new_balance":2500000}
+{"level":"info","ts":1776695588.0786235,"msg":"http request","method":"POST","path":"/balance/{accountNumber}","duration":0.01588614,"trace_id":"a0aa71e0cc0c94f5812b8de172c70ce7"}
+{"level":"info","ts":1776695588.0936708,"msg":"kafka published","topic":"account.balance_change","key":"0888176674904952","trace_id":"a0aa71e0cc0c94f5812b8de172c70ce7"}
+{"level":"info","ts":1776695636.2918594,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776695636.2943115,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695636.3010774,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776695636.3017857,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776695636.3051224,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1100000}
+{"level":"info","ts":1776695636.3056335,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695636.3070147,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":1400000}
+{"level":"info","ts":1776695636.310343,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":1400000}
+{"level":"info","ts":1776695636.3123298,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1100000}
+{"level":"info","ts":1776695636.3127337,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776695636.314017,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":1870000}
+{"level":"info","ts":1776695636.3172598,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":1870000}
+{"level":"info","ts":1776695815.4283805,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776695815.4288628,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695815.433819,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776695815.4341993,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776695815.436351,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1100000}
+{"level":"info","ts":1776695815.4366913,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695815.4378662,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":300000}
+{"level":"info","ts":1776695815.441504,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":300000}
+{"level":"info","ts":1776695815.4426367,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1100000}
+{"level":"info","ts":1776695815.442896,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776695815.4441261,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":2970000}
+{"level":"info","ts":1776695815.4463198,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":2970000}
+{"level":"info","ts":1776695866.357567,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776695866.3578658,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695866.3603117,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776695866.3607059,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776695870.6788425,"msg":"handling deposit","trace_id":"d1f7a57094c233727e08f372b01646e5"}
+{"level":"info","ts":1776695870.679959,"msg":"processing deposit","trace_id":"d1f7a57094c233727e08f372b01646e5","account_number":"0888176674904952","amount":2500000}
+{"level":"info","ts":1776695870.680828,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776695870.6824105,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":2800000}
+{"level":"info","ts":1776695870.6860917,"msg":"deposit success","trace_id":"d1f7a57094c233727e08f372b01646e5","account_number":"0888176674904952","new_balance":2800000}
+{"level":"info","ts":1776695870.6869783,"msg":"http request","method":"POST","path":"/balance/{accountNumber}","duration":0.010776728,"trace_id":"d1f7a57094c233727e08f372b01646e5"}
+{"level":"info","ts":1776695870.7157605,"msg":"kafka published","topic":"account.balance_change","key":"0888176674904952","trace_id":"d1f7a57094c233727e08f372b01646e5"}
+{"level":"info","ts":1776697965.8849626,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776697965.8861644,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776697965.9015577,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776697965.902215,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776697965.9049208,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1100000}
+{"level":"info","ts":1776697965.9053252,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776697965.906726,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":1700000}
+{"level":"info","ts":1776697965.915924,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":1700000}
+{"level":"info","ts":1776697965.9175143,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1100000}
+{"level":"info","ts":1776697965.9179068,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776697965.919728,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":4070000}
+{"level":"info","ts":1776697965.9227006,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":4070000}
+{"level":"info","ts":1776698336.4081104,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776698336.410893,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776698336.4347348,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776698336.4351444,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776698336.4373987,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1100000}
+{"level":"info","ts":1776698336.4377143,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776698336.438955,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":600000}
+{"level":"info","ts":1776698336.483408,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":600000}
+{"level":"info","ts":1776698336.4855046,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1100000}
+{"level":"info","ts":1776698336.4860501,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776698336.4876509,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":5170000}
+{"level":"info","ts":1776698336.504005,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":5170000}
+{"level":"info","ts":1776699182.8322968,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776699182.8334103,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699182.84399,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776699182.844759,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699182.8472965,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-10000}
+{"level":"info","ts":1776699182.847759,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699182.8491616,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":590000}
+{"level":"info","ts":1776699182.8575232,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":590000}
+{"level":"info","ts":1776699182.858836,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":10000}
+{"level":"info","ts":1776699182.8591645,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699182.8604338,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":5180000}
+{"level":"info","ts":1776699182.8628526,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":5180000}
+{"level":"info","ts":1776699405.545943,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776699405.547308,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699405.5690222,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776699405.569498,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699405.5720563,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1}
+{"level":"info","ts":1776699405.5726678,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699405.574163,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":589999}
+{"level":"info","ts":1776699405.5803764,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":589999}
+{"level":"info","ts":1776699405.5820441,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1}
+{"level":"info","ts":1776699405.5823615,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699405.5836706,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":5180001}
+{"level":"info","ts":1776699405.586315,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":5180001}
+{"level":"info","ts":1776699406.6669445,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776699406.6672487,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699406.6690612,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776699406.6693263,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699406.6716115,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1}
+{"level":"info","ts":1776699406.672161,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699406.6734998,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":589998}
+{"level":"info","ts":1776699406.6755054,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":589998}
+{"level":"info","ts":1776699406.6765802,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1}
+{"level":"info","ts":1776699406.676866,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699406.6792238,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":5180002}
+{"level":"info","ts":1776699406.6829484,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":5180002}
+{"level":"info","ts":1776699407.7056503,"msg":"[gRPC] GetByAccountNumber","account_number":"0888176674904952"}
+{"level":"info","ts":1776699407.70603,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699407.7087483,"msg":"[gRPC] GetByAccountNumber","account_number":"0888350429800487"}
+{"level":"info","ts":1776699407.7090654,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699407.7108696,"msg":"[gRPC] UpdateBalance","account_number":"0888176674904952","amount":-1}
+{"level":"info","ts":1776699407.7111151,"msg":"getting account by account number","account_number":"0888176674904952"}
+{"level":"info","ts":1776699407.7123632,"msg":"updating account","id":"3121c453-96fe-46d0-b935-5423760348c3","account_holder":"M Fadhil4","balance":589997}
+{"level":"info","ts":1776699407.715602,"msg":"[gRPC] balance updated successfully","account_number":"0888176674904952","new_balance":589997}
+{"level":"info","ts":1776699407.7171917,"msg":"[gRPC] UpdateBalance","account_number":"0888350429800487","amount":1}
+{"level":"info","ts":1776699407.7174423,"msg":"getting account by account number","account_number":"0888350429800487"}
+{"level":"info","ts":1776699407.720442,"msg":"updating account","id":"27a62707-6636-48bd-b6b3-0cd464fca7da","account_holder":"M Fadhil1","balance":5180003}
+{"level":"info","ts":1776699407.7240536,"msg":"[gRPC] balance updated successfully","account_number":"0888350429800487","new_balance":5180003}

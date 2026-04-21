@@ -21,6 +21,25 @@ services:
       - ./account-service/.env
     restart: always
 
+  fraud-detection-service:
+    build:
+      context: ./fraud-detection-service
+      dockerfile: Dockerfile
+    container_name: fraud-detection-service
+    ports:
+      - "50052:50052" # gRPC — consumed by transaction-service
+    volumes:
+      - ./fraud-detection-service/logs:/app/logs
+    environment:
+      GRPC_PORT: 50052
+      LOG_LEVEL: info
+      SERVICE_NAME: fraud-detection-service
+      RULE_MAX_AMOUNT: 1000000
+      RULE_VELOCITY_THRESHOLD: 5
+      RULE_VELOCITY_WINDOW_MS: 300000
+      RULE_VELOCITY_AUTO_BLOCK: "true"
+    restart: always
+
   transaction-service:
     build:
       context: .
@@ -35,6 +54,7 @@ services:
       - redis
       - kafka
       - account-service
+      - fraud-detection-service
       - tempo
       - loki
     env_file:
@@ -202,6 +222,7 @@ services:
       - ./account-service/logs:/logs/account
       - ./transaction-service/logs:/logs/transaction
       - ./notification-service/logs:/logs/notification
+      - ./fraud-detection-service/logs:/logs/fraud
     restart: always
 
   prometheus:

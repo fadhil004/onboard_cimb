@@ -1,0 +1,51 @@
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T08:50:27.023Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-20T14:28:26.224Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T14:31:46.125Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-957","source":"0888176674904952","timestamp":"2026-04-20T14:33:55.919Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T14:33:55.924Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-20T14:35:29.826Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T14:35:41.554Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-613","source":"0888176674904952","timestamp":"2026-04-20T14:36:55.112Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T14:36:55.113Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-733","source":"0888176674904952","timestamp":"2026-04-20T14:37:46.353Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T14:37:46.354Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-20T14:37:58.339Z"}
+{"level":"info","message":"gRPC server shut down","timestamp":"2026-04-20T14:37:58.347Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T15:10:55.474Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-137","source":"0888176674904952","timestamp":"2026-04-20T15:12:45.593Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T15:12:45.597Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-20T15:14:27.824Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T15:17:59.055Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-105","source":"0888176674904952","timestamp":"2026-04-20T15:18:55.961Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T15:18:55.976Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T15:22:09.940Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-575","source":"0888176674904952","timestamp":"2026-04-20T15:24:10.054Z"}
+{"amount":1100000,"level":"warn","limit":1000000,"message":"AMOUNT_EXCEEDED","timestamp":"2026-04-20T15:24:10.065Z"}
+{"allowed":false,"fraudCode":"AMOUNT_EXCEEDED","level":"info","message":"FraudCheck result","riskLevel":"HIGH","timestamp":"2026-04-20T15:24:10.066Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-20T15:29:10.209Z"}
+{"level":"info","message":"[gRPC] Fraud Detection Service listening on port 50052","timestamp":"2026-04-20T15:31:41.099Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-157","source":"0888176674904952","timestamp":"2026-04-20T15:32:45.996Z"}
+{"amount":1100000,"level":"warn","limit":1000000,"message":"AMOUNT_EXCEEDED","timestamp":"2026-04-20T15:32:45.999Z"}
+{"allowed":false,"fraudCode":"AMOUNT_EXCEEDED","level":"info","message":"FraudCheck result","riskLevel":"HIGH","timestamp":"2026-04-20T15:32:46.000Z"}
+{"amount":1100000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-526","source":"0888176674904952","timestamp":"2026-04-20T15:32:54.911Z"}
+{"amount":1100000,"level":"warn","limit":1000000,"message":"AMOUNT_EXCEEDED","timestamp":"2026-04-20T15:32:54.912Z"}
+{"allowed":false,"fraudCode":"AMOUNT_EXCEEDED","level":"info","message":"FraudCheck result","riskLevel":"HIGH","timestamp":"2026-04-20T15:32:54.913Z"}
+{"amount":10000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-961","source":"0888176674904952","timestamp":"2026-04-20T15:33:02.489Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T15:33:02.490Z"}
+{"amount":1000000000,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-759","source":"0888176674904952","timestamp":"2026-04-20T15:33:36.358Z"}
+{"amount":1000000000,"level":"warn","limit":1000000,"message":"AMOUNT_EXCEEDED","timestamp":"2026-04-20T15:33:36.364Z"}
+{"allowed":false,"fraudCode":"AMOUNT_EXCEEDED","level":"info","message":"FraudCheck result","riskLevel":"HIGH","timestamp":"2026-04-20T15:33:36.364Z"}
+{"amount":1,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-234","source":"0888176674904952","timestamp":"2026-04-20T15:36:45.533Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"LOW","timestamp":"2026-04-20T15:36:45.537Z"}
+{"amount":1,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-569","source":"0888176674904952","timestamp":"2026-04-20T15:36:46.661Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"MEDIUM","timestamp":"2026-04-20T15:36:46.663Z"}
+{"amount":1,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-345","source":"0888176674904952","timestamp":"2026-04-20T15:36:47.702Z"}
+{"allowed":true,"fraudCode":"OK","level":"info","message":"FraudCheck result","riskLevel":"MEDIUM","timestamp":"2026-04-20T15:36:47.702Z"}
+{"amount":1,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-456","source":"0888176674904952","timestamp":"2026-04-20T15:36:48.654Z"}
+{"beneficiaryAccountNo":"0888350429800487","level":"warn","message":"VELOCITY_BREACH detected","sourceAccountNo":"0888176674904952","threshold":5,"timestamp":"2026-04-20T15:36:48.656Z","velocityCount":5,"windowMs":300000}
+{"level":"warn","message":"Account auto-blocked by actimize rule","sourceAccountNo":"0888176674904952","timestamp":"2026-04-20T15:36:48.661Z"}
+{"allowed":false,"fraudCode":"VELOCITY_BREACH","level":"info","message":"FraudCheck result","riskLevel":"CRITICAL","timestamp":"2026-04-20T15:36:48.661Z"}
+{"amount":10,"beneficiary":"0888350429800487","currency":"IDR","level":"info","message":"CheckTransaction","ref":"TRF-REF-395","source":"0888176674904952","timestamp":"2026-04-20T15:36:57.995Z"}
+{"level":"warn","message":"BLOCKED_ACCOUNT hit","sourceAccountNo":"0888176674904952","timestamp":"2026-04-20T15:36:57.996Z"}
+{"allowed":false,"fraudCode":"BLOCKED_ACCOUNT","level":"info","message":"FraudCheck result","riskLevel":"CRITICAL","timestamp":"2026-04-20T15:36:57.996Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-21T02:11:41.377Z"}
