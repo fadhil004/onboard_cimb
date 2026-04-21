@@ -37,7 +37,6 @@ services:
       RULE_MAX_AMOUNT: 1000000
       RULE_VELOCITY_THRESHOLD: 5
       RULE_VELOCITY_WINDOW_MS: 300000
-      RULE_VELOCITY_AUTO_BLOCK: "true"
     restart: always
 
   transaction-service:

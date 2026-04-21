@@ -7,15 +7,6 @@ option go_package = "proto/fraudpb";
 service FraudDetectionService {
   // CheckTransaction — called by transaction-service before every transfer
   rpc CheckTransaction(FraudCheckRequest) returns (FraudCheckResponse);
-
-  // BlockAccount — manual / parameterized block by operator
-  rpc BlockAccount(BlockAccountRequest) returns (BlockAccountResponse);
-
-  // UnblockAccount — remove a manual block
-  rpc UnblockAccount(UnblockAccountRequest) returns (UnblockAccountResponse);
-
-  // GetAccountStatus — inspect fraud / block state of an account
-  rpc GetAccountStatus(GetAccountStatusRequest) returns (GetAccountStatusResponse);
 }
 
 // ─── CheckTransaction ─────────────────────────────────────────────────────────
@@ -34,44 +25,6 @@ message FraudCheckResponse {
   string fraud_code = 2; // "OK" | "BLOCKED_ACCOUNT" | "VELOCITY_BREACH" | ...
   string message    = 3;
   string risk_level = 4; // "LOW" | "MEDIUM" | "HIGH" | "CRITICAL"
-}
-
-// ─── BlockAccount ─────────────────────────────────────────────────────────────
-
-message BlockAccountRequest {
-  string account_no = 1;
-  string reason     = 2;
-  string blocked_by = 3;
-}
-
-message BlockAccountResponse {
-  bool   success = 1;
-  string message = 2;
-}
-
-// ─── UnblockAccount ───────────────────────────────────────────────────────────
-
-message UnblockAccountRequest {
-  string account_no   = 1;
-  string unblocked_by = 2;
-}
-
-message UnblockAccountResponse {
-  bool   success = 1;
-  string message = 2;
-}
-
-// ─── GetAccountStatus ─────────────────────────────────────────────────────────
-
-message GetAccountStatusRequest {
-  string account_no = 1;
-}
-
-message GetAccountStatusResponse {
-  string account_no    = 1;
-  bool   is_blocked    = 2;
-  string block_reason  = 3;
-  string blocked_by    = 4;
-  string blocked_at    = 5;
-  int32  velocity_count = 6;
+  int32 score = 5;       // 
+  string decision = 6;   // (ALLOW / REVIEW / REJECT)
 }

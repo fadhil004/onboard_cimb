@@ -14,8 +14,8 @@ var (
 	ErrAccountNotFound   = errors.New("account not found")
 	ErrDuplicate         = errors.New("duplicate transaction")
 	ErrSupectedFraud     = errors.New("suspected fraud")
-	ErrCardBlocked 		 = errors.New("card blocked")
-	ErrBeneficiaryBlocked = errors.New("beneficiary blocked")
+	ErrNeedReview 		 = errors.New("need review")
+	ErrTranscationLimit  = errors.New("transaction limit")
 )
 
 func SnapResponseCode(httpcode int, serviceCode string, caseCode string) string {
@@ -40,10 +40,10 @@ func MapSnapError(err error, serviceCode string) (string, string, int) {
 		return SnapResponseCode(409, serviceCode, "01"), "Duplicate partnerReferenceNo", 409
 	case ErrSupectedFraud:
 		return SnapResponseCode(403, serviceCode, "03"), "Suspected Fraud", 403
-	case ErrCardBlocked:
-		return SnapResponseCode(403, serviceCode, "07"), "Card Blocked", 403
-	case ErrBeneficiaryBlocked:
-		return SnapResponseCode(403, serviceCode, "08"), "Beneficiary Blocked", 403
+	case ErrNeedReview:
+		return SnapResponseCode(403, serviceCode, "06"), "Transaction Not Allowed At This Time. Need Review", 403
+	case ErrTranscationLimit:
+		return SnapResponseCode(429, serviceCode, "00"), "Maximum Transaction Limit", 429
 	default:
 		return SnapResponseCode(500, serviceCode, "00"), "General Error", 500
 	}

@@ -4,98 +4,121 @@ const store = require("../store");
 const logger = require("./logger");
 
 const RULES = {
-  MAX_AMOUNT: Number(process.env.RULE_MAX_AMOUNT) || 1000000,
+  MAX_AMOUNT: Number(process.env.RULE_MAX_AMOUNT) || 1_000_000,
   VELOCITY_THRESHOLD: Number(process.env.RULE_VELOCITY_THRESHOLD) || 5,
   VELOCITY_WINDOW_MS:
     Number(process.env.RULE_VELOCITY_WINDOW_MS) || 5 * 60 * 1000,
-  VELOCITY_AUTO_BLOCK: process.env.RULE_VELOCITY_AUTO_BLOCK !== "false",
+  RESTRICT_DURATION_MS:
+    Number(process.env.RULE_RESTRICT_DURATION_MS) || 5 * 60 * 1000,
 };
 
-/**
- * Run all fraud rules against a candidate transaction.
- * Returns { allowed, fraudCode, message, riskLevel }
- */
-function runFraudChecks({ sourceAccountNo, beneficiaryAccountNo, amount }) {
-  // Rule 1 — Source blocked
-  if (store.isBlocked(sourceAccountNo)) {
-    const info = store.getBlockInfo(sourceAccountNo);
-    logger.warn("BLOCKED_ACCOUNT hit", { sourceAccountNo });
+// Helper
+function getRiskLevel(score) {
+  if (score >= 80) return "CRITICAL";
+  if (score >= 60) return "HIGH";
+  if (score >= 30) return "MEDIUM";
+  return "LOW";
+}
+
+function getDecision(score) {
+  if (score >= 80) return "REJECT";
+  if (score >= 60) return "REVIEW";
+  return "ALLOW";
+}
+
+async function runFraudChecks({
+  sourceAccountNo,
+  beneficiaryAccountNo,
+  amount,
+}) {
+  let score = 0;
+  const reasons = [];
+
+  // 1. Restricted check
+  if (await store.isRestricted(sourceAccountNo)) {
     return {
       allowed: false,
-      fraudCode: "BLOCKED_ACCOUNT",
-      message: `Source account ${sourceAccountNo} is blocked: ${info.reason}`,
+      fraudCode: "ACCOUNT_RESTRICTED",
+      message: "Account temporarily restricted",
       riskLevel: "CRITICAL",
+      score: 100,
+      decision: "REJECT",
     };
   }
 
-  // Rule 2 — Beneficiary blocked
-  if (store.isBlocked(beneficiaryAccountNo)) {
-    const info = store.getBlockInfo(beneficiaryAccountNo);
-    logger.warn("BLOCKED_BENEFICIARY hit", { beneficiaryAccountNo });
-    return {
-      allowed: false,
-      fraudCode: "BLOCKED_BENEFICIARY",
-      message: `Beneficiary account ${beneficiaryAccountNo} is blocked: ${info.reason}`,
-      riskLevel: "HIGH",
-    };
-  }
-
-  // Rule 3 — Amount ceiling
-  if (amount > RULES.MAX_AMOUNT) {
-    logger.warn("AMOUNT_EXCEEDED", { amount, limit: RULES.MAX_AMOUNT });
-    return {
-      allowed: false,
-      fraudCode: "AMOUNT_EXCEEDED",
-      message: `Transfer amount ${amount} exceeds the maximum allowed ${RULES.MAX_AMOUNT}`,
-      riskLevel: "HIGH",
-    };
-  }
-
-  // Rule 4 — Velocity / Actimize
-  const velocityCount = store.recordAndCountVelocity(
+  // 2. Velocity
+  const velocityCount = await store.recordAndCountVelocity(
     sourceAccountNo,
     beneficiaryAccountNo,
     RULES.VELOCITY_WINDOW_MS,
   );
 
   if (velocityCount >= RULES.VELOCITY_THRESHOLD) {
-    logger.warn("VELOCITY_BREACH detected", {
-      sourceAccountNo,
-      beneficiaryAccountNo,
-      velocityCount,
-      threshold: RULES.VELOCITY_THRESHOLD,
-      windowMs: RULES.VELOCITY_WINDOW_MS,
-    });
-
-    if (RULES.VELOCITY_AUTO_BLOCK && !store.isBlocked(sourceAccountNo)) {
-      store.blockAccount(
-        sourceAccountNo,
-        `Auto-actimized: ${velocityCount} transfers to ${beneficiaryAccountNo} within ${RULES.VELOCITY_WINDOW_MS / 1000}s`,
-        "SYSTEM:ACTIMIZE",
-      );
-      logger.warn("Account auto-blocked by actimize rule", { sourceAccountNo });
-    }
-
-    return {
-      allowed: false,
-      fraudCode: "VELOCITY_BREACH",
-      message: `Suspicious activity: ${velocityCount} transfers to ${beneficiaryAccountNo} within ${RULES.VELOCITY_WINDOW_MS / 1000}s`,
-      riskLevel: "CRITICAL",
-    };
+    score += 40;
+    reasons.push("High velocity");
   }
 
-  // Risk scoring (allowed but elevated)
-  let riskLevel = "LOW";
-  if (amount > RULES.MAX_AMOUNT * 0.7) riskLevel = "MEDIUM";
-  if (velocityCount >= Math.floor(RULES.VELOCITY_THRESHOLD * 0.6))
-    riskLevel = "MEDIUM";
+  // 3. Amount anomaly
+  if (amount > RULES.MAX_AMOUNT) {
+    score += 50;
+    reasons.push("Amount exceeds limit");
+  } else if (amount > RULES.MAX_AMOUNT * 0.8) {
+    score += 25;
+    reasons.push("High amount");
+  }
+
+  // 4. Round number anomaly
+  if (amount % 100000 === 0) {
+    score += 10;
+    reasons.push("Round number suspicious");
+  }
+
+  // 5. Time anomaly
+  const hour = new Date().getHours();
+  if (hour >= 1 && hour <= 4) {
+    score += 15;
+    reasons.push("Odd transaction hour");
+  }
+
+  // 6. New beneficiary
+  // (butuh Redis tracking sederhana)
+  const isNew = await store.isNewBeneficiary(
+    sourceAccountNo,
+    beneficiaryAccountNo,
+  );
+
+  if (isNew) {
+    score += 15;
+    reasons.push("New beneficiary");
+  }
+
+  // Final decision
+  score = Math.min(score, 100);
+  const riskLevel = getRiskLevel(score);
+  const decision = getDecision(score);
+
+  if (decision === "REJECT") {
+    await store.restrictAccount(
+      sourceAccountNo,
+      `Fraud detected: ${reasons.join(", ")}`,
+      RULES.RESTRICT_DURATION_MS,
+    );
+
+    logger.warn("ACCOUNT_RESTRICTED_BY_SCORE", {
+      sourceAccountNo,
+      score,
+      reasons,
+    });
+  }
 
   return {
-    allowed: true,
-    fraudCode: "OK",
-    message: "Transaction cleared",
+    allowed: decision === "ALLOW",
+    fraudCode: decision === "REJECT" ? "FRAUD_DETECTED" : "OK",
+    message: reasons.join(", ") || "Transaction normal",
     riskLevel,
+    score,
+    decision,
   };
 }
 
-module.exports = { runFraudChecks, RULES };
+module.exports = { runFraudChecks };

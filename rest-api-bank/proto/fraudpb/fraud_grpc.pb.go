@@ -20,9 +20,6 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	FraudDetectionService_CheckTransaction_FullMethodName = "/fraud.FraudDetectionService/CheckTransaction"
-	FraudDetectionService_BlockAccount_FullMethodName     = "/fraud.FraudDetectionService/BlockAccount"
-	FraudDetectionService_UnblockAccount_FullMethodName   = "/fraud.FraudDetectionService/UnblockAccount"
-	FraudDetectionService_GetAccountStatus_FullMethodName = "/fraud.FraudDetectionService/GetAccountStatus"
 )
 
 // FraudDetectionServiceClient is the client API for FraudDetectionService service.
@@ -31,12 +28,6 @@ const (
 type FraudDetectionServiceClient interface {
 	// CheckTransaction — called by transaction-service before every transfer
 	CheckTransaction(ctx context.Context, in *FraudCheckRequest, opts ...grpc.CallOption) (*FraudCheckResponse, error)
-	// BlockAccount — manual / parameterized block by operator
-	BlockAccount(ctx context.Context, in *BlockAccountRequest, opts ...grpc.CallOption) (*BlockAccountResponse, error)
-	// UnblockAccount — remove a manual block
-	UnblockAccount(ctx context.Context, in *UnblockAccountRequest, opts ...grpc.CallOption) (*UnblockAccountResponse, error)
-	// GetAccountStatus — inspect fraud / block state of an account
-	GetAccountStatus(ctx context.Context, in *GetAccountStatusRequest, opts ...grpc.CallOption) (*GetAccountStatusResponse, error)
 }
 
 type fraudDetectionServiceClient struct {
@@ -57,48 +48,12 @@ func (c *fraudDetectionServiceClient) CheckTransaction(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *fraudDetectionServiceClient) BlockAccount(ctx context.Context, in *BlockAccountRequest, opts ...grpc.CallOption) (*BlockAccountResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(BlockAccountResponse)
-	err := c.cc.Invoke(ctx, FraudDetectionService_BlockAccount_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *fraudDetectionServiceClient) UnblockAccount(ctx context.Context, in *UnblockAccountRequest, opts ...grpc.CallOption) (*UnblockAccountResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UnblockAccountResponse)
-	err := c.cc.Invoke(ctx, FraudDetectionService_UnblockAccount_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *fraudDetectionServiceClient) GetAccountStatus(ctx context.Context, in *GetAccountStatusRequest, opts ...grpc.CallOption) (*GetAccountStatusResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetAccountStatusResponse)
-	err := c.cc.Invoke(ctx, FraudDetectionService_GetAccountStatus_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // FraudDetectionServiceServer is the server API for FraudDetectionService service.
 // All implementations must embed UnimplementedFraudDetectionServiceServer
 // for forward compatibility.
 type FraudDetectionServiceServer interface {
 	// CheckTransaction — called by transaction-service before every transfer
 	CheckTransaction(context.Context, *FraudCheckRequest) (*FraudCheckResponse, error)
-	// BlockAccount — manual / parameterized block by operator
-	BlockAccount(context.Context, *BlockAccountRequest) (*BlockAccountResponse, error)
-	// UnblockAccount — remove a manual block
-	UnblockAccount(context.Context, *UnblockAccountRequest) (*UnblockAccountResponse, error)
-	// GetAccountStatus — inspect fraud / block state of an account
-	GetAccountStatus(context.Context, *GetAccountStatusRequest) (*GetAccountStatusResponse, error)
 	mustEmbedUnimplementedFraudDetectionServiceServer()
 }
 
@@ -111,15 +66,6 @@ type UnimplementedFraudDetectionServiceServer struct{}
 
 func (UnimplementedFraudDetectionServiceServer) CheckTransaction(context.Context, *FraudCheckRequest) (*FraudCheckResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CheckTransaction not implemented")
-}
-func (UnimplementedFraudDetectionServiceServer) BlockAccount(context.Context, *BlockAccountRequest) (*BlockAccountResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method BlockAccount not implemented")
-}
-func (UnimplementedFraudDetectionServiceServer) UnblockAccount(context.Context, *UnblockAccountRequest) (*UnblockAccountResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method UnblockAccount not implemented")
-}
-func (UnimplementedFraudDetectionServiceServer) GetAccountStatus(context.Context, *GetAccountStatusRequest) (*GetAccountStatusResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method GetAccountStatus not implemented")
 }
 func (UnimplementedFraudDetectionServiceServer) mustEmbedUnimplementedFraudDetectionServiceServer() {}
 func (UnimplementedFraudDetectionServiceServer) testEmbeddedByValue()                               {}
@@ -160,60 +106,6 @@ func _FraudDetectionService_CheckTransaction_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FraudDetectionService_BlockAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BlockAccountRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(FraudDetectionServiceServer).BlockAccount(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: FraudDetectionService_BlockAccount_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FraudDetectionServiceServer).BlockAccount(ctx, req.(*BlockAccountRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _FraudDetectionService_UnblockAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnblockAccountRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(FraudDetectionServiceServer).UnblockAccount(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: FraudDetectionService_UnblockAccount_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FraudDetectionServiceServer).UnblockAccount(ctx, req.(*UnblockAccountRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _FraudDetectionService_GetAccountStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAccountStatusRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(FraudDetectionServiceServer).GetAccountStatus(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: FraudDetectionService_GetAccountStatus_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FraudDetectionServiceServer).GetAccountStatus(ctx, req.(*GetAccountStatusRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // FraudDetectionService_ServiceDesc is the grpc.ServiceDesc for FraudDetectionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -224,18 +116,6 @@ var FraudDetectionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckTransaction",
 			Handler:    _FraudDetectionService_CheckTransaction_Handler,
-		},
-		{
-			MethodName: "BlockAccount",
-			Handler:    _FraudDetectionService_BlockAccount_Handler,
-		},
-		{
-			MethodName: "UnblockAccount",
-			Handler:    _FraudDetectionService_UnblockAccount_Handler,
-		},
-		{
-			MethodName: "GetAccountStatus",
-			Handler:    _FraudDetectionService_GetAccountStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

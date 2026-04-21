@@ -111,6 +111,8 @@ type FraudCheckResponse struct {
 	FraudCode     string                 `protobuf:"bytes,2,opt,name=fraud_code,json=fraudCode,proto3" json:"fraud_code,omitempty"` // "OK" | "BLOCKED_ACCOUNT" | "VELOCITY_BREACH" | ...
 	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	RiskLevel     string                 `protobuf:"bytes,4,opt,name=risk_level,json=riskLevel,proto3" json:"risk_level,omitempty"` // "LOW" | "MEDIUM" | "HIGH" | "CRITICAL"
+	Score         int32                  `protobuf:"varint,5,opt,name=score,proto3" json:"score,omitempty"`                         //
+	Decision      string                 `protobuf:"bytes,6,opt,name=decision,proto3" json:"decision,omitempty"`                    // (ALLOW / REVIEW / REJECT)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -173,348 +175,18 @@ func (x *FraudCheckResponse) GetRiskLevel() string {
 	return ""
 }
 
-type BlockAccountRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountNo     string                 `protobuf:"bytes,1,opt,name=account_no,json=accountNo,proto3" json:"account_no,omitempty"`
-	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
-	BlockedBy     string                 `protobuf:"bytes,3,opt,name=blocked_by,json=blockedBy,proto3" json:"blocked_by,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *BlockAccountRequest) Reset() {
-	*x = BlockAccountRequest{}
-	mi := &file_proto_fraud_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BlockAccountRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BlockAccountRequest) ProtoMessage() {}
-
-func (x *BlockAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[2]
+func (x *FraudCheckResponse) GetScore() int32 {
 	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BlockAccountRequest.ProtoReflect.Descriptor instead.
-func (*BlockAccountRequest) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *BlockAccountRequest) GetAccountNo() string {
-	if x != nil {
-		return x.AccountNo
-	}
-	return ""
-}
-
-func (x *BlockAccountRequest) GetReason() string {
-	if x != nil {
-		return x.Reason
-	}
-	return ""
-}
-
-func (x *BlockAccountRequest) GetBlockedBy() string {
-	if x != nil {
-		return x.BlockedBy
-	}
-	return ""
-}
-
-type BlockAccountResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *BlockAccountResponse) Reset() {
-	*x = BlockAccountResponse{}
-	mi := &file_proto_fraud_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BlockAccountResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BlockAccountResponse) ProtoMessage() {}
-
-func (x *BlockAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BlockAccountResponse.ProtoReflect.Descriptor instead.
-func (*BlockAccountResponse) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *BlockAccountResponse) GetSuccess() bool {
-	if x != nil {
-		return x.Success
-	}
-	return false
-}
-
-func (x *BlockAccountResponse) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
-type UnblockAccountRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountNo     string                 `protobuf:"bytes,1,opt,name=account_no,json=accountNo,proto3" json:"account_no,omitempty"`
-	UnblockedBy   string                 `protobuf:"bytes,2,opt,name=unblocked_by,json=unblockedBy,proto3" json:"unblocked_by,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UnblockAccountRequest) Reset() {
-	*x = UnblockAccountRequest{}
-	mi := &file_proto_fraud_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UnblockAccountRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UnblockAccountRequest) ProtoMessage() {}
-
-func (x *UnblockAccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UnblockAccountRequest.ProtoReflect.Descriptor instead.
-func (*UnblockAccountRequest) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *UnblockAccountRequest) GetAccountNo() string {
-	if x != nil {
-		return x.AccountNo
-	}
-	return ""
-}
-
-func (x *UnblockAccountRequest) GetUnblockedBy() string {
-	if x != nil {
-		return x.UnblockedBy
-	}
-	return ""
-}
-
-type UnblockAccountResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *UnblockAccountResponse) Reset() {
-	*x = UnblockAccountResponse{}
-	mi := &file_proto_fraud_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *UnblockAccountResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UnblockAccountResponse) ProtoMessage() {}
-
-func (x *UnblockAccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UnblockAccountResponse.ProtoReflect.Descriptor instead.
-func (*UnblockAccountResponse) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *UnblockAccountResponse) GetSuccess() bool {
-	if x != nil {
-		return x.Success
-	}
-	return false
-}
-
-func (x *UnblockAccountResponse) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
-
-type GetAccountStatusRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountNo     string                 `protobuf:"bytes,1,opt,name=account_no,json=accountNo,proto3" json:"account_no,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetAccountStatusRequest) Reset() {
-	*x = GetAccountStatusRequest{}
-	mi := &file_proto_fraud_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetAccountStatusRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAccountStatusRequest) ProtoMessage() {}
-
-func (x *GetAccountStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAccountStatusRequest.ProtoReflect.Descriptor instead.
-func (*GetAccountStatusRequest) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *GetAccountStatusRequest) GetAccountNo() string {
-	if x != nil {
-		return x.AccountNo
-	}
-	return ""
-}
-
-type GetAccountStatusResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountNo     string                 `protobuf:"bytes,1,opt,name=account_no,json=accountNo,proto3" json:"account_no,omitempty"`
-	IsBlocked     bool                   `protobuf:"varint,2,opt,name=is_blocked,json=isBlocked,proto3" json:"is_blocked,omitempty"`
-	BlockReason   string                 `protobuf:"bytes,3,opt,name=block_reason,json=blockReason,proto3" json:"block_reason,omitempty"`
-	BlockedBy     string                 `protobuf:"bytes,4,opt,name=blocked_by,json=blockedBy,proto3" json:"blocked_by,omitempty"`
-	BlockedAt     string                 `protobuf:"bytes,5,opt,name=blocked_at,json=blockedAt,proto3" json:"blocked_at,omitempty"`
-	VelocityCount int32                  `protobuf:"varint,6,opt,name=velocity_count,json=velocityCount,proto3" json:"velocity_count,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetAccountStatusResponse) Reset() {
-	*x = GetAccountStatusResponse{}
-	mi := &file_proto_fraud_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetAccountStatusResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetAccountStatusResponse) ProtoMessage() {}
-
-func (x *GetAccountStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_fraud_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetAccountStatusResponse.ProtoReflect.Descriptor instead.
-func (*GetAccountStatusResponse) Descriptor() ([]byte, []int) {
-	return file_proto_fraud_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *GetAccountStatusResponse) GetAccountNo() string {
-	if x != nil {
-		return x.AccountNo
-	}
-	return ""
-}
-
-func (x *GetAccountStatusResponse) GetIsBlocked() bool {
-	if x != nil {
-		return x.IsBlocked
-	}
-	return false
-}
-
-func (x *GetAccountStatusResponse) GetBlockReason() string {
-	if x != nil {
-		return x.BlockReason
-	}
-	return ""
-}
-
-func (x *GetAccountStatusResponse) GetBlockedBy() string {
-	if x != nil {
-		return x.BlockedBy
-	}
-	return ""
-}
-
-func (x *GetAccountStatusResponse) GetBlockedAt() string {
-	if x != nil {
-		return x.BlockedAt
-	}
-	return ""
-}
-
-func (x *GetAccountStatusResponse) GetVelocityCount() int32 {
-	if x != nil {
-		return x.VelocityCount
+		return x.Score
 	}
 	return 0
+}
+
+func (x *FraudCheckResponse) GetDecision() string {
+	if x != nil {
+		return x.Decision
+	}
+	return ""
 }
 
 var File_proto_fraud_proto protoreflect.FileDescriptor
@@ -528,49 +200,18 @@ const file_proto_fraud_proto_rawDesc = "" +
 	"\x06amount\x18\x03 \x01(\x01R\x06amount\x12\x1a\n" +
 	"\bcurrency\x18\x04 \x01(\tR\bcurrency\x120\n" +
 	"\x14partner_reference_no\x18\x05 \x01(\tR\x12partnerReferenceNo\x12)\n" +
-	"\x10transaction_date\x18\x06 \x01(\tR\x0ftransactionDate\"\x86\x01\n" +
+	"\x10transaction_date\x18\x06 \x01(\tR\x0ftransactionDate\"\xb8\x01\n" +
 	"\x12FraudCheckResponse\x12\x18\n" +
 	"\aallowed\x18\x01 \x01(\bR\aallowed\x12\x1d\n" +
 	"\n" +
 	"fraud_code\x18\x02 \x01(\tR\tfraudCode\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x12\x1d\n" +
 	"\n" +
-	"risk_level\x18\x04 \x01(\tR\triskLevel\"k\n" +
-	"\x13BlockAccountRequest\x12\x1d\n" +
-	"\n" +
-	"account_no\x18\x01 \x01(\tR\taccountNo\x12\x16\n" +
-	"\x06reason\x18\x02 \x01(\tR\x06reason\x12\x1d\n" +
-	"\n" +
-	"blocked_by\x18\x03 \x01(\tR\tblockedBy\"J\n" +
-	"\x14BlockAccountResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"Y\n" +
-	"\x15UnblockAccountRequest\x12\x1d\n" +
-	"\n" +
-	"account_no\x18\x01 \x01(\tR\taccountNo\x12!\n" +
-	"\funblocked_by\x18\x02 \x01(\tR\vunblockedBy\"L\n" +
-	"\x16UnblockAccountResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"8\n" +
-	"\x17GetAccountStatusRequest\x12\x1d\n" +
-	"\n" +
-	"account_no\x18\x01 \x01(\tR\taccountNo\"\xe0\x01\n" +
-	"\x18GetAccountStatusResponse\x12\x1d\n" +
-	"\n" +
-	"account_no\x18\x01 \x01(\tR\taccountNo\x12\x1d\n" +
-	"\n" +
-	"is_blocked\x18\x02 \x01(\bR\tisBlocked\x12!\n" +
-	"\fblock_reason\x18\x03 \x01(\tR\vblockReason\x12\x1d\n" +
-	"\n" +
-	"blocked_by\x18\x04 \x01(\tR\tblockedBy\x12\x1d\n" +
-	"\n" +
-	"blocked_at\x18\x05 \x01(\tR\tblockedAt\x12%\n" +
-	"\x0evelocity_count\x18\x06 \x01(\x05R\rvelocityCount2\xcd\x02\n" +
+	"risk_level\x18\x04 \x01(\tR\triskLevel\x12\x14\n" +
+	"\x05score\x18\x05 \x01(\x05R\x05score\x12\x1a\n" +
+	"\bdecision\x18\x06 \x01(\tR\bdecision2`\n" +
 	"\x15FraudDetectionService\x12G\n" +
-	"\x10CheckTransaction\x12\x18.fraud.FraudCheckRequest\x1a\x19.fraud.FraudCheckResponse\x12G\n" +
-	"\fBlockAccount\x12\x1a.fraud.BlockAccountRequest\x1a\x1b.fraud.BlockAccountResponse\x12M\n" +
-	"\x0eUnblockAccount\x12\x1c.fraud.UnblockAccountRequest\x1a\x1d.fraud.UnblockAccountResponse\x12S\n" +
-	"\x10GetAccountStatus\x12\x1e.fraud.GetAccountStatusRequest\x1a\x1f.fraud.GetAccountStatusResponseB\x0fZ\rproto/fraudpbb\x06proto3"
+	"\x10CheckTransaction\x12\x18.fraud.FraudCheckRequest\x1a\x19.fraud.FraudCheckResponseB\x0fZ\rproto/fraudpbb\x06proto3"
 
 var (
 	file_proto_fraud_proto_rawDescOnce sync.Once
@@ -584,28 +225,16 @@ func file_proto_fraud_proto_rawDescGZIP() []byte {
 	return file_proto_fraud_proto_rawDescData
 }
 
-var file_proto_fraud_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_proto_fraud_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_fraud_proto_goTypes = []any{
-	(*FraudCheckRequest)(nil),        // 0: fraud.FraudCheckRequest
-	(*FraudCheckResponse)(nil),       // 1: fraud.FraudCheckResponse
-	(*BlockAccountRequest)(nil),      // 2: fraud.BlockAccountRequest
-	(*BlockAccountResponse)(nil),     // 3: fraud.BlockAccountResponse
-	(*UnblockAccountRequest)(nil),    // 4: fraud.UnblockAccountRequest
-	(*UnblockAccountResponse)(nil),   // 5: fraud.UnblockAccountResponse
-	(*GetAccountStatusRequest)(nil),  // 6: fraud.GetAccountStatusRequest
-	(*GetAccountStatusResponse)(nil), // 7: fraud.GetAccountStatusResponse
+	(*FraudCheckRequest)(nil),  // 0: fraud.FraudCheckRequest
+	(*FraudCheckResponse)(nil), // 1: fraud.FraudCheckResponse
 }
 var file_proto_fraud_proto_depIdxs = []int32{
 	0, // 0: fraud.FraudDetectionService.CheckTransaction:input_type -> fraud.FraudCheckRequest
-	2, // 1: fraud.FraudDetectionService.BlockAccount:input_type -> fraud.BlockAccountRequest
-	4, // 2: fraud.FraudDetectionService.UnblockAccount:input_type -> fraud.UnblockAccountRequest
-	6, // 3: fraud.FraudDetectionService.GetAccountStatus:input_type -> fraud.GetAccountStatusRequest
-	1, // 4: fraud.FraudDetectionService.CheckTransaction:output_type -> fraud.FraudCheckResponse
-	3, // 5: fraud.FraudDetectionService.BlockAccount:output_type -> fraud.BlockAccountResponse
-	5, // 6: fraud.FraudDetectionService.UnblockAccount:output_type -> fraud.UnblockAccountResponse
-	7, // 7: fraud.FraudDetectionService.GetAccountStatus:output_type -> fraud.GetAccountStatusResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
+	1, // 1: fraud.FraudDetectionService.CheckTransaction:output_type -> fraud.FraudCheckResponse
+	1, // [1:2] is the sub-list for method output_type
+	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -622,7 +251,7 @@ func file_proto_fraud_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_fraud_proto_rawDesc), len(file_proto_fraud_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

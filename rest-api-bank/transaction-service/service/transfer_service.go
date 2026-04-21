@@ -153,19 +153,20 @@ func (s *TransferService) runFraudCheck(ctx context.Context, req dto.SnapTransfe
 		zap.Bool("allowed", fraudResp.Allowed),
 		zap.String("fraud_code", fraudResp.FraudCode),
 		zap.String("risk_level", fraudResp.RiskLevel),
+		zap.Int32("score", fraudResp.Score),
+		zap.String("decision", fraudResp.Decision),
 	)
 
-	if fraudResp.FraudCode == "BLOCKED_ACCOUNT" {
+	if fraudResp.Decision == "REVIEW" {
 		metrics.TransferFailed.Inc()
-		return helper.ErrCardBlocked
+		logger.Logger.Warn("transaction needs review",
+			zap.String("source", req.SourceAccountNo),
+			zap.Int32("score", fraudResp.Score),
+		)
+		return helper.ErrNeedReview
 	}
-
-	if fraudResp.FraudCode == "BLOCKED_BENEFICIARY" {
-		metrics.TransferFailed.Inc()
-		return helper.ErrCardBlocked
-	}
-
-	if !fraudResp.Allowed {
+	
+	if !fraudResp.Allowed{
 		metrics.TransferFailed.Inc()
 		return helper.ErrSupectedFraud
 	}
