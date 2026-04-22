@@ -47,7 +47,7 @@ async function runFraudChecks({
     };
   }
 
-  // 2. Velocity
+  // 2. Velocity check
   const velocityCount = await store.recordAndCountVelocity(
     sourceAccountNo,
     beneficiaryAccountNo,
@@ -55,8 +55,10 @@ async function runFraudChecks({
   );
 
   if (velocityCount >= RULES.VELOCITY_THRESHOLD) {
-    const alreadyRestricted = await store.isRestricted(sourceAccountNo);
+    score += 40;
+    reasons.push("Velocity threshold exceeded");
 
+    const alreadyRestricted = await store.isRestricted(sourceAccountNo);
     if (!alreadyRestricted) {
       await store.restrictAccount(
         sourceAccountNo,
@@ -80,7 +82,7 @@ async function runFraudChecks({
       message: "Max amount exceeded",
       riskLevel: "HIGH",
       score: 100,
-      decision: "REVIEW",
+      decision: "REJECT", // was "REVIEW"
     };
   } else if (amount > RULES.MAX_AMOUNT * 0.8) {
     score += 25;
@@ -116,7 +118,8 @@ async function runFraudChecks({
   const riskLevel = getRiskLevel(score);
   const decision = getDecision(score);
 
-  if (riskLevel === "CRITICAl") {
+  if (riskLevel === "CRITICAL") {
+    // was "CRITICAl"
     const alreadyRestricted = await store.isRestricted(sourceAccountNo);
 
     if (!alreadyRestricted) {
