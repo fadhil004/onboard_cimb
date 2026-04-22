@@ -32,6 +32,7 @@ async function runFraudChecks({
   amount,
 }) {
   let score = 0;
+  let fraudCode = "OK";
   const reasons = [];
 
   // 1. Restricted check
@@ -73,8 +74,14 @@ async function runFraudChecks({
 
   // 3. Amount anomaly
   if (amount > RULES.MAX_AMOUNT) {
-    score += 60;
-    reasons.push("Amount exceeds limit");
+    return {
+      allowed: false,
+      fraudCode: "MAX_AMOUNT_EXCEEDED",
+      message: "Max amount exceeded",
+      riskLevel: "HIGH",
+      score: 100,
+      decision: "REVIEW",
+    };
   } else if (amount > RULES.MAX_AMOUNT * 0.8) {
     score += 25;
     reasons.push("High amount");
@@ -82,14 +89,14 @@ async function runFraudChecks({
 
   // 4. Round number anomaly
   if (amount % 100000 === 0) {
-    score += 10;
+    score += 5;
     reasons.push("Round number suspicious");
   }
 
   // 5. Time anomaly
   const hour = new Date().getHours();
   if (hour >= 1 && hour <= 4) {
-    score += 15;
+    score += 5;
     reasons.push("Odd transaction hour");
   }
 
@@ -100,7 +107,7 @@ async function runFraudChecks({
   );
 
   if (isNew) {
-    score += 15;
+    score += 5;
     reasons.push("New beneficiary");
   }
 
@@ -129,7 +136,7 @@ async function runFraudChecks({
 
   return {
     allowed: decision === "ALLOW",
-    fraudCode: decision === "REJECT" ? "FRAUD_DETECTED" : "OK",
+    fraudCode,
     message: reasons.join(", ") || "Transaction normal",
     riskLevel,
     score,
