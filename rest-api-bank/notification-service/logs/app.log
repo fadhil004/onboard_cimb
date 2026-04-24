@@ -19122,3 +19122,44 @@
 {"level":"info","ts":1776848685.5230136,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"2a8cd3c0-5ba6-4397-b3b0-cea1901966c9","key":"0888660510405823"}
 {"level":"warn","ts":1776848686.466555,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
 {"level":"info","ts":1776848686.471216,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"e73d6c9e-5d64-4130-a549-42ba2cbdb9f7","key":"0888389583711889"}
+{"level":"warn","ts":1776848687.3576357,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848687.3622963,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"161150cb-6870-4bf2-91d6-e0fbfc1bbb47","key":"0888436055904326"}
+{"level":"warn","ts":1776848688.2211258,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848688.2286248,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"456049e3-5f56-44c3-b6a7-715bee5eddde","key":"0888660510405823"}
+{"level":"warn","ts":1776848689.1169748,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848689.126258,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"e2a1b21e-9fb0-49c7-b864-9d755f7ac2dd","key":"0888051534365934"}
+{"level":"warn","ts":1776848689.9867244,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848689.990763,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"e1968412-5122-4e3e-93e8-453fb58bf938","key":"0888436055904326"}
+{"level":"warn","ts":1776848690.8853173,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848690.8919847,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"db0a39e9-a622-44c5-80dd-3edef888cae4","key":"0888660510405823"}
+{"level":"warn","ts":1776848691.7688744,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848691.773793,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"6685bfa9-ad35-44e3-93da-3b5f27dde4be","key":"0888389583711889"}
+{"level":"warn","ts":1776848692.6819704,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848692.6858613,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"c227064b-63d0-4105-b622-e798f801aabf","key":"0888436055904326"}
+{"level":"warn","ts":1776848693.6063507,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848693.610342,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"01154451-d52b-4a5c-b6a6-01de9e9a9a7d","key":"0888660510405823"}
+{"level":"warn","ts":1776848694.470312,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848694.4748242,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"1787c83e-fec6-40f2-856f-08440a8bc7d4","key":"0888051534365934"}
+{"level":"warn","ts":1776848695.3218436,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848695.3268201,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"fc9fe988-acee-41a3-bc57-f6157e076900","key":"0888436055904326"}
+{"level":"warn","ts":1776848696.1682975,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848696.172438,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"29d70ffc-bed0-4fdf-904b-17cb1edacf38","key":"0888660510405823"}
+{"level":"warn","ts":1776848697.0288012,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848697.034871,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"a29e1031-7783-45ad-ba55-0bb580655e90","key":"0888389583711889"}
+{"level":"warn","ts":1776848697.9122074,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848697.917458,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"9a108a14-defb-40aa-8a49-1debee735cf4","key":"0888436055904326"}
+{"level":"warn","ts":1776848698.7795212,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848698.7844844,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"d33c67f0-be85-40c9-b993-db35fd769e02","key":"0888660510405823"}
+{"level":"warn","ts":1776848699.657676,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848699.661923,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"c3ce9bdc-3a9c-4734-bbdd-1f390f7bf2a8","key":"0888498876487605"}
+{"level":"warn","ts":1776848700.5113626,"msg":"[notification] callback returned non-2xx","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","status_code":429}
+{"level":"info","ts":1776848700.5274732,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"a6f60831-8df3-4496-b6ff-96a0bc612291","key":"0888436055904326"}
+{"level":"error","ts":1776848700.8739505,"msg":"[notification] callback request failed","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","error":"Post \"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b\": context canceled"}
+{"level":"info","ts":1776848700.8747778,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"4e7516bb-8ab6-4d61-bb59-c62ea5da963a","key":"0888660510405823"}
+{"level":"error","ts":1776848700.8750858,"msg":"[notification] failed to store notification log","error":"context canceled"}
+{"level":"error","ts":1776848700.8758402,"msg":"[notification] callback request failed","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","error":"Post \"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b\": context canceled"}
+{"level":"warn","ts":1776848700.8761108,"msg":"kafka commit error","topic":"account.balance_change","error":"context canceled"}
+{"level":"info","ts":1776848700.876411,"msg":"[notification] received event","topic":"account.balance_change","event_type":"account.balance_change","event_id":"6c969e0a-f405-4055-9d23-9c2bdbaa6cdb","key":"0888051534365934"}
+{"level":"error","ts":1776848700.8766572,"msg":"[notification] failed to store notification log","error":"context canceled"}
+{"level":"error","ts":1776848700.8771315,"msg":"[notification] callback request failed","callback_url":"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b","error":"Post \"https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b\": context canceled"}
+{"level":"warn","ts":1776848700.877457,"msg":"kafka commit error","topic":"account.balance_change","error":"context canceled"}

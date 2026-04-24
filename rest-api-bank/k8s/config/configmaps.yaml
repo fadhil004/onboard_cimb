@@ -1,0 +1,77 @@
+---
+# ── account-service ──────────────────────────────────────────────────────────
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: account-service-config
+  namespace: bank
+data:
+  DB_HOST: "account-db"
+  DB_PORT: "5432"
+  DB_NAME: "account_db"
+  DB_SSLMODE: "disable"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  KAFKA_BROKERS: "kafka:29092"
+  GRPC_PORT: "50051"
+  HTTP_PORT: "8080"
+  SERVICE_NAME: "account-service"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+
+---
+# ── transaction-service ───────────────────────────────────────────────────────
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: transaction-service-config
+  namespace: bank
+data:
+  DB_HOST: "transaction-db"
+  DB_PORT: "5432"
+  DB_NAME: "transaction_db"
+  DB_SSLMODE: "disable"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  KAFKA_BROKERS: "kafka:29092"
+  ACCOUNT_GRPC_ADDR: "account-service:50051"
+  FRAUD_GRPC_ADDR: "fraud-detection-service:50052"
+  HTTP_PORT: "8080"
+  SERVICE_NAME: "transaction-service"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+
+---
+# ── notification-service ──────────────────────────────────────────────────────
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: notification-service-config
+  namespace: bank
+data:
+  DB_HOST: "notification-db"
+  DB_PORT: "5432"
+  DB_NAME: "notification_db"
+  DB_SSLMODE: "disable"
+  KAFKA_BROKERS: "kafka:29092"
+  CALLBACK_URL: "https://webhook.site/8872162b-23bc-4fb5-b2e0-13dfeb00a06b"
+  SERVICE_NAME: "notification-service"
+  HTTP_PORT: "8080"
+
+---
+# ── fraud-detection-service ───────────────────────────────────────────────────
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fraud-detection-service-config
+  namespace: bank
+data:
+  GRPC_PORT: "50052"
+  LOG_LEVEL: "info"
+  SERVICE_NAME: "fraud-detection-service"
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  RULE_MAX_AMOUNT: "1000000"
+  RULE_VELOCITY_THRESHOLD: "5"
+  RULE_VELOCITY_WINDOW_MS: "300000"
+  RULE_RESTRICT_DURATION_MS: "300000"
+  RULE_VELOCITY_AUTO_BLOCK: "true"

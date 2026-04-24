@@ -14151,3 +14151,4 @@
 {"allowed":false,"decision":"REJECT","fraudCode":"ACCOUNT_RESTRICTED","level":"info","message":"FraudCheck result Account temporarily restricted","riskLevel":"CRITICAL","score":100,"timestamp":"2026-04-22T08:09:12.455Z"}
 {"amount":16181,"beneficiary":"0888267846949165","level":"info","message":"CheckTransaction","source":"0888606133863943","timestamp":"2026-04-22T08:09:13.966Z"}
 {"allowed":false,"decision":"REJECT","fraudCode":"ACCOUNT_RESTRICTED","level":"info","message":"FraudCheck result Account temporarily restricted","riskLevel":"CRITICAL","score":100,"timestamp":"2026-04-22T08:09:13.966Z"}
+{"level":"info","message":"SIGTERM received — shutting down","timestamp":"2026-04-22T09:05:01.769Z"}

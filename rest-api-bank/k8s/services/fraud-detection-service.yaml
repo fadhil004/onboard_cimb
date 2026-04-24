@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fraud-detection-service
+  namespace: bank
+  labels:
+    app: fraud-detection-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fraud-detection-service
+  template:
+    metadata:
+      labels:
+        app: fraud-detection-service
+    spec:
+      containers:
+        - name: fraud-detection-service
+          # eval $(minikube docker-env) && docker build -t fraud-detection-service:latest ./fraud-detection-service
+          image: fraud-detection-service:latest
+          imagePullPolicy: Never
+          ports:
+            - name: grpc
+              containerPort: 50052
+          envFrom:
+            - configMapRef:
+                name: fraud-detection-service-config
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
+          readinessProbe:
+            tcpSocket:
+              port: 50052
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 50052
+            initialDelaySeconds: 20
+            periodSeconds: 15
+
+---
+# Hanya ClusterIP — hanya dipanggil oleh transaction-service via gRPC internal
+apiVersion: v1
+kind: Service
+metadata:
+  name: fraud-detection-service
+  namespace: bank
+spec:
+  selector:
+    app: fraud-detection-service
+  ports:
+    - name: grpc
+      port: 50052
+      targetPort: 50052
