@@ -28,30 +28,58 @@ spec:
       labels:
         app: kafka
     spec:
+      # chown volume ke appuser (uid=1000) sebelum Kafka start
+      initContainers:
+        - name: fix-permissions
+          image: busybox:1.36
+          command: ["sh", "-c", "chown -R 1000:1000 /var/lib/kafka/data"]
+          volumeMounts:
+            - name: kafka-storage
+              mountPath: /var/lib/kafka/data
+
       containers:
         - name: kafka
           image: confluentinc/cp-kafka:7.6.1
           ports:
-            - containerPort: 9092   # external
-            - containerPort: 29092  # internal
-            - containerPort: 9093   # controller
+            - containerPort: 29092 # PLAINTEXT — broker listener
+            - containerPort: 9093 # CONTROLLER — KRaft controller listener
           env:
             - name: KAFKA_NODE_ID
               value: "1"
             - name: KAFKA_PROCESS_ROLES
               value: "broker,controller"
+
+            # ROOT CAUSE FIX:
+            # Controller dan broker jalan dalam 1 pod yang sama (combined mode).
+            # Jika KAFKA_CONTROLLER_QUORUM_VOTERS pakai hostname "kafka",
+            # broker resolve "kafka" → ClusterIP Service → kube-proxy →
+            # dikembalikan ke pod yang sama. kind tidak aktifkan hairpin/loopback
+            # pada Service ClusterIP by default, sehingga koneksi gagal terus.
+            #
+            # Solusi: pakai "localhost" — karena controller & broker 1 pod,
+            # koneksi internal cukup lewat loopback (127.0.0.1), tidak perlu
+            # keluar ke Service IP.
             - name: KAFKA_CONTROLLER_QUORUM_VOTERS
-              value: "1@kafka:9093"
+              value: "1@localhost:9093"
+
+            # PLAINTEXT untuk broker (antar-service di cluster),
+            # CONTROLLER untuk internal KRaft, tidak di-advertise ke client
             - name: KAFKA_LISTENERS
-              value: "INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+              value: "PLAINTEXT://0.0.0.0:29092,CONTROLLER://0.0.0.0:9093"
             - name: KAFKA_ADVERTISED_LISTENERS
-              value: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
+              value: "PLAINTEXT://kafka:29092"
             - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
-              value: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT"
+              value: "PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT"
             - name: KAFKA_INTER_BROKER_LISTENER_NAME
-              value: "INTERNAL"
+              value: "PLAINTEXT"
             - name: KAFKA_CONTROLLER_LISTENER_NAMES
               value: "CONTROLLER"
+
+            # Override KAFKA_PORT agar tidak dibaca dari env yang di-inject K8s
+            # (K8s inject KAFKA_PORT=tcp://clusterIP:port untuk setiap Service)
+            - name: KAFKA_PORT
+              value: ""
+
             - name: KAFKA_NUM_PARTITIONS
               value: "3"
             - name: KAFKA_DEFAULT_REPLICATION_FACTOR
@@ -68,9 +96,11 @@ spec:
               value: "WARN"
             - name: CLUSTER_ID
               value: "MkU3OEVBNTcwNTJENDM2Qg"
+
           volumeMounts:
             - name: kafka-storage
               mountPath: /var/lib/kafka/data
+
           resources:
             requests:
               cpu: "300m"
@@ -78,24 +108,31 @@ spec:
             limits:
               cpu: "800m"
               memory: "1Gi"
+
+          # Probe pakai localhost bukan hostname "kafka" —
+          # sama alasannya: probe dijalankan dari dalam pod itu sendiri
           readinessProbe:
             exec:
               command:
                 - kafka-broker-api-versions
                 - --bootstrap-server
-                - kafka:29092
+                - localhost:29092
             initialDelaySeconds: 30
             periodSeconds: 10
             failureThreshold: 10
+            timeoutSeconds: 5
+
           livenessProbe:
             exec:
               command:
                 - kafka-broker-api-versions
                 - --bootstrap-server
-                - kafka:29092
+                - localhost:29092
             initialDelaySeconds: 60
             periodSeconds: 20
             failureThreshold: 5
+            timeoutSeconds: 5
+
       volumes:
         - name: kafka-storage
           persistentVolumeClaim:
@@ -111,18 +148,17 @@ spec:
   selector:
     app: kafka
   ports:
-    - name: internal
+    # Port 9092 sengaja tidak di-expose:
+    # K8s inject KAFKA_PORT=tcp://clusterIP:9092 ke semua pod di namespace
+    # jika ada port 9092 di Service ini → conflict dengan cp-kafka internal env
+    - name: plaintext
       port: 29092
       targetPort: 29092
-    - name: external
-      port: 9092
-      targetPort: 9092
     - name: controller
       port: 9093
       targetPort: 9093
 
 ---
-# Kafka UI — opsional, untuk debugging
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -175,4 +211,4 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 30090
+      nodePort: 30091
